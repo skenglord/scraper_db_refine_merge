@@ -81,60 +81,82 @@ def create_indexes(db):
     indexes_created = []
     
     try:
-        # Unique index on event_id
-        db.events.create_index("event_id", unique=True)
+        # Unique index on event_id (Primary Key)
+        db.events.create_index("event_id", unique=True, name="idx_event_id_unique")
         indexes_created.append("event_id (unique)")
-        
-        # Index on scraping metadata
-        db.events.create_index("scraping_metadata.source_url")
-        indexes_created.append("scraping_metadata.source_url")
-        
-        # Index on datetime for date-based queries
-        db.events.create_index("datetime.start_datetime")
-        indexes_created.append("datetime.start_datetime")
-        
-        # Index on venue for location-based queries
-        db.events.create_index("venue.name")
-        indexes_created.append("venue.name")
-        
-        # Index on venue city
-        db.events.create_index("venue.city")
-        indexes_created.append("venue.city")
-        
-        # Compound index on venue coordinates for geo queries
-        db.events.create_index([("venue.coordinates.latitude", 1), ("venue.coordinates.longitude", 1)])
-        indexes_created.append("venue.coordinates (compound)")
-        
-        # Index on event type
-        db.events.create_index("event_type")
-        indexes_created.append("event_type")
-        
-        # Index on status
-        db.events.create_index("status")
+
+        # Core V2 Fields marked for indexing
+        db.events.create_index("type", name="idx_type")
+        indexes_created.append("type")
+
+        db.events.create_index("status", name="idx_status")
         indexes_created.append("status")
+
+        db.events.create_index("datetime.start_date", name="idx_datetime_start_date")
+        indexes_created.append("datetime.start_date")
         
-        # Index on data quality score for quality-based filtering
-        db.events.create_index("data_quality.overall_score")
+        db.events.create_index("venue.name", name="idx_venue_name")
+        indexes_created.append("venue.name")
+
+        db.events.create_index("venue.address.city", name="idx_venue_address_city")
+        indexes_created.append("venue.address.city")
+
+        db.events.create_index("acts.act_id", name="idx_acts_act_id") # Indexing array of strings
+        indexes_created.append("acts.act_id")
+        
+        db.events.create_index("acts.act_name", name="idx_acts_act_name") # Indexing array of strings
+        indexes_created.append("acts.act_name")
+
+        db.events.create_index("music.primary_genre", name="idx_music_primary_genre")
+        indexes_created.append("music.primary_genre")
+
+        db.events.create_index("scraping_metadata.source_platform", name="idx_scraping_metadata_source_platform")
+        indexes_created.append("scraping_metadata.source_platform")
+        
+        # Index on source_url as it's frequently used for deduplication/identification
+        db.events.create_index("scraping_metadata.source_url", name="idx_scraping_metadata_source_url")
+        indexes_created.append("scraping_metadata.source_url")
+
+        db.events.create_index("scraping_metadata.last_scraped", name="idx_scraping_metadata_last_scraped")
+        indexes_created.append("scraping_metadata.last_scraped")
+
+        db.events.create_index("data_quality.overall_score", name="idx_data_quality_overall_score")
         indexes_created.append("data_quality.overall_score")
         
-        # Index on scraping timestamp
-        db.events.create_index("scraping_metadata.scraped_at")
-        indexes_created.append("scraping_metadata.scraped_at")
+        db.events.create_index("deduplication.is_canonical", name="idx_deduplication_is_canonical")
+        indexes_created.append("deduplication.is_canonical")
+
+        db.events.create_index("created_at", name="idx_created_at")
+        indexes_created.append("created_at")
+
+        # Geospatial index for venue.coordinates
+        db.events.create_index([("venue.coordinates", "2dsphere")], name="idx_venue_coordinates_2dsphere")
+        indexes_created.append("venue.coordinates (2dsphere)")
+
+        # Additional useful indexes for querying nested arrays/objects
+        db.events.create_index("venue.stages.host.host_name", name="idx_venue_stages_host_name")
+        indexes_created.append("venue.stages.host.host_name")
         
-        # Text index for full-text search on title and descriptions
+        # Text index for searching (ensure fields exist in V2)
+        # V2 fields: title, content.short_description, content.full_description
         db.events.create_index([
             ("title", "text"),
             ("content.short_description", "text"),
-            ("content.full_description", "text")
-        ])
-        indexes_created.append("text search (title, descriptions)")
-        
-        logger.info(f"Created {len(indexes_created)} indexes")
-        for idx in indexes_created:
-            logger.info(f"  - {idx}")
+            ("content.full_description", "text"),
+            ("venue.name", "text"),
+            ("acts.act_name", "text") # Including act names in text search
+        ], name="idx_text_search_all")
+        indexes_created.append("Text Search (title, descriptions, venue, acts)")
+
+        logger.info(f"Attempted to create/ensure {len(indexes_created)} indexes.")
+        # Listing actual indexes to confirm (MongoDB handles if they already exist)
+        final_indexes = list(db.events.list_indexes())
+        logger.info(f"Current indexes on 'events' collection ({len(final_indexes)}):")
+        for idx_info in final_indexes:
+            logger.info(f"  - Name: {idx_info['name']}, Key: {idx_info['key']}")
             
     except Exception as e:
-        logger.warning(f"Some indexes may already exist: {e}")
+        logger.error(f"Error creating indexes: {e}", exc_info=True)
 
 
 def verify_schema():
