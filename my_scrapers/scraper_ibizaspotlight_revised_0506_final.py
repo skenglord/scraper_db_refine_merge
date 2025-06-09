@@ -41,6 +41,7 @@ from config import settings
 from database.quality_scorer import QualityScorer
 from pymongo import MongoClient, errors
 from pymongo.database import Database
+from schema_adapter import map_to_unified_schema
 
 # Setup logging
 logger = logging.getLogger(__name__)
@@ -1251,110 +1252,50 @@ class IbizaSpotlightScraper:
         except Exception as e:
             logger.warning(f"Error updating venue context from URL {url}: {e}", exc_info=True)
 
-    def save_event(self, event: Dict[str, Any]):
-        try:
-            event.setdefault("title", "Untitled Event")
-            event.setdefault("tickets_url", "Unknown URL")
-            
-            # --- Schema Alignment ---
-            # 1. Align 'artists' to 'lineUp' schema
-            if "artists" in event:
-                line_up = []
-                for artist in event["artists"]:
-                    lu_item = {
-                        "name": artist.get("name", ""),
-                        "room": artist.get("room", "Main Room"), # Default room if not specified
-                        "headliner": artist.get("role") == "headliner",
-                        "genre": artist.get("genre"), # Assuming genre might be part of artist data
-                        "startTime": artist.get("performance_time") # Assuming performance_time maps to startTime
-                    }
-                    line_up.append(lu_item)
-                event["lineUp"] = line_up
-                del event["artists"] # Remove old field
-            
-            # 2. Align 'datetime_obj' and 'datetime_info' to 'dateTime' schema
-            if event.get("datetime_info"):
-                dt_info = event["datetime_info"]
-                event["dateTime"] = {
-                    "start": dt_info.get("start_datetime"),
-                    "end": dt_info.get("end_datetime"),
-                    "displayText": dt_info.get("original_string"),
-                    "timezone": dt_info.get("timezone")
-                }
-                # Ensure start and end are datetime objects for MongoDB
-                if event["dateTime"]["start"] and not isinstance(event["dateTime"]["start"], datetime):
-                    event["dateTime"]["start"] = datetime.fromisoformat(event["dateTime"]["start"])
-                if event["dateTime"]["end"] and not isinstance(event["dateTime"]["end"], datetime):
-                    event["dateTime"]["end"] = datetime.fromisoformat(event["dateTime"]["end"])
-                
-                del event["datetime_obj"] # Remove old field
-                del event["datetime_info"] # Remove old field
-            elif event.get("datetime_obj"): # Fallback if only datetime_obj exists
-                event["dateTime"] = {
-                    "start": event["datetime_obj"],
-                    "end": None,
-                    "displayText": event.get("raw_date_string"),
-                    "timezone": "Europe/Madrid" # Default timezone
-                }
-                del event["datetime_obj"]
-            
-            # 3. Align 'location' field if it's not already a dict with 'venue'
-            if event.get("venue") and not isinstance(event.get("location"), dict):
-                event["location"] = {"venue": event["venue"]}
-                if event.get("address"):
-                    event["location"]["address"] = event["address"]
-                if event.get("city"):
-                    event["location"]["city"] = event["city"]
-                del event["venue"] # Remove old field
-                if "address" in event: del event["address"]
-                if "city" in event: del event["city"]
-            elif event.get("venue") and isinstance(event.get("location"), dict):
-                # If location is already a dict, ensure 'venue' is populated
-                if not event["location"].get("venue"):
-                    event["location"]["venue"] = event["venue"]
-                del event["venue"]
-            
-            # 4. Map 'data_quality' to '_quality'
-            if event.get("data_quality"):
-                quality_data = {
-                    "scores": {
-                        "title": event["data_quality"].get("completeness_score", 0) / 100,
-                        "location": event["data_quality"].get("completeness_score", 0) / 100, # Placeholder, improve if specific location quality is available
-                        "dateTime": event["data_quality"].get("accuracy_score", 0) / 100, # Using accuracy for datetime
-                        "lineUp": event["data_quality"].get("completeness_score", 0) / 100, # Placeholder
-                        "ticketInfo": event["data_quality"].get("completeness_score", 0) / 100 # Placeholder
-                    },
-                    "overall": self.scorer.calculate_event_quality(event).get("score", 0) / 100,
-                    "lastCalculated": datetime.utcnow()
-                }
-                event["_quality"] = quality_data
-                del event["data_quality"]
-            else:
-                # Fallback to existing quality calculation if data_quality is not present
-                quality_data = self.scorer.calculate_event_quality(event)
-                event["_quality"] = quality_data
-            
-            # Ensure scrapedAt is a datetime object
-            if isinstance(event.get("scrapedAt"), str):
-                event["scrapedAt"] = datetime.fromisoformat(event["scrapedAt"].replace('Z', '+00:00'))
+    def save_event(self, raw_event_data: Dict[str, Any], current_page_url: str):
+       """
+       Saves a single event to the database after mapping it to the
+       unified schema.
+       """
+       try:
+           if not raw_event_data.get("title"):
+               logger.warning("Skipping save for event with no title.")
+               return
 
-            # Define update key based on new schema fields
-            update_key = {"title": event["title"], "tickets_url": event["tickets_url"]}
-            if event.get("dateTime") and event["dateTime"].get("start"):
-                update_key["dateTime.start"] = event["dateTime"]["start"]
-            elif event.get("raw_date_string"):
-                update_key["raw_date_key_part"] = event["raw_date_string"][:30] # Keep for backward compatibility if needed
-            
-            # Remove raw_date_string if dateTime is properly set
-            if event.get("dateTime") and event["dateTime"].get("start") and "raw_date_string" in event:
-                del event["raw_date_string"]
+           # 1. Map the raw scraped data to our new, unified schema
+           unified_event_doc = map_to_unified_schema(
+               raw_data=raw_event_data,
+               source_platform="ibiza-spotlight", # Or determine this dynamically if possible
+               source_url=current_page_url
+           )
 
-            if self.db is not None:
-                self.db.events.update_one(update_key, {"$set": event}, upsert=True)
-            else:
-                logger.warning("MongoDB not available. Event not saved to DB.")
-        except Exception as e:
-            logger.error(f"Error saving event '{event.get('title', 'N/A')}': {e}", exc_info=True)
+           # 2. Define the unique key for this event to prevent duplicates
+           #    This key should align with how duplicates are identified in the new schema.
+           #    Based on unifiedEventsSchema_v2, event_id is the primary unique key.
+           #    The map_to_unified_schema function already generates event_id.
+           #    Let's use event_id for the update_key if it's guaranteed unique by the adapter.
+           #    Alternatively, if title and start_date are still preferred for upsertion logic:
+           update_key = {
+               "title": unified_event_doc["title"],
+               "datetime.start_date": unified_event_doc["datetime"]["start_date"]
+           }
+           # If event_id is the sole unique identifier, the update_key would be:
+           # update_key = {"event_id": unified_event_doc["event_id"]}
+
+           # 3. Save to MongoDB
+           if self.db is not None:
+               self.db.events.update_one(
+                   update_key,
+                   {"$set": unified_event_doc},
+                   upsert=True
+               )
+               logger.debug(f"Successfully saved/updated event: {unified_event_doc['title']}")
+           else:
+               logger.info("DB not connected. Mapped document for saving:")
+               # print(json.dumps(unified_event_doc, indent=2)) # Consider if json needs to be imported
+
+       except Exception as e:
+           logger.error(f"Error in save_event for '{raw_event_data.get('title', 'N/A')}': {e}", exc_info=True)
     
     def append_to_csv(self, events_batch: List[Dict[str, Any]]):
         if not events_batch: return
@@ -1474,7 +1415,7 @@ class IbizaSpotlightScraper:
                     if page_events:
                         logger.info(f"Found {len(page_events)} events on promoter page {url.split('/')[-1]}")
                         for event_item in page_events:
-                            self.save_event(event_item)
+                            self.save_event(event_item, url)
                         self.append_to_csv(page_events)
                         self.all_scraped_events_for_run.extend(page_events)
                         self.stats["events_scraped"] += len(page_events)

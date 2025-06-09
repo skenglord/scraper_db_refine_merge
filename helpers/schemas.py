@@ -1,492 +1,457 @@
 """
-MongoDB Event Schema for Classy Skkkrapey
+MongoDB Event Schema for Classy Skkkrapey (unifiedEventsSchema_v2)
 
-This module defines the unified MongoDB schema for event data storage.
-The schema provides comprehensive event information with quality scoring
-and data validation capabilities.
+This module defines the unified MongoDB schema for event data storage
+based on unifiedEventsSchema_v2.
 """
 
-from typing import Dict, List, Optional, Union
-from datetime import datetime
+from typing import Dict, List, Optional, Any
 
-# Unified MongoDB Event Schema
-EVENT_SCHEMA = {
-    # Core Event Information
-    "event_id": str,  # Unique identifier
-    "title": str,
-    "event_type": str,  # concert, festival, club_night, etc.
-    "status": str,  # upcoming, ongoing, completed, cancelled
-    
-    # Temporal Information
+# Python type hints for unifiedEventsSchema_v2 for documentation and internal reference.
+# Note: MongoDB bsonTypes like 'date' for ISO strings are represented as 'str' here.
+EVENT_SCHEMA: Dict[str, Any] = {
+    # I. CORE EVENT IDENTIFICATION & STATUS
+    "event_id": str,  # Primary unique identifier for an event document.
+    "canonical_id": str, # Identifier of the canonical version if this is a duplicate.
+    "title": str,     # Main title of the event.
+    "type": str,      # Type of event (e.g., club_night, festival, concert, day_party). Enum.
+    "status": str,    # Current status (e.g., scheduled, cancelled, postponed, sold_out). Enum.
+
+    # II. COMPREHENSIVE DATETIME
     "datetime": {
-        "start_datetime": datetime,  # ISO 8601 datetime
-        "end_datetime": Optional[datetime],  # ISO 8601 datetime (optional)
-        "raw_date_string": str,  # Original scraped date
-        "timezone": str,
-        "doors_open": Optional[datetime],  # ISO 8601 datetime (optional)
-        "last_entry": Optional[datetime]  # ISO 8601 datetime (optional)
-    },
-    
-    # Location Information
-    "venue": {
-        "name": str,
-        "slug": str,
-        "address": str,
-        "city": str,
-        "country": str,
-        "coordinates": {
-            "latitude": float,
-            "longitude": float
+        "start_date": str,  # ISO 8601 string (YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DD). Required.
+        "end_date": Optional[str],    # ISO 8601 string or null.
+        "timezone": str,              # E.g., "Europe/Madrid". Required.
+        "doors_open": Optional[str],  # ISO 8601 string or null.
+        "last_entry": Optional[str],  # ISO 8601 string or null.
+        "is_all_day": bool,
+        "duration_hours": Optional[float],
+        "recurring": {
+            "is_recurring": bool,
+            "frequency": Optional[str], # e.g., daily, weekly, monthly. Enum.
+            "pattern_description": Optional[str], # e.g., "Every Friday"
+            "end_recurrence": Optional[str] # ISO 8601 string or null
         }
     },
-    
-    # Content & Description
-    "content": {
-        "short_description": str,
-        "full_description": str,
-        "event_highlights": List[str],
-        "special_notes": str,
-        "content_language": str
-    },
-    
-    # Artists & Lineup
-    "artists": {
-        "headliners": List[Dict],  # array of artist objects
-        "supporting_acts": List[Dict],  # array of artist objects
-        "all_performers": List[Dict],  # array of all artist objects
-        "lineup_order": List[{
-            "act_number": int,
-            "artist_name": str,
-            "artist_slug": str,
-            "performance_time": Optional[datetime],  # ISO 8601 datetime (optional)
-            "stage": Optional[str],
-            "set_duration": Optional[int]  # minutes
+
+    # III. ENHANCED VENUE & STAGE STRUCTURE
+    "venue": {
+        "venue_id": str, # Unique ID for the venue.
+        "name": str,     # Name of the venue. Required.
+        "address": {
+            "street": Optional[str],
+            "city": Optional[str],
+            "state": Optional[str],
+            "country": Optional[str],
+            "postal_code": Optional[str],
+            "full_address": Optional[str]
+        },
+        "coordinates": { # GeoJSON Point
+            "type": str, # "Point"
+            "coordinates": List[float] # [longitude, latitude]
+        },
+        "venue_type": Optional[str], # e.g., club, outdoor_space, arena. Enum.
+        "total_capacity": Optional[int],
+        "has_disabled_access": Optional[bool],
+        "website": Optional[str],
+        "social_links": Dict[str, str], # e.g., {"facebook": "url", "instagram": "url"}
+        "stage_count": int,
+        "stages": List[{
+            "stage_id": str,
+            "stage_name": str,
+            "capacity": Optional[int],
+            "stage_type": Optional[str], # e.g., main_stage, side_room, outdoor_stage. Enum.
+            "host": { # Promoter or entity hosting this specific stage/room
+                "host_name": Optional[str],
+                "host_id": Optional[str] # Link to a promoter/organization entity
+            },
+            "stage_genres": List[str],
+            "acts": List[{ # Acts performing on this stage
+                "act_id": str, # Reference to an act in the top-level "acts" array
+                "set_time": {
+                    "start": Optional[str], # ISO 8601 string or null
+                    "end": Optional[str],   # ISO 8601 string or null
+                    "duration_minutes": Optional[int]
+                },
+                "billing_order": Optional[int], # 1 for headliner, 2 for main support, etc.
+                "is_headliner": bool
+            }]
         }]
     },
-    
-    # Genre & Music Information
-    "music_info": {
-        "primary_genres": List[str],
-        "secondary_genres": List[str],
-        "music_style_tags": List[str],
-        "bpm_range": Optional[str],
-        "music_description": str
+
+    # IV. NORMALIZED ACTS & LINEUP (SINGLE SOURCE OF TRUTH)
+    "acts": List[{ # Array of unique artists/acts involved in the event
+        "act_id": str, # Unique ID for the artist/act.
+        "act_name": str,
+        "act_type": str, # e.g., dj, live_band, vocalist, mc. Enum.
+        "genres": List[str],
+        "styles": List[str],
+        "social_media": Dict[str, str], # Platform name -> URL
+        "popularity_metrics": Dict[str, Any] # e.g., {"spotify_followers": 10000}
+    }],
+
+    # V. RICH CONTENT & MUSIC ANALYSIS
+    "content": {
+        "short_description": Optional[str],
+        "full_description": Optional[str],
+        "keywords": List[str],
+        "hashtags": List[str]
     },
-    
-    # Ticketing Information
+    "music": {
+        "primary_genre": Optional[str],
+        "sub_genres": List[str],
+        "styles": List[str], # More specific music styles
+        "mood_tags": List[str], # e.g., energetic, chill, underground
+        "energy_level": Optional[int], # Scale of 1-10
+        "genre_confidence": Optional[float] # 0.0 to 1.0
+    },
+
+    # VI. DETAILED TICKETING & ACCESSIBILITY
     "ticketing": {
-        "ticket_tiers": List[{
+        "tickets_url": Optional[str], # Direct link to purchase tickets
+        "is_free": bool,
+        "age_restriction": {
+            "minimum_age": Optional[int],
+            "restriction_type": Optional[str] # e.g., "18+", "all_ages"
+        },
+        "promos": List[Dict[str, Any]], # e.g., {"promo_code": "EARLYBIRD", "discount_percentage": 10}
+        "tiers": List[{
+            "tier_id": Optional[str],
             "tier_name": str,
-            "price": float,
-            "currency": str,
-            "description": str,
-            "availability": str,
-            "conditions": str,
-            "includes": List[str]
+            "tier_price": float,
+            "currency": str, # ISO 4217 currency code
+            "sale_start": Optional[str], # ISO 8601 string
+            "sale_end": Optional[str],   # ISO 8601 string
+            "is_sold_out": bool,
+            "is_nearly_sold_out": bool
         }],
-        "price_range": {
-            "min_price": float,
-            "max_price": float,
-            "currency": str
-        },
-        "ticket_url": str,
-        "booking_platforms": List[Dict],  # array of platform objects
-        "presale_info": Optional[Dict]
+        "external_platforms": List[Dict[str, Any]] # For third-party ticket sellers
     },
-    
-    # Organizer Information
-    "organization": {
-        "promoter": {
-            "name": str,
-            "slug": str,
-            "social_media": {
-                "instagram": str,
-                "facebook": str,
-                "twitter": str,
-                "website": str
-            }
-        },
-        "event_organizer": Dict,  # similar structure to promoter
-        "booking_agency": Optional[str]
-    },
-    
-    # Media & Assets
-    "media": {
-        "featured_image": str,  # URL
-        "gallery_images": List[str],  # array of URLs
-        "promotional_video": Optional[str],  # URL
-        "social_media_assets": List[Dict]
-    },
-    
-    # Scraping Metadata
+
+    # VII. SCRAPING METADATA
     "scraping_metadata": {
-        "scraped_at": datetime,  # ISO 8601 datetime
-        "source_url": str,
-        "source_site": str,
-        "extraction_method": str,
-        "last_updated": datetime,  # ISO 8601 datetime
-        "scraper_version": str
+        "source_platform": str, # Name of the platform data was scraped from. Required.
+        "source_url": str,      # URL of the original event page. Required.
+        "source_event_id": Optional[str], # Event ID from the source platform
+        "first_scraped": str,   # ISO 8601 datetime string.
+        "last_scraped": str,    # ISO 8601 datetime string.
+        "scraper_version": Optional[str],
+        "raw_data": Optional[Dict[str, Any]] # Store the original scraped data for debugging
     },
-    
-    # Quality & Validation
+
+    # VIII. DATA QUALITY & VALIDATION
     "data_quality": {
-        "overall_score": float,  # 0-100
-        "completeness_score": float,  # 0-100
-        "accuracy_score": float,  # 0-100
-        "freshness_score": float,  # 0-100
-        "missing_fields": List[str],
-        "quality_flags": List[str],
-        "validation_status": str,
-        "fallback_methods_used": List[str]
+        "overall_score": float, # 0.0 to 1.0
+        "field_quality_scores": Dict[str, float], # e.g., {"title": 0.9, "datetime": 0.7}
+        "validation_flags": List[Dict[str, Any]], # e.g., [{"field": "end_date", "issue": "missing"}]
+        "manual_verification": {
+            "is_verified": bool,
+            "verified_by": Optional[str],
+            "verified_at": Optional[str] # ISO 8601 datetime string
+        }
+    },
+
+    # IX. DEDUPLICATION & MERGING
+    "deduplication": {
+        "is_canonical": bool, # True if this is the master document for this event
+        "merged_from_ids": List[str], # List of event_ids that were merged into this one
+        "merge_log": List[Dict[str, Any]] # Log of merge operations
+    },
+
+    # X. KNOWLEDGE GRAPH & ANALYTICS
+    "knowledge_graph": {
+        "related_events": List[str], # List of event_ids for related events
+        "audience_profile_tags": List[str], # e.g., "students", "techno_lovers"
+        "influence_score": Optional[float]
+    },
+    "analytics": {
+        "views": Optional[int],
+        "saves": Optional[int],
+        "clicks_to_tickets": Optional[int]
+    },
+
+    # XI. TIMESTAMPS & SYSTEM FLAGS
+    "created_at": str,  # ISO 8601 datetime string when the document was first created.
+    "updated_at": str,  # ISO 8601 datetime string for the last update.
+    "system_flags": {
+        "is_featured": bool,
+        "is_hidden": bool
     }
 }
 
 
-def get_mongodb_validation_schema():
+def get_mongodb_validation_schema() -> Dict[str, Any]:
     """
-    Returns the MongoDB JSON Schema validation rules for the events collection.
-    This ensures data consistency and quality at the database level.
+    Returns the MongoDB JSON Schema validation rules for the events collection,
+    aligned with unifiedEventsSchema_v2.
     """
     return {
         "$jsonSchema": {
             "bsonType": "object",
-            "required": ["event_id", "title", "scraping_metadata"],
+            "required": [
+                "event_id", "title", "type", "status",
+                "datetime", "venue", "acts", "scraping_metadata",
+                "created_at", "updated_at"
+            ],
             "properties": {
-                # Core Event Information
-                "event_id": {
-                    "bsonType": "string",
-                    "description": "Unique event identifier - required"
-                },
-                "title": {
-                    "bsonType": "string",
-                    "description": "Event title - required"
-                },
-                "event_type": {
-                    "bsonType": "string",
-                    "enum": ["concert", "festival", "club_night", "dj_set", "live_performance", "special_event", "other"],
-                    "description": "Type of event"
-                },
-                "status": {
-                    "bsonType": "string",
-                    "enum": ["upcoming", "ongoing", "completed", "cancelled", "postponed"],
-                    "description": "Current event status"
-                },
-                
-                # Temporal Information
+                # I. CORE EVENT IDENTIFICATION & STATUS
+                "event_id": {"bsonType": "string", "description": "Primary unique identifier. Req."},
+                "canonical_id": {"bsonType": "string", "description": "Identifier of the canonical version."},
+                "title": {"bsonType": "string", "description": "Main title of the event. Req."},
+                "type": {"bsonType": "string", "description": "Type of event (e.g., club_night, festival). Req. Enum."},
+                "status": {"bsonType": "string", "description": "Current status (e.g., scheduled, cancelled). Req. Enum."},
+
+                # II. COMPREHENSIVE DATETIME
                 "datetime": {
                     "bsonType": "object",
+                    "required": ["start_date", "timezone"],
                     "properties": {
-                        "start_datetime": {"bsonType": "date"},
-                        "end_datetime": {"bsonType": ["date", "null"]},
-                        "raw_date_string": {"bsonType": "string"},
-                        "timezone": {"bsonType": "string"},
-                        "doors_open": {"bsonType": ["date", "null"]},
-                        "last_entry": {"bsonType": ["date", "null"]}
-                    }
-                },
-                
-                # Location Information
-                "venue": {
-                    "bsonType": "object",
-                    "properties": {
-                        "name": {"bsonType": "string"},
-                        "slug": {"bsonType": "string"},
-                        "address": {"bsonType": "string"},
-                        "city": {"bsonType": "string"},
-                        "country": {"bsonType": "string"},
-                        "coordinates": {
+                        "start_date": {"bsonType": "string", "description": "ISO 8601 string (YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DD). Req."},
+                        "end_date": {"bsonType": ["string", "null"], "description": "ISO 8601 string or null."},
+                        "timezone": {"bsonType": "string", "description": "E.g., Europe/Madrid. Req."},
+                        "doors_open": {"bsonType": ["string", "null"], "description": "ISO 8601 string or null."},
+                        "last_entry": {"bsonType": ["string", "null"], "description": "ISO 8601 string or null."},
+                        "is_all_day": {"bsonType": "bool", "description": "True if the event runs for the entire day."},
+                        "duration_hours": {"bsonType": ["double", "null"], "description": "Duration of the event in hours."},
+                        "recurring": {
                             "bsonType": "object",
                             "properties": {
-                                "latitude": {"bsonType": "double"},
-                                "longitude": {"bsonType": "double"}
+                                "is_recurring": {"bsonType": "bool"},
+                                "frequency": {"bsonType": ["string", "null"], "description": "e.g., daily, weekly, monthly. Enum."},
+                                "pattern_description": {"bsonType": ["string", "null"], "description": "e.g., Every Friday"},
+                                "end_recurrence": {"bsonType": ["string", "null"], "description": "ISO 8601 string or null"}
                             }
                         }
                     }
                 },
-                
-                # Content & Description
+
+                # III. ENHANCED VENUE & STAGE STRUCTURE
+                "venue": {
+                    "bsonType": "object",
+                    "required": ["venue_id", "name"],
+                    "properties": {
+                        "venue_id": {"bsonType": "string", "description": "Unique ID for the venue. Req."},
+                        "name": {"bsonType": "string", "description": "Name of the venue. Req."},
+                        "address": {
+                            "bsonType": "object",
+                            "properties": {
+                                "street": {"bsonType": ["string", "null"]},
+                                "city": {"bsonType": ["string", "null"]},
+                                "state": {"bsonType": ["string", "null"]},
+                                "country": {"bsonType": ["string", "null"]},
+                                "postal_code": {"bsonType": ["string", "null"]},
+                                "full_address": {"bsonType": ["string", "null"]}
+                            }
+                        },
+                        "coordinates": {
+                            "bsonType": "object",
+                            "required": ["type", "coordinates"],
+                            "properties": {
+                                "type": {"bsonType": "string", "enum": ["Point"]},
+                                "coordinates": {
+                                    "bsonType": "array",
+                                    "minItems": 2,
+                                    "maxItems": 2,
+                                    "items": {"bsonType": "double"} # [longitude, latitude]
+                                }
+                            }
+                        },
+                        "venue_type": {"bsonType": ["string", "null"], "description": "e.g., club, outdoor_space. Enum."},
+                        "total_capacity": {"bsonType": ["int", "null"]},
+                        "has_disabled_access": {"bsonType": ["bool", "null"]},
+                        "website": {"bsonType": ["string", "null"]},
+                        "social_links": {"bsonType": "object", "description": "Platform name -> URL"},
+                        "stage_count": {"bsonType": "int", "minimum": 0},
+                        "stages": {
+                            "bsonType": "array",
+                            "items": {
+                                "bsonType": "object",
+                                "required": ["stage_id", "stage_name"],
+                                "properties": {
+                                    "stage_id": {"bsonType": "string"},
+                                    "stage_name": {"bsonType": "string"},
+                                    "capacity": {"bsonType": ["int", "null"]},
+                                    "stage_type": {"bsonType": ["string", "null"], "description": "e.g., main_stage. Enum."},
+                                    "host": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "host_name": {"bsonType": ["string", "null"]},
+                                            "host_id": {"bsonType": ["string", "null"]}
+                                        }
+                                    },
+                                    "stage_genres": {"bsonType": "array", "items": {"bsonType": "string"}},
+                                    "acts": {
+                                        "bsonType": "array",
+                                        "items": {
+                                            "bsonType": "object",
+                                            "required": ["act_id", "is_headliner"],
+                                            "properties": {
+                                                "act_id": {"bsonType": "string", "description": "Ref to top-level acts array"},
+                                                "set_time": {
+                                                    "bsonType": "object",
+                                                    "properties": {
+                                                        "start": {"bsonType": ["string", "null"], "description": "ISO 8601 string"},
+                                                        "end": {"bsonType": ["string", "null"], "description": "ISO 8601 string"},
+                                                        "duration_minutes": {"bsonType": ["int", "null"]}
+                                                    }
+                                                },
+                                                "billing_order": {"bsonType": ["int", "null"]},
+                                                "is_headliner": {"bsonType": "bool"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+
+                # IV. NORMALIZED ACTS & LINEUP
+                "acts": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "required": ["act_id", "act_name", "act_type"],
+                        "properties": {
+                            "act_id": {"bsonType": "string"},
+                            "act_name": {"bsonType": "string"},
+                            "act_type": {"bsonType": "string", "description": "e.g., dj, live_band. Enum."},
+                            "genres": {"bsonType": "array", "items": {"bsonType": "string"}},
+                            "styles": {"bsonType": "array", "items": {"bsonType": "string"}},
+                            "social_media": {"bsonType": "object", "description": "Platform name -> URL"},
+                            "popularity_metrics": {"bsonType": "object", "description": "e.g., spotify_followers"}
+                        }
+                    }
+                },
+
+                # V. RICH CONTENT & MUSIC ANALYSIS
                 "content": {
                     "bsonType": "object",
                     "properties": {
-                        "short_description": {"bsonType": "string"},
-                        "full_description": {"bsonType": "string"},
-                        "event_highlights": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "string"}
-                        },
-                        "special_notes": {"bsonType": "string"},
-                        "content_language": {"bsonType": "string"}
+                        "short_description": {"bsonType": ["string", "null"]},
+                        "full_description": {"bsonType": ["string", "null"]},
+                        "keywords": {"bsonType": "array", "items": {"bsonType": "string"}},
+                        "hashtags": {"bsonType": "array", "items": {"bsonType": "string"}}
                     }
                 },
-                
-                # Artists & Lineup
-                "artists": {
+                "music": {
                     "bsonType": "object",
                     "properties": {
-                        "headliners": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "object"}
-                        },
-                        "supporting_acts": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "object"}
-                        },
-                        "all_performers": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "object"}
-                        },
-                        "lineup_order": {
-                            "bsonType": "array",
-                            "items": {
-                                "bsonType": "object",
-                                "properties": {
-                                    "act_number": {"bsonType": "int"},
-                                    "artist_name": {"bsonType": "string"},
-                                    "artist_slug": {"bsonType": "string"},
-                                    "performance_time": {"bsonType": ["date", "null"]},
-                                    "stage": {"bsonType": ["string", "null"]},
-                                    "set_duration": {"bsonType": ["int", "null"]}
-                                }
-                            }
-                        }
+                        "primary_genre": {"bsonType": ["string", "null"]},
+                        "sub_genres": {"bsonType": "array", "items": {"bsonType": "string"}},
+                        "styles": {"bsonType": "array", "items": {"bsonType": "string"}},
+                        "mood_tags": {"bsonType": "array", "items": {"bsonType": "string"}},
+                        "energy_level": {"bsonType": ["int", "null"], "minimum": 1, "maximum": 10},
+                        "genre_confidence": {"bsonType": ["double", "null"], "minimum": 0.0, "maximum": 1.0}
                     }
                 },
-                
-                # Genre & Music Information
-                "music_info": {
-                    "bsonType": "object",
-                    "properties": {
-                        "primary_genres": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "string"}
-                        },
-                        "secondary_genres": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "string"}
-                        },
-                        "music_style_tags": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "string"}
-                        },
-                        "bpm_range": {"bsonType": ["string", "null"]},
-                        "music_description": {"bsonType": "string"}
-                    }
-                },
-                
-                # Ticketing Information
+
+                # VI. DETAILED TICKETING & ACCESSIBILITY
                 "ticketing": {
                     "bsonType": "object",
                     "properties": {
-                        "ticket_tiers": {
+                        "tickets_url": {"bsonType": ["string", "null"]},
+                        "is_free": {"bsonType": "bool"},
+                        "age_restriction": {
+                            "bsonType": "object",
+                            "properties": {
+                                "minimum_age": {"bsonType": ["int", "null"]},
+                                "restriction_type": {"bsonType": ["string", "null"]}
+                            }
+                        },
+                        "promos": {"bsonType": "array", "items": {"bsonType": "object"}},
+                        "tiers": {
                             "bsonType": "array",
                             "items": {
                                 "bsonType": "object",
+                                "required": ["tier_name", "tier_price", "currency", "is_sold_out", "is_nearly_sold_out"],
                                 "properties": {
+                                    "tier_id": {"bsonType": ["string", "null"]},
                                     "tier_name": {"bsonType": "string"},
-                                    "price": {"bsonType": "double"},
+                                    "tier_price": {"bsonType": "double"},
                                     "currency": {"bsonType": "string"},
-                                    "description": {"bsonType": "string"},
-                                    "availability": {"bsonType": "string"},
-                                    "conditions": {"bsonType": "string"},
-                                    "includes": {
-                                        "bsonType": "array",
-                                        "items": {"bsonType": "string"}
-                                    }
+                                    "sale_start": {"bsonType": ["string", "null"], "description": "ISO 8601 string"},
+                                    "sale_end": {"bsonType": ["string", "null"], "description": "ISO 8601 string"},
+                                    "is_sold_out": {"bsonType": "bool"},
+                                    "is_nearly_sold_out": {"bsonType": "bool"}
                                 }
                             }
                         },
-                        "price_range": {
-                            "bsonType": "object",
-                            "properties": {
-                                "min_price": {"bsonType": "double"},
-                                "max_price": {"bsonType": "double"},
-                                "currency": {"bsonType": "string"}
-                            }
-                        },
-                        "ticket_url": {"bsonType": "string"},
-                        "booking_platforms": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "object"}
-                        },
-                        "presale_info": {"bsonType": ["object", "null"]}
+                        "external_platforms": {"bsonType": "array", "items": {"bsonType": "object"}}
                     }
                 },
-                
-                # Organizer Information
-                "organization": {
-                    "bsonType": "object",
-                    "properties": {
-                        "promoter": {
-                            "bsonType": "object",
-                            "properties": {
-                                "name": {"bsonType": "string"},
-                                "slug": {"bsonType": "string"},
-                                "social_media": {
-                                    "bsonType": "object",
-                                    "properties": {
-                                        "instagram": {"bsonType": "string"},
-                                        "facebook": {"bsonType": "string"},
-                                        "twitter": {"bsonType": "string"},
-                                        "website": {"bsonType": "string"}
-                                    }
-                                }
-                            }
-                        },
-                        "event_organizer": {"bsonType": "object"},
-                        "booking_agency": {"bsonType": ["string", "null"]}
-                    }
-                },
-                
-                # Media & Assets
-                "media": {
-                    "bsonType": "object",
-                    "properties": {
-                        "featured_image": {"bsonType": "string"},
-                        "gallery_images": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "string"}
-                        },
-                        "promotional_video": {"bsonType": ["string", "null"]},
-                        "social_media_assets": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "object"}
-                        }
-                    }
-                },
-                
-                # Scraping Metadata (required)
+
+                # VII. SCRAPING METADATA
                 "scraping_metadata": {
                     "bsonType": "object",
-                    "required": ["scraped_at", "source_url"],
+                    "required": ["source_platform", "source_url", "first_scraped", "last_scraped"],
                     "properties": {
-                        "scraped_at": {"bsonType": "date"},
-                        "source_url": {"bsonType": "string"},
-                        "source_site": {"bsonType": "string"},
-                        "extraction_method": {"bsonType": "string"},
-                        "last_updated": {"bsonType": "date"},
-                        "scraper_version": {"bsonType": "string"}
+                        "source_platform": {"bsonType": "string", "description": "Scraping source platform. Req."},
+                        "source_url": {"bsonType": "string", "description": "Original event page URL. Req."},
+                        "source_event_id": {"bsonType": ["string", "null"]},
+                        "first_scraped": {"bsonType": "string", "description": "ISO 8601 datetime string. Req."},
+                        "last_scraped": {"bsonType": "string", "description": "ISO 8601 datetime string. Req."},
+                        "scraper_version": {"bsonType": ["string", "null"]},
+                        "raw_data": {"bsonType": ["object", "null"], "description": "Original scraped data."}
                     }
                 },
-                
-                # Quality & Validation
+
+                # VIII. DATA QUALITY & VALIDATION
                 "data_quality": {
                     "bsonType": "object",
                     "properties": {
-                        "overall_score": {
-                            "bsonType": "double",
-                            "minimum": 0,
-                            "maximum": 100
-                        },
-                        "completeness_score": {
-                            "bsonType": "double",
-                            "minimum": 0,
-                            "maximum": 100
-                        },
-                        "accuracy_score": {
-                            "bsonType": "double",
-                            "minimum": 0,
-                            "maximum": 100
-                        },
-                        "freshness_score": {
-                            "bsonType": "double",
-                            "minimum": 0,
-                            "maximum": 100
-                        },
-                        "missing_fields": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "string"}
-                        },
-                        "quality_flags": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "string"}
-                        },
-                        "validation_status": {"bsonType": "string"},
-                        "fallback_methods_used": {
-                            "bsonType": "array",
-                            "items": {"bsonType": "string"}
+                        "overall_score": {"bsonType": "double", "minimum": 0.0, "maximum": 1.0},
+                        "field_quality_scores": {"bsonType": "object"},
+                        "validation_flags": {"bsonType": "array", "items": {"bsonType": "object"}},
+                        "manual_verification": {
+                            "bsonType": "object",
+                            "properties": {
+                                "is_verified": {"bsonType": "bool"},
+                                "verified_by": {"bsonType": ["string", "null"]},
+                                "verified_at": {"bsonType": ["string", "null"], "description": "ISO 8601 datetime"}
+                            }
                         }
+                    }
+                },
+
+                # IX. DEDUPLICATION & MERGING
+                "deduplication": {
+                    "bsonType": "object",
+                    "properties": {
+                        "is_canonical": {"bsonType": "bool"},
+                        "merged_from_ids": {"bsonType": "array", "items": {"bsonType": "string"}},
+                        "merge_log": {"bsonType": "array", "items": {"bsonType": "object"}}
+                    }
+                },
+
+                # X. KNOWLEDGE GRAPH & ANALYTICS
+                "knowledge_graph": {
+                    "bsonType": "object",
+                    "properties": {
+                        "related_events": {"bsonType": "array", "items": {"bsonType": "string"}},
+                        "audience_profile_tags": {"bsonType": "array", "items": {"bsonType": "string"}},
+                        "influence_score": {"bsonType": ["double", "null"]}
+                    }
+                },
+                "analytics": {
+                    "bsonType": "object",
+                    "properties": {
+                        "views": {"bsonType": ["int", "null"]},
+                        "saves": {"bsonType": ["int", "null"]},
+                        "clicks_to_tickets": {"bsonType": ["int", "null"]}
+                    }
+                },
+
+                # XI. TIMESTAMPS & SYSTEM FLAGS
+                "created_at": {"bsonType": "string", "description": "ISO 8601 datetime string. Req."},
+                "updated_at": {"bsonType": "string", "description": "ISO 8601 datetime string. Req."},
+                "system_flags": {
+                    "bsonType": "object",
+                    "properties": {
+                        "is_featured": {"bsonType": "bool"},
+                        "is_hidden": {"bsonType": "bool"}
                     }
                 }
             }
         }
     }
-
-
-def create_event_document(data: Dict[str, any]) -> Dict[str, any]:
-    """
-    Helper function to create a properly structured event document
-    from scraped data, ensuring all required fields are present.
-    """
-    from datetime import datetime
-    import uuid
-    
-    # Generate event_id if not provided
-    event_id = data.get('event_id') or str(uuid.uuid4())
-    
-    # Build the document with defaults
-    event_doc = {
-        "event_id": event_id,
-        "title": data.get('title', ''),
-        "event_type": data.get('event_type', 'other'),
-        "status": data.get('status', 'upcoming'),
-        
-        # Temporal Information
-        "datetime": data.get('datetime', {}),
-        
-        # Location Information
-        "venue": data.get('venue', {}),
-        
-        # Content & Description
-        "content": data.get('content', {}),
-        
-        # Artists & Lineup
-        "artists": data.get('artists', {
-            "headliners": [],
-            "supporting_acts": [],
-            "all_performers": [],
-            "lineup_order": []
-        }),
-        
-        # Genre & Music Information
-        "music_info": data.get('music_info', {
-            "primary_genres": [],
-            "secondary_genres": [],
-            "music_style_tags": []
-        }),
-        
-        # Ticketing Information
-        "ticketing": data.get('ticketing', {}),
-        
-        # Organizer Information
-        "organization": data.get('organization', {}),
-        
-        # Media & Assets
-        "media": data.get('media', {
-            "gallery_images": [],
-            "social_media_assets": []
-        }),
-        
-        # Scraping Metadata (always required)
-        "scraping_metadata": {
-            "scraped_at": data.get('scraping_metadata', {}).get('scraped_at', datetime.utcnow()),
-            "source_url": data.get('scraping_metadata', {}).get('source_url', ''),
-            "source_site": data.get('scraping_metadata', {}).get('source_site', ''),
-            "extraction_method": data.get('scraping_metadata', {}).get('extraction_method', 'unknown'),
-            "last_updated": datetime.utcnow(),
-            "scraper_version": data.get('scraping_metadata', {}).get('scraper_version', '0.1.0')
-        },
-        
-        # Quality & Validation
-        "data_quality": data.get('data_quality', {
-            "overall_score": 0,
-            "completeness_score": 0,
-            "accuracy_score": 0,
-            "freshness_score": 100,
-            "missing_fields": [],
-            "quality_flags": [],
-            "validation_status": "pending",
-            "fallback_methods_used": []
-        })
-    }
-    
-    return event_doc
