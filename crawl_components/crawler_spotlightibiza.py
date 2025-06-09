@@ -9,6 +9,15 @@ from typing import List, Optional
 # Attempt to import from previously created components
 import sys
 from pathlib import Path
+import logging # Added
+from pymongo import MongoClient # Added
+from pymongo.errors import ConnectionFailure # Added
+from dataclasses import asdict # Added
+
+# Setup logger
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
 
 if __name__ == '__main__': # Guard this path manipulation
     try:
@@ -16,10 +25,21 @@ if __name__ == '__main__': # Guard this path manipulation
         project_root = current_dir.parent
         if str(project_root) not in sys.path:
             sys.path.insert(0, str(project_root))
-            # print(f"DEBUG: Added {project_root} to sys.path for crawler_spotlightibiza.py")
+            logger.debug(f"Added {project_root} to sys.path for crawler_spotlightibiza.py")
     except NameError:
-        # print("DEBUG: __file__ not defined, skipping sys.path modification for crawler_spotlightibiza.py.")
-        pass
+        logger.debug("__file__ not defined, skipping sys.path modification for crawler_spotlightibiza.py.")
+        project_root = Path.cwd() # Fallback
+
+try:
+    from schema_adapter import map_to_unified_schema # Added
+    from classy_skkkrapey.config import settings # Added
+except ImportError as e:
+    logger.error(f"Failed to import schema_adapter or settings: {e}. Ensure schema_adapter.py is in project root and classy_skkkrapey/config.py is accessible.")
+    class DummySettings: # Fallback settings
+        MONGODB_URI = "mongodb://localhost:27017/"
+        DB_NAME = "fallback_db_spotlight"
+    settings = DummySettings()
+    # map_to_unified_schema will be missing if this fails, handle downstream.
 
 try:
     from stealth_components.playwright_stealth_integration_fs import launch_stealth_browser
@@ -67,157 +87,205 @@ class SpotlightEvent:
 
     def to_dict(self) -> dict:
         data = asdict(self)
-        data['scraped_at'] = self.scraped_at.isoformat() + "Z"
+        # Ensure datetime is ISO format string for JSON serialization and adapter consumption
+        if isinstance(self.scraped_at, datetime):
+            data['scraped_at'] = self.scraped_at.isoformat() + "Z"
         return data
 
 # --- Core Scraping Logic ---
-def scrape_spotlight_event_page(page: PlaywrightPage, url: str) -> SpotlightEvent | None:
+def scrape_spotlight_event_page(page: PlaywrightPage, url: str) -> dict | None:
     """
     Scrapes a single event detail page from Ibiza Spotlight using Playwright.
-    This is a simplified version focusing on using stealth components.
+    Extracts raw data, then maps it using schema_adapter.
+    Returns a unified event document (dictionary) or None.
     """
-    print(f"Attempting to scrape Spotlight event from: {url}")
-    event_data = SpotlightEvent(url=url)
+    logger.info(f"Attempting to scrape Spotlight event from: {url}")
 
     try:
-        # Apply page enhancements (UA, resource blocking etc.)
-        # setup_enhanced_playwright_page(page) # Called here or could be part of launch_stealth_browser logic
-
-        print(f"Navigating to {url}...")
+        logger.info(f"Navigating to {url}...")
         page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        get_random_delay(0.5, 1.5) # Wait a bit for initial dynamic content
+        get_random_delay(0.5, 1.5)
 
-        # Handle cookie banners, pop-ups, etc.
-        print("Handling overlays...")
-        handle_overlays(page) # This uses human_click from its own module
+        logger.info("Handling overlays...")
+        handle_overlays(page)
 
-        get_random_delay(1.0, 2.5) # Wait after overlays for content to settle
+        get_random_delay(1.0, 2.5)
 
-        print("Extracting page content...")
+        logger.info("Extracting page content...")
         html_content = page.content()
         soup = BeautifulSoup(html_content, "html.parser")
 
-        # Simplified parsing logic (placeholder for site-specific selectors)
-        # Title: Look for h1 with class "eventTitle", then any h1.
-        title_tag = soup.select_one("h1.eventTitle, h1.article-title")
-        if not title_tag:
-            title_tag = soup.select_one("h1") # More generic h1
+        # Populate a temporary SpotlightEvent dataclass or a simple dict with raw fields
+        # For this refactor, we'll use the existing SpotlightEvent dataclass then convert to dict
+        temp_event_data = SpotlightEvent(url=url)
+
+        title_tag = soup.select_one("h1.eventTitle, h1.article-title, article header h1, main h1")
         if title_tag:
-            event_data.title = title_tag.get_text(strip=True)
+            temp_event_data.title = title_tag.get_text(strip=True)
         else:
-            print(f"[WARNING] No title found for {url}")
+            logger.warning(f"No title found for {url}")
 
-        # Date Text: Example - find a div that might contain date info
-        # This is highly dependent on actual page structure.
-        date_info_tag = soup.select_one(".event-date, .date-display, time[datetime]") # Placeholder selectors
+        date_info_tag = soup.select_one(".event-date, .date-display, time[datetime], .eventInfo .date") # Added another common selector
         if date_info_tag:
-            event_data.date_text = date_info_tag.get_text(strip=True)
-            if not event_data.date_text and date_info_tag.has_attr('datetime'):
-                event_data.date_text = date_info_tag['datetime']
+            temp_event_data.date_text = date_info_tag.get_text(strip=True)
+            if not temp_event_data.date_text and date_info_tag.has_attr('datetime'):
+                temp_event_data.date_text = date_info_tag['datetime']
 
-
-        # Venue: Example - find a link that might be the venue
-        venue_link_tag = soup.select_one("a[href*='/club/'], .venue-name") # Placeholder selectors
+        venue_link_tag = soup.select_one("a[href*='/club/'], .venue-name, .eventInfo .club") # Added another common selector
         if venue_link_tag:
-            event_data.venue = venue_link_tag.get_text(strip=True)
+            temp_event_data.venue = venue_link_tag.get_text(strip=True)
 
-        # Raw Description: Get text from a main content area
-        # This is a very generic placeholder.
-        description_area = soup.select_one("article .content, .event-details .description, #main_content")
+        description_area = soup.select_one("article .content, .event-details .description, #main_content, .articleText") # Added .articleText
         if description_area:
-            event_data.raw_description = description_area.get_text(separator="\n", strip=True)[:1000] # Limit length
+            temp_event_data.raw_description = description_area.get_text(separator="\n", strip=True)[:2000] # Increased limit slightly
         else:
-            # Fallback: get a chunk of body text if no specific description area found
             body_text = soup.body.get_text(separator="\n", strip=True) if soup.body else ""
-            event_data.main_content_text = body_text[:1000] if body_text else None
+            temp_event_data.main_content_text = body_text[:2000] if body_text else None
+            if not body_text: logger.warning(f"Could not find description area or body text for {url}")
 
 
-        if not event_data.title: # If title is missing, it might not be a valid event page
-            print(f"[WARNING] Essential data (title) missing for {url}. Discarding.")
+        if not temp_event_data.title:
+            logger.warning(f"Essential data (title) missing for {url}. Cannot process for unified schema.")
             return None
 
-        print(f"Successfully extracted some data for: {event_data.title or url}")
-        return event_data
+        logger.info(f"Successfully extracted some raw data for: {temp_event_data.title or url}")
 
-    except PlaywrightException as e: # More specific Playwright errors
-        print(f"A Playwright error occurred while scraping {url}: {e}")
-        # Consider taking a snapshot on error
-        # page.screenshot(path=f"error_snapshot_{datetime.now():%Y%m%d_%H%M%S}.png")
+        # Convert SpotlightEvent dataclass instance to dictionary
+        raw_event_dict = temp_event_data.to_dict()
+
+        # Add any other fields needed by the adapter that are not in SpotlightEvent
+        # For example, the adapter might expect 'promoter' or 'artists' list directly if available.
+        # The current SpotlightEvent is very basic, so adapter might need to infer a lot.
+        # For now, we pass what we have.
+
+        # Call the adapter
+        # Check if map_to_unified_schema was imported successfully
+        if 'map_to_unified_schema' not in globals():
+            logger.error("map_to_unified_schema is not available. Cannot map to unified schema.")
+            return None # Or handle differently, e.g., return raw_event_dict for basic saving
+
+        unified_event_doc = map_to_unified_schema(
+            raw_data=raw_event_dict,
+            source_platform="ibiza-spotlight-stealth", # Specific platform name
+            source_url=url
+        )
+
+        if unified_event_doc:
+            logger.info(f"Successfully mapped '{unified_event_doc.get('title')}' to unified schema.")
+            return unified_event_doc
+        else:
+            logger.error(f"Schema mapping failed for {url}. unified_event_doc is None.")
+            return None
+
+    except PlaywrightException as e:
+        logger.error(f"A Playwright error occurred while scraping {url}: {e}")
     except Exception as e:
-        print(f"An unexpected error occurred while scraping {url}: {e}")
-        import traceback
-        traceback.print_exc()
+        logger.error(f"An unexpected error occurred while scraping {url}: {e}", exc_info=True)
 
     return None
 
 
 # --- Main Execution ---
 def main():
-    parser = argparse.ArgumentParser(description="Scrape a single event page from Ibiza-Spotlight.com.")
+    parser = argparse.ArgumentParser(description="Scrape a single event page from Ibiza-Spotlight.com and save to MongoDB.")
     parser.add_argument("url", help="The URL of the event detail page to scrape.")
-    # Example: "https.www.ibiza-spotlight.com/night/events/2024/09/18/event-name"
-    # Add --headless False argument
     parser.add_argument(
         "--headless",
         action=argparse.BooleanOptionalAction,
-        default=True, # Default to headless True
+        default=True,
         help="Run browser in headless mode. Use --no-headless to show browser."
     )
-
     args = parser.parse_args()
 
-    if not STEALTH_COMPONENTS_AVAILABLE:
-        print("FATAL: Required stealth components are not available due to import errors. Cannot proceed.")
-        return
-
-    # Launch browser with stealth capabilities
-    # launch_stealth_browser returns: pw_instance, browser_instance, page_instance
-    print(f"Launching browser (headless: {args.headless})...")
-    pw_instance, browser, page = launch_stealth_browser(headless=args.headless) # type: ignore
-
-    if not page or not browser:
-        print("Failed to launch Playwright browser or page. Exiting.")
-        if browser:
-            try: browser.close()
-            except: pass
-        if pw_instance:
-            try: pw_instance.stop() # type: ignore
-            except: pass
-        return
+    mongo_client = None
+    events_collection = None
+    pw_instance = None
+    browser = None
 
     try:
-        # Apply further page enhancements before navigation if not done in launch_stealth_browser
-        # For this example, setup_enhanced_playwright_page is called within scrape_spotlight_event_page
-        # or could be called here.
-        # Let's call it here for clarity on when enhancements are applied.
-        print("Setting up enhanced Playwright page...")
+        # Establish MongoDB connection
+        # Attempt to import settings if available (already handled at module level, this is for clarity)
+        if hasattr(settings, 'MONGODB_URI') and hasattr(settings, 'DB_NAME'):
+            try:
+                mongo_client = MongoClient(settings.MONGODB_URI)
+                db = mongo_client[settings.DB_NAME]
+                events_collection = db.events
+                logger.info(f"Successfully connected to MongoDB: {settings.DB_NAME}")
+            except ConnectionFailure as e:
+                logger.error(f"Could not connect to MongoDB: {e}")
+            except AttributeError: # Should be caught by hasattr check, but as a safeguard
+                 logger.error("MongoDB URI/DB_NAME not found in settings. Cannot connect to DB.")
+        else:
+            logger.warning("MongoDB settings not found (likely due to import error or dummy settings). Will print to console.")
+
+
+        if not STEALTH_COMPONENTS_AVAILABLE:
+            logger.fatal("Required stealth components are not available. Cannot proceed.")
+            return
+
+        logger.info(f"Launching browser (headless: {args.headless})...")
+        pw_instance, browser, page = launch_stealth_browser(headless=args.headless)
+
+        if not page or not browser:
+            logger.error("Failed to launch Playwright browser or page. Exiting.")
+            return
+
+        logger.info("Setting up enhanced Playwright page...")
         setup_enhanced_playwright_page(
             page,
-            user_agents_list=MODERN_USER_AGENTS_SUBSET, # Use the list from this module
-            resource_types_to_block=["image", "font", "media"] # Example: block images, fonts, media
+            user_agents_list=MODERN_USER_AGENTS_SUBSET,
+            resource_types_to_block=["image", "font", "media"]
         )
 
-        scraped_event = scrape_spotlight_event_page(page, args.url)
+        unified_event_doc = scrape_spotlight_event_page(page, args.url)
 
-        if scraped_event:
-            print("\n--- JSON Output (SpotlightEvent) ---")
-            print(json.dumps(scraped_event.to_dict(), indent=2, ensure_ascii=False))
+        if unified_event_doc:
+            if events_collection:
+                try:
+                    if not unified_event_doc.get("event_id"):
+                        logger.error("Unified event document is missing 'event_id'. Cannot save to DB.")
+                        # Fallback to print if event_id is missing for some reason
+                        logger.info("Printing unified_event_doc to console due to missing event_id.")
+                        print(json.dumps(unified_event_doc, indent=2, default=str))
+                    else:
+                        update_key = {"event_id": unified_event_doc["event_id"]}
+                        events_collection.update_one(
+                            update_key,
+                            {"$set": unified_event_doc},
+                            upsert=True
+                        )
+                        logger.info(f"Successfully saved/updated event to DB: {unified_event_doc.get('title', unified_event_doc['event_id'])}")
+                except Exception as e:
+                    logger.error(f"Error saving event {unified_event_doc.get('event_id')} to MongoDB: {e}", exc_info=True)
+                    logger.info("Printing unified_event_doc to console due to DB save error.")
+                    print(json.dumps(unified_event_doc, indent=2, default=str)) # Ensure json is imported for this
+            else:
+                logger.warning("DB not connected. Printing unified_event_doc to console instead.")
+                # Ensure json is imported if this path is taken
+                import json
+                print(json.dumps(unified_event_doc, indent=2, default=str))
         else:
-            print(f"No data scraped or processed for {args.url}.")
+            logger.info(f"No data scraped or processed for {args.url}.")
 
+    except Exception as e:
+        logger.error(f"An unexpected error occurred in main: {e}", exc_info=True)
     finally:
-        print("\nClosing browser and Playwright...")
+        logger.info("\nClosing browser and Playwright...")
         if browser:
             try:
                 browser.close()
             except Exception as e:
-                print(f"Error closing browser: {e}")
+                logger.error(f"Error closing browser: {e}")
         if pw_instance:
             try:
-                pw_instance.stop() # type: ignore
+                pw_instance.stop()
             except Exception as e:
-                print(f"Error stopping Playwright: {e}")
-        print("Cleanup finished.")
+                logger.error(f"Error stopping Playwright: {e}")
+
+        if mongo_client:
+            mongo_client.close()
+            logger.info("MongoDB connection closed.")
+        logger.info("Cleanup finished.")
 
 if __name__ == "__main__":
     main()

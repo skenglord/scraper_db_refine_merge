@@ -29,18 +29,45 @@ def get_all_events():
 def format_event(event):
     """Format a single event for readable display"""
     # Convert MongoDB ObjectId to string and remove MongoDB-specific fields
-    event.pop('_id', None)
-    event.pop('_quality', None)
-    event.pop('_validation', None)
-    
-    # Format datetime objects
-    for field in ['scrapedAt', 'dateTime.start', 'dateTime.end']:
-        parts = field.split('.')
+    event.pop('_id', None) # _id is still standard
+    event.pop('data_quality', None) # Pop the whole data_quality object
+    # No direct _validation equivalent at top level; validation_flags is inside data_quality
+
+    # Format datetime objects if they are not already strings
+    # V2 stores dates as ISO strings, so this loop might not do much
+    # if data is already compliant. It's kept for path correction demonstration
+    # and if any datetime objects somehow exist.
+    date_fields_to_check = [
+        'scraping_metadata.first_scraped',
+        'scraping_metadata.last_scraped',
+        'datetime.start_date',
+        'datetime.end_date',
+        'datetime.doors_open',
+        'datetime.last_entry',
+        'datetime.recurring.end_recurrence',
+        'ticketing.tiers.sale_start', # Note: this is nested in an array, loop won't handle directly
+        'ticketing.tiers.sale_end',   # Loop won't handle directly
+        'created_at',
+        'updated_at'
+    ]
+
+    for field_path in date_fields_to_check:
+        parts = field_path.split('.')
         obj = event
-        for part in parts[:-1]:
-            obj = obj.get(part, {})
-        if parts[-1] in obj and isinstance(obj[parts[-1]], datetime):
-            obj[parts[-1]] = obj[parts[-1]].strftime('%Y-%m-%d %H:%M:%S')
+        # Traverse the path
+        # This simple loop won't handle arrays like ticketing.tiers.sale_start.
+        # A more complex recursive function would be needed for full datetime conversion
+        # if they weren't already strings. For this task, focusing on direct paths.
+        try:
+            for part in parts[:-1]:
+                obj = obj.get(part, {})
+
+            last_part = parts[-1]
+            if last_part in obj and isinstance(obj[last_part], datetime):
+                obj[last_part] = obj[last_part].isoformat() # Convert to ISO string
+            # If it's already a string (as expected for V2), no change needed by this logic.
+        except AttributeError: # Raised if a part of the path doesn't exist / is not a dict
+            continue
     
     return event
 

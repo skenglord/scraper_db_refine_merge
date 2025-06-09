@@ -20,6 +20,37 @@ from urllib.parse import urljoin
 from playwright.async_api import (Browser, BrowserContext, Page,
                                 Playwright, async_playwright, TimeoutError, Response)
 from playwright_stealth import stealth_async
+from pymongo import MongoClient # Added
+from pymongo.errors import ConnectionFailure # Added
+
+# Assuming schema_adapter is in project root, and classy_skkkrapey is project root or accessible
+# Path manipulation for imports might be needed if this script is run directly
+# For now, direct imports are attempted.
+try:
+    from schema_adapter import map_to_unified_schema # Added
+    from classy_skkkrapey.config import settings # Added
+except ImportError as e:
+    # Fallback for local execution if imports fail
+    # This assumes schema_adapter.py and config.py are in the parent directory
+    # or that the project root has been added to sys.path by an external runner
+    import sys
+    from pathlib import Path
+    project_root_for_imports = Path(__file__).resolve().parent.parent
+    if str(project_root_for_imports) not in sys.path:
+        sys.path.insert(0, str(project_root_for_imports))
+    try:
+        from schema_adapter import map_to_unified_schema
+        from classy_skkkrapey.config import settings
+    except ImportError:
+        # Define dummy settings if import still fails, for script to run without full functionality
+        class DummySettings:
+            MONGODB_URI = "mongodb://localhost:27017/"
+            DB_NAME = "fallback_db_calendar"
+        settings = DummySettings()
+        # map_to_unified_schema will remain undefined if import fails, leading to errors later if not handled.
+        # This is acceptable for the task, as the focus is on refactoring assuming components are available.
+        logging.error(f"Failed to import schema_adapter or settings even after path modification: {e}")
+
 
 # --- Optimized Configuration ---
 BASE_URL = "https://www.ibiza-spotlight.com"
@@ -436,45 +467,118 @@ async def scrape_fast(page: Page) -> List[Dict[str, Any]]:
                 logger.info(f"Error navigating to next month or no more months: {e}")
                 break # Break if there's an error or no more months
     
-    logger.info(f"Total events collected: {len(all_events)}")
-    return all_events
+    logger.info(f"Total raw events collected by scrape_fast: {len(all_events)}")
 
-def save_fast(events: List[Dict[str, Any]], filename: str = OUTPUT_FILE) -> None:
-    try:
-        output = {
-            "metadata": {
-                "total_events": len(events),
-                "scraped_at": datetime.utcnow().isoformat(),
-                "version": "fast_v1.0"
-            },
-            "events": events
-        }
-        
-        with open(filename, "w", encoding="utf-8") as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
-        logger.info(f"Saved {len(events)} events to {filename}")
-    except Exception as e:
-        logger.error(f"Save error: {e}")
+    unified_events_list: List[Dict[str, Any]] = []
+    if 'map_to_unified_schema' not in globals():
+        logger.error("map_to_unified_schema is not available. Cannot process events for unified schema.")
+        return unified_events_list # Return empty list
+
+    for raw_event_dict in all_events:
+        source_url_extracted = raw_event_dict.get("url")
+        if not source_url_extracted:
+            # Try to find URL in 'data' if it's from intercepted_events
+            if raw_event_dict.get('source') == 'intercepted' and isinstance(raw_event_dict.get('data'), dict):
+                source_url_extracted = raw_event_dict.get('data', {}).get('url')
+
+            if not source_url_extracted:
+                 # Fallback if URL is truly missing, use a placeholder or log error
+                logger.warning(f"Missing source_url for raw event: {raw_event_dict.get('title', 'Unknown event')}. Skipping.")
+                continue # Skip this event if URL is crucial and missing
+
+        try:
+            unified_event_doc = map_to_unified_schema(
+                raw_data=raw_event_dict,
+                source_platform="ibiza-spotlight-calendar", # Specific platform name
+                source_url=source_url_extracted
+            )
+            if unified_event_doc:
+                unified_events_list.append(unified_event_doc)
+            else:
+                logger.warning(f"Mapping to unified schema returned None for event from: {source_url_extracted}")
+        except Exception as e_map:
+            logger.error(f"Error mapping event data from {source_url_extracted}: {e_map}", exc_info=True)
+
+    logger.info(f"Successfully mapped {len(unified_events_list)} events to unified schema.")
+    return unified_events_list
+
+def save_fast(unified_events: List[Dict[str, Any]], events_collection: Any) -> None: # Added events_collection type hint
+    """Saves a list of unified event documents to MongoDB."""
+    if not events_collection:
+        logger.warning("MongoDB collection not available. Cannot save events to DB.")
+        if unified_events: # Fallback to print if DB not available but events exist
+            logger.info("Printing unified events to console as DB fallback:")
+            for event_doc in unified_events[:5]: # Print first 5 as sample
+                 print(json.dumps(event_doc, indent=2, default=str))
+            if len(unified_events) > 5:
+                print(f"... and {len(unified_events) - 5} more events.")
+        return
+
+    if not unified_events:
+        logger.info("No unified events to save.")
+        return
+
+    saved_count = 0
+    for unified_event_doc in unified_events:
+        if not unified_event_doc or not unified_event_doc.get("event_id"):
+            logger.warning(f"Skipping save for event due to missing data or event_id: {unified_event_doc.get('title', 'N/A')}")
+            continue
+        try:
+            update_key = {"event_id": unified_event_doc["event_id"]}
+            events_collection.update_one(
+                update_key,
+                {"$set": unified_event_doc},
+                upsert=True
+            )
+            saved_count += 1
+            # logger.debug(f"Saved/Updated event to DB: {unified_event_doc.get('title')}") # Can be too noisy
+        except Exception as e:
+            logger.error(f"Error saving event {unified_event_doc.get('event_id')} to MongoDB: {e}", exc_info=True)
+
+    logger.info(f"Successfully saved/updated {saved_count} events to MongoDB.")
+
 
 async def main():
-    logger.info("Starting FAST Ibiza Spotlight Scraper...")
+    logger.info("Starting FAST Ibiza Spotlight Calendar Scraper...")
     start_time = time.time()
+
+    mongo_client = None
+    events_collection = None
+    try:
+        if hasattr(settings, 'MONGODB_URI') and hasattr(settings, 'DB_NAME'):
+            mongo_client = MongoClient(settings.MONGODB_URI)
+            db = mongo_client[settings.DB_NAME]
+            events_collection = db.events # Assuming collection name is 'events'
+            logger.info(f"Successfully connected to MongoDB: {settings.DB_NAME} on {settings.MONGODB_URI}")
+        else:
+            logger.warning("MongoDB settings (MONGODB_URI or DB_NAME) not found. Will fallback if saving is attempted.")
+    except ConnectionFailure as e:
+        logger.error(f"Could not connect to MongoDB: {e}")
+    except AttributeError: # If settings is a DummySettings without these attributes
+        logger.error("MongoDB URI/DB_NAME not found in settings configuration.")
+
     
     async with async_playwright() as playwright:
-        browser, context = await init_fast_browser(playwright, headless=False)
+        browser, context = await init_fast_browser(playwright, headless=True) # Usually headless=True for prod
         if not browser or not context:
+            if mongo_client: mongo_client.close()
             return
         
         page = await context.new_page()
         try:
-            events = await scrape_fast(page)
-            if events:
-                save_fast(events)
-                logger.info(f"SUCCESS: {len(events)} events in {time.time() - start_time:.1f}s")
+            # scrape_fast now returns list of unified_event_docs
+            unified_events_list = await scrape_fast(page)
+
+            if unified_events_list:
+                save_fast(unified_events_list, events_collection) # Pass collection to save_fast
+                logger.info(f"SUCCESS: Processed {len(unified_events_list)} events in {time.time() - start_time:.1f}s")
             else:
-                logger.warning("No events collected")
+                logger.warning("No events collected or mapped.")
         finally:
             await browser.close()
+            if mongo_client:
+                mongo_client.close()
+                logger.info("MongoDB connection closed.")
     
     logger.info(f"Finished in {time.time() - start_time:.1f} seconds")
 

@@ -11,13 +11,32 @@ from typing import Dict, List, Optional, TypedDict
 # Add the current directory to sys.path to fix import issues
 sys.path.insert(0, str(Path(__file__).parent))
 
+import logging # Added
+from pymongo import MongoClient, UpdateOne # Added
+from pymongo.errors import ConnectionFailure # Added
+# Assuming schema_adapter is in project root, and classy_skkkrapey is project root or accessible
+# Adjust path if schema_adapter is elsewhere relative to my_scrapers directory
+try:
+    from schema_adapter import map_to_unified_schema # Added
+    from classy_skkkrapey.config import settings # Added
+except ImportError:
+    # Fallback if running script directly and imports are not resolving from project root
+    # This assumes schema_adapter.py and config.py are in the parent directory of my_scrapers
+    # Or that the project root has been added to sys.path by an external runner
+    project_root_for_imports = Path(__file__).resolve().parent.parent
+    if str(project_root_for_imports) not in sys.path:
+        sys.path.insert(0, str(project_root_for_imports))
+    from schema_adapter import map_to_unified_schema
+    from classy_skkkrapey.config import settings
+
+
 # Import the specific module directly without going through __init__.py
 import importlib.util
 spec = importlib.util.spec_from_file_location("convert_to_md",
                                                Path(__file__).parent / "utils" / "convert_to_md.py")
 convert_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(convert_module)
-convert_to_md = convert_module.convert_to_md
+convert_to_md = convert_module.convert_to_md # type: ignore
 import requests
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
@@ -152,7 +171,34 @@ class MultiLayerEventScraper:
         self.pages_scraped_since_ua_rotation: int = 0
         self.rotate_ua_after_pages: int = random.randint(6, 12)
         self.rotate_user_agent()  # Initial User-Agent selection and session setup
-        # self.session is initialized by rotate_user_agent calling _setup_session
+
+        # Initialize logger for the class instance
+        self.logger = logging.getLogger(self.__class__.__name__)
+        # Ensure basicConfig is called, preferably at module level or in main
+        # For now, assuming it's configured externally or by a simple main() setup.
+
+        # Initialize MongoDB client
+        try:
+            self.mongo_client = MongoClient(settings.MONGODB_URI)
+            self.db = self.mongo_client[settings.DB_NAME]
+            self.events_collection = self.db.events
+            self.logger.info("Successfully connected to MongoDB.")
+        except AttributeError as e: # Handle if settings are not correctly loaded
+            self.logger.error(f"MongoDB settings not found (MONGODB_URI or DB_NAME missing): {e}")
+            self.mongo_client = None
+            self.db = None
+            self.events_collection = None
+        except ConnectionFailure as e:
+            self.logger.error(f"Could not connect to MongoDB: {e}")
+            self.mongo_client = None
+            self.db = None
+            self.events_collection = None
+        except Exception as e: # Catch other potential errors during setup
+            self.logger.error(f"An unexpected error occurred during MongoDB setup: {e}")
+            self.mongo_client = None
+            self.db = None
+            self.events_collection = None
+
 
     def rotate_user_agent(self):
         """Rotates the User-Agent and re-initializes the session."""
@@ -434,33 +480,109 @@ class MultiLayerEventScraper:
         combined_data = {**wp_data, **meta_data, **pattern_data}
         # Ensure 'html' key is populated for fallback, possibly truncated.
         # _build_schema_from_fallback already handles html (truncated).
-        return self._map_fallback_to_event_schema(combined_data, url, html, now_iso)
-
-    def scrape_event_strategically(self, url: str) -> Dict:
-        """Orchestrates scraping, trying requests first, then Playwright if needed."""
-        event_data_requests = self.scrape_event_data(url, attempt_with_browser=False)
-
-        if is_data_sufficient(event_data_requests):
-            print(f"[INFO] Data sufficient from requests-only attempt for {url}")
-            return event_data_requests
-
-        if self.use_browser and sync_playwright is not None:
-            print(
-                f"[INFO] Requests-only attempt insufficient for {url}. Attempting with browser."
-            )
-            event_data_browser = self.scrape_event_data(url, attempt_with_browser=True)
-            # Optionally, decide if browser data is "better" even if requests was "sufficient"
-            # For now, if requests was sufficient, we don't try browser.
-            # If browser data is empty or not better, could return requests data.
-            # For simplicity, returning browser data if we attempted it.
-            return event_data_browser
+        # Return raw data and method string
+        if jsonld_data:
+            return jsonld_data, "jsonld"
         else:
-            # Playwright not available or not enabled, return initial requests attempt
-            return event_data_requests
+            return combined_data, "fallback"
+
+
+    def save_event_to_db(self, unified_event_doc: Dict[str, Any]):
+        if not self.events_collection:
+            self.logger.error("MongoDB not connected. Cannot save event.")
+            # Fallback: print to console if you want to see the data
+            # self.logger.info(json.dumps(unified_event_doc, indent=2, default=str))
+            return
+
+        if not unified_event_doc or not unified_event_doc.get("event_id"):
+            self.logger.error("Attempted to save an event with missing data or event_id.")
+            return
+
+        try:
+            update_key = {"event_id": unified_event_doc["event_id"]}
+            self.events_collection.update_one(
+                update_key,
+                {"$set": unified_event_doc},
+                upsert=True
+            )
+            self.logger.info(f"Successfully saved/updated event to DB: {unified_event_doc.get('title', unified_event_doc['event_id'])}")
+        except Exception as e:
+            self.logger.error(f"Error saving event {unified_event_doc.get('event_id')} to MongoDB: {e}", exc_info=True)
+
+
+    def scrape_event_strategically(self, url: str) -> Optional[Dict[str, Any]]:
+        """
+        Orchestrates scraping, maps to unified schema, and saves to DB.
+        Returns the unified event document or None.
+        """
+        raw_event_dict, extraction_method = ({}, None) # Initialize
+
+        # Try with requests first
+        raw_event_dict_req, extraction_method_req = self.scrape_event_data(url, attempt_with_browser=False)
+
+        # Basic check for sufficiency (e.g., if a title was found)
+        # The old is_data_sufficient checked EventSchemaTypedDict, which is no longer formed here.
+        # We'll use a simpler check for now.
+        sufficient_from_requests = bool(raw_event_dict_req and raw_event_dict_req.get("title"))
+
+        if sufficient_from_requests:
+            self.logger.info(f"Data potentially sufficient from requests-only attempt for {url} using {extraction_method_req}.")
+            raw_event_dict = raw_event_dict_req
+            extraction_method = extraction_method_req
+
+        if not sufficient_from_requests and self.use_browser and sync_playwright is not None:
+            self.logger.info(f"Requests-only attempt insufficient or failed for {url}. Attempting with browser.")
+            raw_event_dict_browser, extraction_method_browser = self.scrape_event_data(url, attempt_with_browser=True)
+
+            # Prioritize browser data if it's non-empty, otherwise stick with requests if it had something
+            if raw_event_dict_browser and raw_event_dict_browser.get("title"):
+                raw_event_dict = raw_event_dict_browser
+                extraction_method = extraction_method_browser
+                self.logger.info(f"Using data from browser attempt for {url} using {extraction_method}.")
+            elif raw_event_dict_req and raw_event_dict_req.get("title"): # Fallback to requests if browser yielded nothing better
+                self.logger.info(f"Browser attempt yielded no better data for {url}. Using prior requests data.")
+                raw_event_dict = raw_event_dict_req # Already assigned, but for clarity
+                extraction_method = extraction_method_req
+            else: # Neither yielded much
+                 raw_event_dict = raw_event_dict_browser # Could be empty, handled below
+                 extraction_method = extraction_method_browser
+
+        elif not sufficient_from_requests: # Requests failed and browser not used/available
+            self.logger.info(f"Requests-only attempt failed for {url}, and browser not used. Using (potentially empty) requests data.")
+            raw_event_dict = raw_event_dict_req
+            extraction_method = extraction_method_req
+
+
+        if not raw_event_dict or not raw_event_dict.get("title"): # Final check if any usable raw data was obtained
+            self.logger.warning(f"No sufficient raw data obtained for {url} after all attempts.")
+            return None
+
+        # Add extraction_method to raw_data if adapter needs it, or handle appropriately
+        raw_event_dict["extraction_method_used"] = extraction_method
+
+        # Check if map_to_unified_schema was imported
+        if 'map_to_unified_schema' not in globals():
+            self.logger.error("map_to_unified_schema function is not available. Cannot proceed with schema mapping.")
+            return None # Or return raw_event_dict for non-standard saving
+
+        try:
+            unified_event_doc = map_to_unified_schema(
+                raw_data=raw_event_dict,
+                source_platform="ticketmaster", # Platform name
+                source_url=url
+            )
+
+            if unified_event_doc and unified_event_doc.get("event_id"):
+                self.save_event_to_db(unified_event_doc)
+                return unified_event_doc
+            else:
+                self.logger.error(f"Schema mapping failed for {url}. Unified doc: {unified_event_doc}")
+                return None
+        except Exception as e:
+            self.logger.error(f"Error during schema mapping or saving for {url}: {e}", exc_info=True)
+            return None
 
     def _map_jsonld_to_event_schema(
-        self, node: Dict, url: str, html: str, now_iso: str
-    ) -> EventSchemaTypedDict:
         """Build schema from JSON-LD data, populating EventSchemaTypedDict."""
         
         scraped_at_datetime: Optional[datetime] = None
@@ -966,51 +1088,89 @@ def crawl_listing_for_events(
     max_pages: int = 4000,
     *,
     headless: bool = True,
-) -> List[Dict]:
+) -> List[Optional[Dict[str, Any]]]: # Returns list of unified docs or Nones
     """Crawl a listing page and scrape each linked event."""
     if sync_playwright is None:
-        print("Playwright is not installed; cannot crawl listing", file=sys.stderr)
+        scraper.logger.error("Playwright is not installed; cannot crawl listing")
         return []
 
-    scraped: List[Dict] = []
+    processed_events: List[Optional[Dict[str, Any]]] = []
+
+    # It's better to manage Playwright browser instance within the crawler method
+    # or pass it in if multiple crawls are done with the same browser instance.
+    # For this structure, let's keep it encapsulated here.
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=headless)
-        page = browser.new_page()
-        page.goto(listing_url, timeout=30000)
+        browser = None
         try:
-            page.wait_for_selector("text=INFO", timeout=10000)
-        except Exception:
-            pass
-        links = [
-            elem.get_attribute("href")
-            for elem in page.query_selector_all("text=INFO")
-            if elem.get_attribute("href")
-        ]
-        browser.close()
+            browser = p.chromium.launch(headless=headless)
+            page = browser.new_page()
+            scraper.logger.info(f"Navigating to listing page: {listing_url}")
+            page.goto(listing_url, timeout=60000, wait_until="domcontentloaded")
+
+            # Adjust selector for event links as needed. This is a placeholder.
+            # Example: page.wait_for_selector("a.event-link-selector", timeout=10000)
+            # For TicketsIbiza, it was "text=INFO"
+            # This needs to be specific to the listing page structure of the target.
+            # Assuming a generic selector for demonstration:
+            try:
+                page.wait_for_selector("a[href]", timeout=15000) # Wait for some links to be present
+            except Exception as e_wait:
+                scraper.logger.warning(f"Timeout or error waiting for links on {listing_url}: {e_wait}")
+
+            # Extract links - this needs to be robust and specific to the site
+            # The original "text=INFO" might be too generic or specific to one site.
+            # Let's assume a more generic approach for a moment, or use a passed selector.
+            link_elements = page.query_selector_all("a[href*='event'], a.event-listing-item-link") # Example selectors
+
+            links = []
+            for elem in link_elements:
+                href = elem.get_attribute("href")
+                if href:
+                    # Make sure URL is absolute
+                    if not href.startswith(('http://', 'https://')):
+                        href = requests.compat.urljoin(listing_url, href) # Need requests for this
+                    # Add filtering logic if needed (e.g., based on URL patterns)
+                    links.append(href)
+
+            links = list(set(links)) # Deduplicate
+            scraper.logger.info(f"Found {len(links)} potential event links on {listing_url}.")
+
+        except Exception as e:
+            scraper.logger.error(f"Error fetching or parsing listing page {listing_url}: {e}", exc_info=True)
+            if browser: browser.close()
+            return processed_events # Return what we have so far
+        finally:
+            if browser: browser.close() # Ensure browser is closed if page.goto fails early
+
+    # Re-initialize browser for individual scraping if needed by scrape_event_strategically
+    # or pass the browser instance. For now, scrape_event_strategically handles its own browser if needed.
 
     count = 0
     for link in links:
         if count >= max_pages:
+            scraper.logger.info(f"Reached max_pages limit ({max_pages}). Stopping crawl.")
             break
-        print(f"Scraping: {link}")
 
+        scraper.logger.info(f"Processing event link: {link}")
         scraper.pages_scraped_since_ua_rotation += 1
         if scraper.pages_scraped_since_ua_rotation >= scraper.rotate_ua_after_pages:
             scraper.rotate_user_agent()
-            print(
-                f"[INFO] Rotating User-Agent during crawl to: {scraper.current_user_agent}"
-            )
-        # Random delay is now in fetch_page for requests-based fetching
+            scraper.logger.info(f"Rotating User-Agent during crawl to: {scraper.current_user_agent}")
 
-        data = scraper.scrape_event_strategically(link)
-        if data:
-            scraped.append(data)
-            print(f"✓ Extracted data using: {data.get('extractionMethod', 'unknown')}")
+        unified_event_doc = scraper.scrape_event_strategically(link) # This now saves to DB
+        processed_events.append(unified_event_doc) # Collect unified doc (or None)
+
+        if unified_event_doc:
+            scraper.logger.info(f"✓ Successfully processed and saved: {unified_event_doc.get('title', link)}")
         else:
-            print("✗ No data extracted")
+            scraper.logger.warning(f"✗ No data processed for: {link}")
         count += 1
 
-    return scraped
+        # Add a small delay between scraping individual event pages from a listing
+        time.sleep(random.uniform(scraper.random_delay_range[0] * 0.5, scraper.random_delay_range[1] * 0.5))
+
+
+    return processed_events
 
 
 # Helper for JSON serialization of datetime objects
@@ -1234,21 +1394,24 @@ def main():
     )
     args = parser.parse_args()
 
+    # Setup basic logging configuration
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    logger_main = logging.getLogger("MainExecution")
+
+
     user_agents_list = MODERN_USER_AGENTS  # Default
     if args.user_agents_file:
         try:
             with open(args.user_agents_file, "r") as f:
                 user_agents_list = [line.strip() for line in f if line.strip()]
             if not user_agents_list:
-                print(
-                    f"[WARNING] User agents file {args.user_agents_file} was empty. Using default user agents.",
-                    file=sys.stderr,
+                logger_main.warning(
+                    f"User agents file {args.user_agents_file} was empty. Using default user agents."
                 )
                 user_agents_list = MODERN_USER_AGENTS
         except FileNotFoundError:
-            print(
-                f"[WARNING] User agents file {args.user_agents_file} not found. Using default user agents.",
-                file=sys.stderr,
+            logger_main.warning(
+                f"User agents file {args.user_agents_file} not found. Using default user agents."
             )
             user_agents_list = MODERN_USER_AGENTS
 
@@ -1260,78 +1423,45 @@ def main():
         user_agents=user_agents_list,
     )
 
-    default_events_path = (
-        Path(__file__).resolve().parent / "ticketsibiza_event_data.json"
-    )
-    events_path = Path(args.events_path) if args.events_path else default_events_path
+    # Ensure DB connection is available before proceeding with scraping
+    if not scraper.events_collection:
+        logger_main.critical("MongoDB connection not established in scraper. Aborting.")
+        return
+
 
     if args.crawl_listing:
-        all_event_data = crawl_listing_for_events(
+        processed_events_output = crawl_listing_for_events( # Renamed variable
             args.target_url,
             scraper,
-            max_pages=4000,
+            max_pages=4000, # Example limit
             headless=args.headless,
         )
-    else:
+        successful_saves = sum(1 for doc in processed_events_output if doc and doc.get("event_id"))
+        logger_main.info(f"Crawl finished. Successfully processed and saved {successful_saves} events to DB.")
+
+    else: # Single URL scraping
         if args.target_url:
-            event_urls = [args.target_url]
-        else:
-            try:
-                with events_path.open() as f:
-                    events = json.load(f)
-                    event_urls = [
-                        e.get("url")
-                        for e in events
-                        if isinstance(e, dict) and e.get("url")
-                    ]
-            except FileNotFoundError:
-                print(f"{events_path} not found.", file=sys.stderr)
-                return
-
-        if not event_urls:
-            print("No event URLs to process.", file=sys.stderr)
-            return
-
-        all_event_data: List[Dict] = []
-        max_pages = 4000
-        scraped_count = 0
-
-        for url in event_urls:
-            if scraped_count >= max_pages:
-                break
-            print(f"Scraping: {url}")
-
-            scraper.pages_scraped_since_ua_rotation += 1
-            if scraper.pages_scraped_since_ua_rotation >= scraper.rotate_ua_after_pages:
-                scraper.rotate_user_agent()
-                print(f"[INFO] Rotating User-Agent to: {scraper.current_user_agent}")
-            # Random delay is now in fetch_page for requests-based fetching
-
-            event_data = scraper.scrape_event_strategically(url)
-            if event_data:
-                all_event_data.append(event_data)
-                print(
-                    f"✓ Extracted data using: {event_data.get('extractionMethod', 'unknown')}"
+            logger_main.info(f"Scraping single URL: {args.target_url}")
+            unified_event_doc = scraper.scrape_event_strategically(args.target_url)
+            if unified_event_doc and unified_event_doc.get("event_id"):
+                logger_main.info(
+                    f"✓ Successfully processed and saved event: {unified_event_doc.get('title', unified_event_doc.get('event_id'))}"
                 )
             else:
-                print("✗ No data extracted")
-            scraped_count += 1
+                logger_main.warning(f"✗ No data processed or saved for {args.target_url}")
+        else:
+            # Removed reading URLs from local JSON file, as focus is on DB.
+            # If this functionality is needed, it should be re-added with care.
+            logger_main.warning("No target URL specified for single event scraping and local JSON reading is disabled.")
+            return
 
-    output = {"events": all_event_data}
-    with open("ticketsibiza_scraped_data.json", "w") as f:
-        json.dump(output, f, indent=2, default=datetime_serializer)
 
-    markdown_content = "# TicketsIbiza Scraped Data (New Schema)\n\n"
-    for ev_data in all_event_data: # ev_data is an EventSchemaTypedDict
-        markdown_content += format_event_to_markdown(ev_data)
-        markdown_content += "\n---\n\n" # Separator
-        
-    with open("ticketsibiza_event_data_parsed.md", "w") as f:
-        f.write(markdown_content)
-
-    print(f"\n✓ Scraped {len(all_event_data)} events")
-    print("✓ Data saved to ticketsibiza_scraped_data.json")
-    print("✓ Markdown saved to ticketsibiza_event_data_parsed.md")
+    # Old file saving logic is removed.
+    # If export is needed, it should be a separate script querying the DB.
+    logger_main.info("\n✓ Scraping process completed.")
+    if scraper.mongo_client: # Ensure client is closed if initialized
+        scraper.mongo_client.close()
+        logger_main.info("MongoDB connection closed by main.")
 
 
 if __name__ == "__main__":

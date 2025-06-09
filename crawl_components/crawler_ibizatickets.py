@@ -36,25 +36,44 @@ from bs4 import BeautifulSoup
 # This is often the case in structured projects.
 import sys
 from pathlib import Path
+import logging # Added
+from pymongo import MongoClient # Added
+from pymongo.errors import ConnectionFailure # Added
+
+# Setup logger
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
 
 # Add parent directory of 'crawl_components' to sys.path to find sibling component directories
 # This is a common pattern for making sibling packages/modules importable.
 # Assuming the script is in .../some_root/crawl_components/crawler_ibizatickets.py
 # And other components are in .../some_root/scraping_components/ etc.
 # This makes 'some_root' the effective top-level for these imports.
-if __name__ == '__main__': # Guard this path manipulation
-    try:
-        # Path to the 'crawl_components' directory
-        current_dir = Path(__file__).resolve().parent
-        # Path to the parent of 'crawl_components' (e.g., 'some_root')
-        project_root = current_dir.parent
-        if str(project_root) not in sys.path:
-            sys.path.insert(0, str(project_root))
-            # print(f"DEBUG: Added {project_root} to sys.path") # Optional debug
-    except NameError: # __file__ is not defined (e.g. in a REPL or non-file execution)
-        # print("DEBUG: __file__ not defined, skipping sys.path modification for sibling imports.")
-        pass
 
+# project_root calculation needs to be at the module level for imports to be found globally
+try:
+    current_dir = Path(__file__).resolve().parent
+    project_root = current_dir.parent
+    if str(project_root) not in sys.path:
+        sys.path.insert(0, str(project_root))
+        logger.debug(f"Added {project_root} to sys.path")
+except NameError:
+    logger.debug("__file__ not defined, skipping sys.path modification for sibling imports.")
+    project_root = Path.cwd() # Fallback or assume current dir is project root
+
+try:
+    from schema_adapter import map_to_unified_schema # Added
+    from classy_skkkrapey.config import settings # Added
+except ImportError as e:
+    logger.error(f"Failed to import schema_adapter or settings: {e}. Ensure schema_adapter.py is in project root and classy_skkkrapey/config.py is accessible.")
+    # Define dummy settings if import fails, for script to run without full functionality
+    class DummySettings:
+        MONGODB_URI = "mongodb://localhost:27017/"
+        DB_NAME = "fallback_db"
+    settings = DummySettings()
+    # map_to_unified_schema will remain undefined if import fails, leading to errors later if not handled.
+    # This is acceptable for the task, as the focus is on refactoring assuming components are available.
 
 try:
     from scraping_components.fetch_page_dual_mode_cs import DualModeFetcherCS
@@ -89,11 +108,11 @@ try:
     # This implies the EventSchema from parse_json_ld_event_cs is the one to work with,
     # and format_event_to_markdown_cs should be ableto handle it.
 
-    print("Successfully imported components.") # Debug print
+    logger.info("Successfully imported local scraping/parsing components.")
     COMPONENTS_AVAILABLE = True
 except ImportError as e:
-    print(f"Error importing components: {e}")
-    print("Falling back: Component imports failed. TypedDicts might be duplicated if necessary.")
+    logger.error(f"Error importing local scraping/parsing components: {e}")
+    logger.warning("Falling back: Component imports failed. TypedDicts might be duplicated if necessary.")
     COMPONENTS_AVAILABLE = False
     # Define dummy classes/functions or allow script to fail if components are critical
     class DualModeFetcherCS: pass
@@ -170,85 +189,123 @@ except ImportError as e:
 
 
 # --- Main Logic ---
-def scrape_ibiza_tickets_event(url: str, fetcher: DualModeFetcherCS) -> EventSchema | None:
+def scrape_ibiza_tickets_event(url: str, fetcher: DualModeFetcherCS) -> dict | None:
     """
-    Scrapes a single event page from TicketsIbiza.com.
+    Scrapes a single event page from TicketsIbiza.com, maps it to Unified Event Schema v2.
     """
-    print(f"Attempting to scrape event from: {url}")
-    event_data: EventSchema | None = None
+    logger.info(f"Attempting to scrape event from: {url}")
+    unified_event_doc: dict | None = None
     try:
-        # Use browser for TicketsIbiza as dynamic content might be involved for some pages.
-        # The original TicketsIbizaScraper in classy_skkkrapey used requests by default,
-        # but BaseEventScraper (which DualModeFetcherCS is based on) had Playwright.
-        # Forcing browser use here for robustness.
         html_content = fetcher.fetch_page(url, use_browser_override=True)
 
         if not html_content:
-            print(f"Failed to fetch HTML content from {url}.")
+            logger.error(f"Failed to fetch HTML content from {url}.")
             return None
 
         soup = BeautifulSoup(html_content, "html.parser")
-
-        # parse_json_ld_event_cs is designed to find and parse EventSchema
-        parsed_event_data = parse_json_ld_event_cs(soup)
+        parsed_event_data = parse_json_ld_event_cs(soup) # This returns EventSchema (a TypedDict)
 
         if parsed_event_data:
-            # Add URL and scrapedAt time, as the parser component doesn't do this.
-            # The EventSchema from parse_json_ld_event_cs.py already includes these fields (as optional).
-            event_data = parsed_event_data
-            event_data['url'] = url
-            event_data['scrapedAt'] = datetime.utcnow().isoformat() + "Z"
-            # extractionMethod is already set by parse_json_ld_event_cs
+            logger.info(f"Successfully extracted raw data for: {parsed_event_data.get('title', 'N/A Title')}")
 
-            print(f"Successfully extracted data for: {event_data.get('title', 'N/A Title')}")
-            if COMPONENTS_AVAILABLE : # Only try to format if the real component is there
-                try:
-                    markdown_output = format_event_to_markdown_cs(event_data)
-                    print("\n--- Markdown Output ---")
-                    print(markdown_output)
-                    print("-----------------------\n")
-                except Exception as e_markdown:
-                    print(f"Error formatting to markdown: {e_markdown}")
+            # Convert EventSchema (TypedDict) to a standard dict for the adapter
+            # The adapter expects a plain dict as raw_data.
+            # Ensure all fields from EventSchema are correctly represented.
+            # parse_json_ld_event_cs already sets extractionMethod.
+            # We need to add 'url' and 'scrapedAt' to the raw_data if adapter expects them
+            # from the raw_data dict itself, rather than as separate params.
+            # The schema_adapter's map_to_unified_schema takes source_url separately.
+            # scrapedAt is usually generated by the adapter or at point of saving.
+
+            raw_data_dict = dict(parsed_event_data)
+            # Add any other fields to raw_data_dict if your parse_json_ld_event_cs
+            # doesn't capture everything the adapter might look for in raw_data.
+            # For example, if the adapter uses 'raw_date_string' but your parser produces 'dateTime.displayText'.
+            # For now, assuming direct conversion is mostly fine.
+
+            unified_event_doc = map_to_unified_schema(
+                raw_data=raw_data_dict,
+                source_platform="ibizatickets", # Hardcoded source platform
+                source_url=url
+            )
+
+            if unified_event_doc:
+                logger.info(f"Successfully mapped event {unified_event_doc.get('title')} to unified schema.")
             else:
-                 print("(Skipping markdown formatting due to component import failure)")
+                logger.error(f"Failed to map raw data from {url} to unified schema.")
         else:
-            print(f"No structured event data (JSON-LD) found on {url}.")
+            logger.warning(f"No structured event data (JSON-LD) found on {url}.")
 
     except Exception as e:
-        print(f"An error occurred during scraping of {url}: {e}")
-        import traceback
-        traceback.print_exc()
+        logger.error(f"An error occurred during scraping of {url}: {e}", exc_info=True)
+        # Removed traceback.print_exc() as logger.error with exc_info=True does this.
 
-    return event_data
+    return unified_event_doc
 
 # --- Main Execution ---
 def main():
-    parser = argparse.ArgumentParser(description="Scrape a single event page from TicketsIbiza.com.")
+    parser = argparse.ArgumentParser(description="Scrape a single event page from TicketsIbiza.com and save to MongoDB.")
     parser.add_argument("url", help="The URL of the event page to scrape.")
-    # Example: "https://www.ticketsibiza.com/en/ibiza-calendar-2024/amnesia/amnesia-closing-party-october-5th"
-    # Add more arguments as needed, e.g., --output-file
-
     args = parser.parse_args()
 
+    mongo_client = None
+    events_collection = None
+
+    # Establish MongoDB connection
+    try:
+        mongo_client = MongoClient(settings.MONGODB_URI)
+        db = mongo_client[settings.DB_NAME]
+        events_collection = db.events # Assuming 'events' is the collection name
+        logger.info(f"Successfully connected to MongoDB: {settings.DB_NAME} on {settings.MONGODB_URI}")
+    except ConnectionFailure as e:
+        logger.error(f"Could not connect to MongoDB: {e}")
+    except AttributeError: # If settings is not available (e.g. DummySettings)
+        logger.error("MongoDB settings (MONGODB_URI or DB_NAME) not found. Cannot connect to DB.")
+
     if not COMPONENTS_AVAILABLE and DualModeFetcherCS.__name__ == 'DummyFetcher':
-        print("\nWARNING: Running with dummy components due to import errors. Output will be simulated.\n")
+        logger.warning("\nRunning with dummy components due to import errors. Output will be simulated and not saved to DB.\n")
 
-    # DualModeFetcherCS is a context manager
-    with DualModeFetcherCS(use_browser_default=False, headless=True) as fetcher: # Default to not using browser unless specified by fetch_page
-        scraped_data = scrape_ibiza_tickets_event(args.url, fetcher)
+    fetcher_instance = None
+    try:
+        # DualModeFetcherCS is a context manager
+        # Initialize fetcher outside with statement to ensure close is called in finally
+        fetcher_instance = DualModeFetcherCS(use_browser_default=False, headless=True)
+        unified_event_doc = scrape_ibiza_tickets_event(args.url, fetcher_instance)
 
-        if scraped_data:
-            print("\n--- JSON Output ---")
-            # Ensure all parts of EventSchema are serializable if they contain complex types not handled by default.
-            # The current EventSchema uses basic types or lists/dicts of them, so json.dumps should be fine.
-            try:
-                print(json.dumps(scraped_data, indent=2, ensure_ascii=False))
-            except TypeError as te:
-                print(f"Error serializing to JSON: {te}. Ensure all EventSchema fields are JSON serializable.")
-                print("Scraped data (raw):", scraped_data)
-
+        if unified_event_doc:
+            if events_collection:
+                try:
+                    if not unified_event_doc.get("event_id"):
+                        logger.error("Unified event document is missing 'event_id'. Cannot save to DB.")
+                    else:
+                        update_key = {"event_id": unified_event_doc["event_id"]}
+                        events_collection.update_one(
+                            update_key,
+                            {"$set": unified_event_doc},
+                            upsert=True
+                        )
+                        logger.info(f"Successfully saved/updated event to DB: {unified_event_doc.get('title', unified_event_doc['event_id'])}")
+                except Exception as e:
+                    logger.error(f"Error saving event {unified_event_doc.get('event_id')} to MongoDB: {e}", exc_info=True)
+                    # Fallback to printing if DB save fails
+                    logger.info("Printing unified_event_doc to console due to DB save error.")
+                    print(json.dumps(unified_event_doc, indent=2, default=str))
+            else:
+                logger.warning("DB not connected. Printing unified_event_doc to console instead.")
+                # Need to import json for this fallback
+                import json
+                print(json.dumps(unified_event_doc, indent=2, default=str))
         else:
-            print(f"No data scraped from {args.url}.")
+            logger.info(f"No data scraped or mapped from {args.url}.")
+
+    except Exception as e:
+        logger.error(f"An unexpected error occurred in main: {e}", exc_info=True)
+    finally:
+        if fetcher_instance:
+            fetcher_instance.close()
+        if mongo_client:
+            mongo_client.close()
+            logger.info("MongoDB connection closed.")
 
 if __name__ == "__main__":
     main()

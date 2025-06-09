@@ -17,33 +17,35 @@ def main():
         print(f"Total number of events: {total_events}")
 
         # 2. Number of distinct promoters
-        distinct_promoters = len(set(db.events.distinct("promoter")))
-        print(f"Number of distinct promoters: {distinct_promoters}")
+        # V2: Promoter is venue.stages.host.host_name
+        # Note: This will count each host_name once, even if they appear at multiple venues/stages.
+        # If a promoter can have multiple host_names, this might overcount distinct "promoter entities".
+        # For now, this directly translates the old logic to the new path.
+        distinct_promoters = len(db.events.distinct("venue.stages.host.host_name"))
+        print(f"Number of distinct host names (promoters): {distinct_promoters}")
 
         # 3. Distribution of events by date
+        # V2: Date field is datetime.start_date and is an ISOString
         # First, sample some date values for debugging
         sample_dates = list(db.events.aggregate([
-            {"$match": {"dateTime.start": {"$exists": True}}},
-            {"$project": {"dateType": {"$type": "$dateTime.start"}, "dateValue": "$dateTime.start"}},
+            {"$match": {"datetime.start_date": {"$exists": True}}}, # Updated path
+            {"$project": {"dateType": {"$type": "$datetime.start_date"}, "dateValue": "$datetime.start_date"}}, # Updated path
             {"$limit": 5}
         ]))
-        print("Sample date values and types:")
+        print("Sample date values and types (from datetime.start_date):")
         for doc in sample_dates:
             print(f"Type: {doc['dateType']}, Value: {doc['dateValue']}")
         
         # Now run the date distribution pipeline
         pipeline = [
-            # Filter out documents without dateTime.start
-            {"$match": {"dateTime.start": {"$exists": True}}},
+            # Filter out documents without datetime.start_date
+            {"$match": {"datetime.start_date": {"$exists": True}}}, # Updated path
             
-            # Convert string dates to Date objects
+            # Convert ISO string dates to Date objects for grouping
             {"$addFields": {
                 "convertedDate": {
-                    "$cond": {
-                        "if": {"$eq": [{"$type": "$dateTime.start"}, "string"]},
-                        "then": {"$dateFromString": {"dateString": "$dateTime.start"}},
-                        "else": "$dateTime.start"
-                    }
+                    # V2 stores start_date as string, so $toDate is appropriate
+                    "$toDate": "$datetime.start_date" # Updated path
                 }
             }},
             

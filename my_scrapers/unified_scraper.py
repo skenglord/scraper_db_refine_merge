@@ -27,6 +27,16 @@ from bs4 import BeautifulSoup, Tag
 import mistune
 from classy_skkkrapey.utils.cleanup_html import cleanup_html
 from classy_skkkrapey.config import settings
+from pymongo import MongoClient, UpdateOne
+from pymongo.errors import ConnectionFailure
+from schema_adapter import map_to_unified_schema # Assuming schema_adapter.py is in project root or PYTHONPATH
+import logging
+
+# Setup logger for this module
+logger = logging.getLogger(__name__)
+# Basic logging configuration (if not configured globally)
+# logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
 
 try:
     from playwright.sync_api import sync_playwright, Browser, Locator, TimeoutError as PlaywrightTimeoutError
@@ -102,9 +112,28 @@ class IbizaSpotlightUnifiedScraper:
         self.headless = headless
         self.min_delay = min_delay
         self.max_delay = max_delay
-        self.browser: Any = None  # Changed type to `Any` to avoid type expression error
-        self.playwright_context: Any = None  # Changed type to `Any` to avoid type expression error
+        self.browser: Any = None
+        self.playwright_context: Any = None
         self._ensure_browser()
+
+        # Initialize MongoDB client
+        try:
+            # Use settings for MONGODB_URI and DB_NAME
+            self.mongo_client = MongoClient(settings.MONGODB_URI)
+            self.db = self.mongo_client[settings.DB_NAME]
+            self.events_collection = self.db.events # Assuming collection name is 'events'
+            logger.info(f"Successfully connected to MongoDB: {settings.DB_NAME} on {settings.MONGODB_URI}")
+        except ConnectionFailure as e:
+            logger.error(f"Could not connect to MongoDB: {e}")
+            self.mongo_client = None
+            self.db = None
+            self.events_collection = None
+        except AttributeError as e:
+            logger.error(f"MongoDB settings (MONGODB_URI or DB_NAME) not found in config: {e}")
+            self.mongo_client = None
+            self.db = None
+            self.events_collection = None
+
 
     def _get_random_delay(self, multiplier: float = 1.0) -> None:
         time.sleep(random.uniform(self.min_delay * multiplier, self.max_delay * multiplier))
@@ -222,114 +251,124 @@ class IbizaSpotlightUnifiedScraper:
             if page:
                 page.close()
 
-    def _parse_event_detail_page_content(self, html_content: str, url: str) -> Optional[Event]:
-        print(f"[INFO] Parsing event detail page: {url}")
+    def _get_raw_details_from_html(self, html_content: str, url: str) -> Dict[str, Any]:
+        """
+        Parses the HTML content of an event detail page and extracts raw information
+        into a dictionary. This dictionary will serve as raw_data for map_to_unified_schema.
+        """
+        logger.info(f"Parsing event detail page for raw data: {url}") # Use logger
         soup = BeautifulSoup(html_content, "lxml")
-        event_data = Event(url=url)
+        raw_details: Dict[str, Any] = {"url": url} # Start with the URL
 
-        # --- SELECTORS FOR IBIZA SPOTLIGHT EVENT DETAIL PAGE ---
-        # !!! IMPORTANT: YOU MUST INSPECT LIVE IBIZA SPOTLIGHT EVENT DETAIL PAGES !!!
-        # !!! AND REFINE THESE SELECTORS FOR ACCURATE DATA EXTRACTION.       !!!
-        # The selectors below are EDUCATED GUESSES based on common patterns.
+        # --- SELECTORS (same as before, but will populate a dict) ---
         selectors = {
-            "title": "h1.eventTitle, h1.article-title, main h1, article header h1", 
-            "venue": "a[href*='/club/'], .promoter-info a[href*='/night/clubs/'], .venue-name-class", # Look for links to club pages
-            "date_text": ".event-date-time-class, .event-info .date, time[datetime]", 
-            "time_text": ".event-date-time-class, .event-info .time", # Often date and time are together
-            "price_text": ".price-info-class, .ticket-price-class, .buy-tickets .price",
-            "lineup_container": ".lineup-section, .dj-list-container, #lineup", 
-            "dj_item": "li, .artist-name, .dj-name", 
-            "description": "div.event-description-text, article div.article-content, section#description",
-            "promoter": ".promoter-link a, .event-by-promoter",
+            "title": "h1.eventTitle, h1.article-title, main h1, article header h1",
+            "venue_name": "a[href*='/club/'], .promoter-info a[href*='/night/clubs/'], .venue-name-class", # Key changed
+            "raw_date_string": ".event-date-time-class, .event-info .date, time[datetime]", # Key changed
+            "raw_time_string": ".event-date-time-class, .event-info .time", # Key changed
+            "raw_price_string": ".price-info-class, .ticket-price-class, .buy-tickets .price", # Key changed
+            "lineup_container": ".lineup-section, .dj-list-container, #lineup",
+            "dj_item_selector": "li, .artist-name, .dj-name",
+            "full_description_html": "div.event-description-text, article div.article-content, section#description", # Key changed for clarity
+            "promoter_name": ".promoter-link a, .event-by-promoter", # Key changed
             "categories_container": ".event-tags, .category-list",
-            "category_item": "a, .tag-item"
+            "category_item_selector": "a, .tag-item"
         }
-        # --- END OF SELECTOR REFINEMENT NOTE ---
+        # --- END OF SELECTORS ---
 
         title_elem = soup.select_one(selectors["title"])
-        if title_elem: event_data.title = title_elem.get_text(strip=True)
-        else: print(f"[WARNING] No title found on detail page: {url}. This event might be skipped if title is critical."); # Not returning None yet, other fields might exist
+        if title_elem: raw_details["title"] = title_elem.get_text(strip=True)
+        else: logger.warning(f"No title found on detail page: {url}")
 
-        venue_elem = soup.select_one(selectors["venue"])
-        if venue_elem: event_data.venue = venue_elem.get_text(strip=True)
+        venue_elem = soup.select_one(selectors["venue_name"])
+        if venue_elem: raw_details["venue"] = venue_elem.get_text(strip=True) # Changed key to 'venue' for adapter
         
-        date_text_elem = soup.select_one(selectors["date_text"])
+        date_text_elem = soup.select_one(selectors["raw_date_string"])
         if date_text_elem:
-            event_data.date_text = date_text_elem.get('datetime') or date_text_elem.get_text(strip=True)
-            # Attempt to parse start_date and start_time (basic example)
+            raw_details["raw_date_string"] = date_text_elem.get('datetime') or date_text_elem.get_text(strip=True)
             try:
-                if event_data.date_text:
-                    # More robust parsing needed here for various date formats
-                    # Example: "Thursday 01 May 2025" or "01/05/2025"
-                    # This is a placeholder - real parsing needs to handle Ibiza Spotlight's specific format
+                if raw_details["raw_date_string"]:
                     parsed_dt = None
-                    # Try ISO format first
-                    try: parsed_dt = datetime.fromisoformat(event_data.date_text.replace('Z', '+00:00'))
+                    try: parsed_dt = datetime.fromisoformat(raw_details["raw_date_string"].replace('Z', '+00:00'))
                     except ValueError:
-                        # Try common European format "DD MMM YYYY" or "DD Month YYYY"
-                        for fmt in ("%d %b %Y", "%d %B %Y", "%A %d %B %Y"):
+                        for fmt in ("%d %b %Y", "%d %B %Y", "%A %d %B %Y", "%a %d %b %Y"): # Added short day format
                             try:
-                                # Extract year from URL if not in text
                                 year_in_url_match = re.search(r'/(\d{4})/', url)
-                                year_context = year_in_url_match.group(1) if year_in_url_match else str(datetime.now().year)
-                                # Append year if not present
-                                date_to_parse = event_data.date_text
-                                if not re.search(r'\d{4}', date_to_parse): # If year is not in text
-                                    date_to_parse += f" {year_context}"
+                                year_context = str(datetime.now().year) # Default to current year
+                                if year_in_url_match : year_context = year_in_url_match.group(1)
+
+                                date_to_parse = raw_details["raw_date_string"]
+                                if not re.search(r'\d{4}', date_to_parse): date_to_parse += f" {year_context}"
                                 parsed_dt = datetime.strptime(date_to_parse, fmt)
                                 break
-                            except ValueError:
-                                continue
+                            except ValueError: continue
                     if parsed_dt:
-                        event_data.start_date = parsed_dt.date()
-                        # Time might be separate or part of a longer string
+                        raw_details["datetime_obj"] = parsed_dt
             except Exception as e_date:
-                print(f"[DEBUG] Could not parse date from text '{event_data.date_text}': {e_date}")
+                logger.debug(f"Could not parse date from raw_date_string '{raw_details.get('raw_date_string')}': {e_date}")
 
-        time_text_elem = soup.select_one(selectors["time_text"])
+        time_text_elem = soup.select_one(selectors["raw_time_string"])
         if time_text_elem:
-            time_full_text = time_text_elem.get_text(strip=True)
-            time_matches = re.findall(r'(\d{1,2}:\d{2})', time_full_text) # Finds HH:MM
-            if time_matches:
-                try:
-                    event_data.start_time = dt_time.fromisoformat(time_matches[0])
-                    if len(time_matches) > 1:
-                        event_data.end_time = dt_time.fromisoformat(time_matches[1])
-                except ValueError: print(f"[WARNING] Could not parse time(s) from: {time_full_text}")
+             raw_details["raw_time_string"] = time_text_elem.get_text(strip=True)
 
-        price_elem = soup.select_one(selectors["price_text"])
+        price_elem = soup.select_one(selectors["raw_price_string"])
         if price_elem: 
-            event_data.price_text = price_elem.get_text(strip=True)
-            price_match = re.search(r'(\d[\d,.]*\d)', event_data.price_text.replace(',', '.')) # Normalize comma to dot for float
-            if price_match:
-                try: event_data.price_value = float(price_match.group(1))
-                except ValueError: print(f"[WARNING] Could not parse price from: {event_data.price_text}")
-            if "€" in event_data.price_text or "eur" in event_data.price_text.lower(): event_data.currency = "EUR"
-            elif "$" in event_data.price_text or "usd" in event_data.price_text.lower(): event_data.currency = "USD"
-            elif "£" in event_data.price_text or "gbp" in event_data.price_text.lower(): event_data.currency = "GBP"
+            raw_details["price_text"] = price_elem.get_text(strip=True) # Changed key to 'price_text'
             
         lineup_container = soup.select_one(selectors["lineup_container"])
         if lineup_container:
-            dj_elements = lineup_container.select(selectors["dj_item"])
-            event_data.lineup = [dj.get_text(strip=True) for dj in dj_elements if dj.get_text(strip=True)]
+            dj_elements = lineup_container.select(selectors["dj_item_selector"])
+            # The adapter expects a list of dicts for artists if possible.
+            # Creating basic artist dicts here.
+            artists_list = []
+            for dj_elem in dj_elements:
+                dj_name = dj_elem.get_text(strip=True)
+                if dj_name:
+                    artists_list.append({"name": dj_name, "role": "dj"}) # Basic structure
+            if artists_list: raw_details["artists"] = artists_list # Changed key to 'artists'
         
-        desc_elem = soup.select_one(selectors["description"])
-        if desc_elem: event_data.description = desc_elem.get_text(strip=True, separator="\n")
+        desc_elem = soup.select_one(selectors["full_description_html"])
+        # Pass HTML string for description; adapter can handle cleaning or full text.
+        if desc_elem: raw_details["full_description"] = str(desc_elem)
 
-        promoter_elem = soup.select_one(selectors["promoter"])
-        if promoter_elem: event_data.promoter = promoter_elem.get_text(strip=True)
+        promoter_elem = soup.select_one(selectors["promoter_name"])
+        if promoter_elem: raw_details["promoter"] = promoter_elem.get_text(strip=True) # Changed key to 'promoter'
 
         categories_container = soup.select_one(selectors["categories_container"])
         if categories_container:
-            cat_elements = categories_container.select(selectors["category_item"])
-            event_data.categories = [cat.get_text(strip=True) for cat in cat_elements if cat.get_text(strip=True)]
+            cat_elements = categories_container.select(selectors["category_item_selector"])
+            raw_details["genres"] = [cat.get_text(strip=True) for cat in cat_elements if cat.get_text(strip=True)] # Changed key to 'genres'
             
-        if not event_data.title and not event_data.venue and not event_data.date_text:
-             print(f"[WARNING] Very little data found for {url}, likely not a valid event detail page or selectors need major update.")
-             return None
-        return event_data
+        # Attempt to extract JSON-LD data
+        json_ld_script = soup.find("script", type="application/ld+json")
+        if json_ld_script and json_ld_script.string:
+            try:
+                json_ld_content = json.loads(json_ld_script.string)
+                # The adapter might expect the full JSON-LD or specific parts.
+                # For now, let's pass the description if available.
+                current_event_ld = None
+                if isinstance(json_ld_content, list):
+                    for item in json_ld_content:
+                        if isinstance(item, dict) and item.get("@type") in ["Event", "MusicEvent"]:
+                            current_event_ld = item
+                            break
+                elif isinstance(json_ld_content, dict) and json_ld_content.get("@type") in ["Event", "MusicEvent"]:
+                     current_event_ld = json_ld_content
 
-    def _parse_html_to_markdown_fallback(self, html_content: str, url: str) -> Optional[Event]:
+                if current_event_ld and current_event_ld.get("description"):
+                    raw_details["json_ld_description"] = current_event_ld["description"]
+                if current_event_ld : # Pass the whole JSON LD for the event if found
+                    raw_details["json_ld_data"] = current_event_ld
+
+            except json.JSONDecodeError:
+                logger.warning(f"Could not parse JSON-LD from {url}")
+
+        if not raw_details.get("title") and not raw_details.get("venue") and not raw_details.get("raw_date_string"):
+             logger.warning(f"Very little raw data found for {url}. Adapter might struggle.")
+
+        return raw_details
+
+    def _parse_html_to_markdown_fallback(self, html_content: str, url: str) -> Optional[Dict[str, Any]]:
         """
         Fallback method to extract all text from HTML and convert it to Markdown.
         Used when structured parsing fails to yield high-quality data.
@@ -461,44 +500,108 @@ class IbizaSpotlightUnifiedScraper:
             traceback.print_exc()
             return False
 
-    def scrape_single_event(self, event_url: str) -> Optional[Event]:
-        print(f"[MODE: SCRAPE] Scraping single event: {event_url}")
+    def scrape_single_event(self, event_url: str) -> Optional[str]: # Returns event_id or None
+        logger.info(f"[MODE: SCRAPE] Scraping single event: {event_url}")
         try:
-            # Wait for a general content area of an event detail page.
-            # Common patterns: <main>, <article>, <div id="content-column">, <div class="event-detail-wrapper">
-            # This needs to be specific enough for Ibiza Spotlight detail pages.
             html_content = self.fetch_page_html(event_url, wait_for_content_selector="main article, main div.content-article, #main-content article")
             
-            # Attempt rigid JSON schema parsing first
-            event = self._parse_event_detail_page_content(html_content, event_url)
+            raw_event_details_dict = self._get_raw_details_from_html(html_content, event_url)
 
-            # Check if the event data is of high quality or sufficient
-            # Define "high quality" as having at least a title, venue, and date_text
-            if event and (event.title or event.venue or event.date_text):
-                print(f"[INFO] Successfully scraped event {event_url} with structured data.")
-                return event
+            if raw_event_details_dict:
+                # Ensure 'url' is in raw_event_details_dict if not already added by _get_raw_details_from_html
+                if 'url' not in raw_event_details_dict:
+                    raw_event_details_dict['url'] = event_url
+
+                unified_event_doc = map_to_unified_schema(
+                    raw_data=raw_event_details_dict,
+                    source_platform="ibiza-spotlight-unified", # Or derive dynamically if needed
+                    source_url=event_url
+                )
+
+                if unified_event_doc and unified_event_doc.get("event_id"):
+                    self.save_event_to_db(unified_event_doc)
+                    logger.info(f"Successfully processed and initiated save for event: {event_url}")
+                    return unified_event_doc.get("event_id")
+                else:
+                    logger.error(f"Schema mapping failed for {event_url}. No event_id generated.")
+                    # Optionally, attempt markdown fallback here if unified_event_doc is None or lacks critical info
+                    # For now, just logging error.
+                    return None
             else:
-                print(f"[INFO] Structured parsing failed or yielded low-quality data for {event_url}. Attempting markdown fallback.")
-                # If structured parsing fails or yields low quality data, try markdown fallback
-                return self._parse_html_to_markdown_fallback(html_content, event_url)
+                logger.warning(f"Could not extract sufficient raw details from {event_url} to process with schema adapter.")
+                # Consider a more robust fallback here, e.g., saving raw HTML or a screenshot
+                # For example, try the markdown fallback if that's still desired for some cases:
+                # markdown_data = self._parse_html_to_markdown_fallback(html_content, event_url)
+                # if markdown_data:
+                #     # This markdown_data is a dict, not an Event object.
+                #     # Need to decide how to save this. For now, we're not saving it directly to DB via adapter.
+                #     logger.info(f"Generated markdown fallback for {event_url}, but not saving to DB via this path.")
+                return None
 
         except Exception as e:
-            print(f"[ERROR] Failed to scrape event {event_url}: {e}")
+            logger.error(f"Failed to scrape event {event_url}: {e}", exc_info=True)
             traceback.print_exc()
             return None
 
-    def crawl_calendar(self, year: int, month: int) -> List[Event]:
+    def crawl_calendar(self, year: int, month: int) -> List[Optional[str]]: # Returns list of event_ids or Nones
         self._ensure_browser()
-        page: Any = None  # Changed type to `Any` to avoid type expression error
+        page: Any = None
+        processed_event_ids: List[Optional[str]] = []
+        scraped_event_urls_this_session = set()
+
         try:
             page = self.browser.new_page(user_agent=random.choice(MODERN_USER_AGENTS))
-            print("[INFO] Starting crawl session...")
-            page.goto(f"{BASE_URL}/night/events/{year}/{month:02d}", wait_until="domcontentloaded", timeout=75000)
-            # ...existing code...
+            logger.info(f"Starting calendar crawl for {year}-{month:02d}")
+
+            current_calendar_url = f"{BASE_URL}/night/events/{year}/{month:02d}"
+            page.goto(current_calendar_url, wait_until="domcontentloaded", timeout=75000)
+            self._get_random_delay()
+            self._handle_overlays(page)
+
+            page_count = 0
+            max_pages_to_crawl = 30 # Safety break for pagination
+
+            while page_count < max_pages_to_crawl:
+                page_count += 1
+                logger.info(f"Processing calendar page {page_count}: {page.url}")
+                html_content = page.content()
+
+                # Save snapshot of the calendar page for debugging link extraction
+                # snap_path = SNAPSHOT_DIR / f"calendar_page_{year}_{month:02d}_week_{page_count}_{int(time.time())}.html"
+                # try:
+                #     Path(snap_path).write_text(html_content, encoding="utf-8", errors="replace")
+                #     logger.debug(f"Saved calendar snapshot to: {snap_path}")
+                # except Exception as e: logger.error(f"Could not save calendar snapshot: {e}")
+
+                event_urls_on_page = self._extract_event_links_from_calendar(html_content, BASE_URL, page.url)
+
+                if not event_urls_on_page:
+                    logger.info(f"No event links found on calendar page: {page.url}. This might be the end of the calendar or an issue.")
+
+                for event_url in event_urls_on_page:
+                    if event_url not in scraped_event_urls_this_session:
+                        self._get_random_delay() # Delay before scraping each detail page
+                        event_id = self.scrape_single_event(event_url) # This now saves to DB
+                        processed_event_ids.append(event_id)
+                        scraped_event_urls_this_session.add(event_url)
+                    else:
+                        logger.info(f"Already scraped {event_url} in this session, skipping.")
+
+                self._get_random_delay() # Delay after processing a calendar page's events
+                if not self._handle_calendar_pagination(page):
+                    logger.info("No further pagination found or pagination limit reached.")
+                    break
+                self._get_random_delay() # Delay after pagination
+
+            logger.info(f"Finished crawling calendar for {year}-{month:02d}. Processed {len(processed_event_ids)} events.")
+            return processed_event_ids
+
+        except Exception as e:
+            logger.error(f"Error during calendar crawl for {year}-{month:02d}: {e}", exc_info=True)
+            return processed_event_ids # Return what was processed so far
         finally:
             if page:
                 page.close()
-    # ...existing code...
     
     def close(self):
         if self.browser:
@@ -507,51 +610,81 @@ class IbizaSpotlightUnifiedScraper:
         if self.playwright_context:
             try: self.playwright_context.stop()
             except Exception as e: print(f"[DEBUG] Error stopping Playwright context: {e}")
+        # Close MongoDB client
+        if self.mongo_client:
+            try:
+                self.mongo_client.close()
+                logger.info("MongoDB connection closed.")
+            except Exception as e:
+                logger.error(f"Error closing MongoDB connection: {e}")
         print("[INFO] Scraper resources closed.")
 
-def save_events_to_file(events: List[Event], filepath_base: Path, formats: List[str]):
-    if not events: print("[INFO] No events to save."); return
+    def save_event_to_db(self, unified_event_doc: Dict[str, Any]):
+        if not self.events_collection:
+            logger.error("MongoDB not connected. Cannot save event.")
+            # Optionally, print to console as a fallback
+            # print(json.dumps(unified_event_doc, indent=2, default=str))
+            return
+
+        if not unified_event_doc or not unified_event_doc.get("event_id"):
+            logger.error("Attempted to save an event with missing data or event_id.")
+            return
+
+        try:
+            update_key = {"event_id": unified_event_doc["event_id"]}
+            self.events_collection.update_one(
+                update_key,
+                {"$set": unified_event_doc},
+                upsert=True
+            )
+            logger.info(f"Successfully saved/updated event to DB: {unified_event_doc.get('title', unified_event_doc['event_id'])}")
+        except Exception as e:
+            logger.error(f"Error saving event {unified_event_doc.get('event_id')} to MongoDB: {e}", exc_info=True)
+
+# Commenting out for now, primary save path is DB
+# def save_events_to_file(events: List[Event], filepath_base: Path, formats: List[str]):
+#     if not events: print("[INFO] No events to save."); return
     
-    for event in events:
-        if event.extraction_method == "markdown_fallback" and "md" in formats:
-            # Use the specific path provided by the user for markdown fallback output
-            md_path = Path("/home/creekz/Projects/skrrraped_graph/single_event_test_output/scraped_event_www_ibizaspotlight_com_001.md")
-            md_path.parent.mkdir(parents=True, exist_ok=True) # Ensure directory exists
-            with md_path.open("w", encoding="utf-8") as f:
-                f.write(event.description if event.description else "")
-            print(f"[INFO] Saved markdown fallback content to {md_path}")
-            # Do not save this event as JSON/CSV if it's a markdown fallback, as it's not structured data
-            continue 
+#     for event in events:
+#         if event.extraction_method == "markdown_fallback" and "md" in formats:
+#             # Use the specific path provided by the user for markdown fallback output
+#             md_path = Path("/home/creekz/Projects/skrrraped_graph/single_event_test_output/scraped_event_www_ibizaspotlight_com_001.md")
+#             md_path.parent.mkdir(parents=True, exist_ok=True) # Ensure directory exists
+#             with md_path.open("w", encoding="utf-8") as f:
+#                 f.write(event.description if event.description else "")
+#             print(f"[INFO] Saved markdown fallback content to {md_path}")
+#             # Do not save this event as JSON/CSV if it's a markdown fallback, as it's not structured data
+#             continue
 
-    if "json" in formats:
-        json_path = filepath_base.with_suffix(".json")
-        # Filter out markdown fallback events from JSON/CSV output
-        json_events = [e for e in events if e.extraction_method != "markdown_fallback"]
-        if json_events:
-            with json_path.open("w", encoding="utf-8") as f:
-                json.dump([e.to_dict() for e in json_events], f, indent=2, ensure_ascii=False)
-            print(f"[INFO] Saved {len(json_events)} structured events to {json_path}")
-        else:
-            print("[INFO] No structured events to save to JSON.")
+#     if "json" in formats:
+#         json_path = filepath_base.with_suffix(".json")
+#         # Filter out markdown fallback events from JSON/CSV output
+#         json_events = [e for e in events if e.extraction_method != "markdown_fallback"]
+#         if json_events:
+#             with json_path.open("w", encoding="utf-8") as f:
+#                 json.dump([e.to_dict() for e in json_events], f, indent=2, ensure_ascii=False)
+#             print(f"[INFO] Saved {len(json_events)} structured events to {json_path}")
+#         else:
+#             print("[INFO] No structured events to save to JSON.")
 
-    if "csv" in formats and events:
-        csv_path = filepath_base.with_suffix(".csv")
-        # Filter out markdown fallback events from JSON/CSV output
-        csv_events = [e for e in events if e.extraction_method != "markdown_fallback"]
-        if csv_events:
-            # Ensure all possible keys are included in header, even if some events don't have them
-            all_keys = set()
-            for event in csv_events:
-                all_keys.update(event.to_dict().keys())
-            fieldnames = sorted(list(all_keys))
+#     if "csv" in formats and events:
+#         csv_path = filepath_base.with_suffix(".csv")
+#         # Filter out markdown fallback events from JSON/CSV output
+#         csv_events = [e for e in events if e.extraction_method != "markdown_fallback"]
+#         if csv_events:
+#             # Ensure all possible keys are included in header, even if some events don't have them
+#             all_keys = set()
+#             for event in csv_events:
+#                 all_keys.update(event.to_dict().keys())
+#             fieldnames = sorted(list(all_keys))
 
-            with csv_path.open("w", newline="", encoding="utf-8") as f:
-                writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
-                writer.writeheader()
-                for event in csv_events: writer.writerow(event.to_dict())
-            print(f"[INFO] Saved {len(csv_events)} structured events to {csv_path}")
-        else:
-            print("[INFO] No structured events to save to CSV.")
+#             with csv_path.open("w", newline="", encoding="utf-8") as f:
+#                 writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+#                 writer.writeheader()
+#                 for event in csv_events: writer.writerow(event.to_dict())
+#             print(f"[INFO] Saved {len(csv_events)} structured events to {csv_path}")
+#         else:
+#             print("[INFO] No structured events to save to CSV.")
 
 def main():
     parser = argparse.ArgumentParser(description="Unified Ibiza Spotlight Scraper v1.2 - Refined")
@@ -560,7 +693,7 @@ def main():
     parser.add_argument("--month", type=int, help="Month (1-12) (for 'crawl' mode, e.g., 5 for May).")
     parser.add_argument("--year", type=int, help="Year (e.g., 2025) (for 'crawl' mode).")
     # Headless, output-dir, min-delay, max-delay are now handled by settings
-    parser.add_argument("--format", nargs='+', choices=["json", "csv", "md"], default=["json", "csv"], help="Output format(s).")
+    parser.add_argument("--format", nargs='+', choices=["json", "csv", "md"], default=[], help="Output format(s) (Primarily for non-DB saving, less relevant now).")
     args = parser.parse_args()
 
     if args.action == "scrape":
@@ -571,41 +704,37 @@ def main():
         if not (1 <= args.month <= 12): parser.error("Month must be 1-12.")
         if args.year < 2000 or args.year > datetime.now().year + 5: parser.error(f"Year seems invalid ({args.year}). Please provide a realistic year.")
 
+    # Output directory from settings is used for snapshots, not primary data now
     Path(settings.SCRAPER_DEFAULT_OUTPUT_DIR).mkdir(exist_ok=True, parents=True)
+
     scraper = None
-    all_events_data: List[Event] = []
     try:
         scraper = IbizaSpotlightUnifiedScraper(
             headless=settings.SCRAPER_DEFAULT_HEADLESS,
             min_delay=settings.SCRAPER_DEFAULT_MIN_DELAY,
             max_delay=settings.SCRAPER_DEFAULT_MAX_DELAY
         )
-        if args.action == "scrape":
-            event = scraper.scrape_single_event(args.url)
-            if event: all_events_data.append(event)
-        elif args.action == "crawl":
-            all_events_data = scraper.crawl_calendar(args.year, args.month)
-            
-        if not all_events_data: print("[INFO] No events were successfully scraped.")
-        else:
-            print(f"[SUCCESS] Completed. Total events processed/scraped: {len(all_events_data)}")
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            action_part = args.action
-            name_part = ""
-            if args.action == "scrape" and args.url:
-                 url_path = urlparse(args.url).path
-                 name_part = url_path.replace('/','_').strip('_')[:50] if url_path else "single_event"
-            elif args.action == "crawl" and args.year and args.month:
-                 name_part = f"ibiza_spotlight_{args.year}_{args.month:02d}"
-            else:
-                name_part = "unknown_operation"
 
-            base_name = f"{action_part}_{name_part}_{timestamp}"
-            filepath_base = Path(settings.SCRAPER_DEFAULT_OUTPUT_DIR) / base_name
-            save_events_to_file(all_events_data, filepath_base, args.format)
-    except KeyboardInterrupt: print("\n[INFO] Scraping interrupted by user.")
+        if not scraper.events_collection:
+            logger.critical("MongoDB connection failed. Aborting script.")
+            return
+
+        if args.action == "scrape":
+            event_id = scraper.scrape_single_event(args.url)
+            if event_id:
+                logger.info(f"Scrape successful for event URL {args.url}. Event ID: {event_id}")
+            else:
+                logger.warning(f"Scrape failed or no data processed for event URL {args.url}.")
+        elif args.action == "crawl":
+            processed_event_ids = scraper.crawl_calendar(args.year, args.month)
+            successful_saves = sum(1 for _id in processed_event_ids if _id is not None)
+            logger.info(f"Crawl completed for {args.year}-{args.month:02d}. Successfully processed and saved {successful_saves} events to DB.")
+            if not processed_event_ids:
+                logger.info("No events were processed during the crawl.")
+            
+    except KeyboardInterrupt: logger.info("\n[INFO] Scraping interrupted by user.")
     except ImportError as e:
-        print(f"[FATAL ERROR] A required library is missing: {e}. Please install dependencies.")
+        logger.critical(f"[FATAL ERROR] A required library is missing: {e}. Please install dependencies.")
         print("Try: pip install playwright beautifulsoup4 requests")
         print("And then: playwright install") # Remind user to install browser drivers
     except Exception as e:
