@@ -1,0 +1,330 @@
+{
+  "events": [
+    {
+      "title": "Ibiza Spotlight Party Calendar 27 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/27",
+      "scrapedAt": "2025-06-01T22:51:25.714681Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 29 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/29",
+      "scrapedAt": "2025-06-01T22:51:41.449257Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 30 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/30",
+      "scrapedAt": "2025-06-01T22:51:57.111024Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 26 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/26",
+      "scrapedAt": "2025-06-01T22:52:12.234033Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 1 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/01",
+      "scrapedAt": "2025-06-01T22:52:27.332592Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/02",
+      "scrapedAt": "2025-06-01T22:52:42.934634Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 28 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/28",
+      "scrapedAt": "2025-06-01T22:52:58.360311Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 31 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/31",
+      "scrapedAt": "2025-06-01T22:53:13.637229Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 3 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/03",
+      "scrapedAt": "2025-06-01T22:53:28.926252Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 6 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/06",
+      "scrapedAt": "2025-06-01T22:54:29.926037Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 1 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/01",
+      "scrapedAt": "2025-06-01T22:54:44.997780Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 30 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/30",
+      "scrapedAt": "2025-06-01T22:55:00.377505Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 3 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/03",
+      "scrapedAt": "2025-06-01T22:55:15.418305Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/02",
+      "scrapedAt": "2025-06-01T22:55:30.542542Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 4 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/04",
+      "scrapedAt": "2025-06-01T22:55:45.736568Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/02",
+      "scrapedAt": "2025-06-01T22:56:01.421362Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 3 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/03",
+      "scrapedAt": "2025-06-01T22:56:16.461962Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 5 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/05",
+      "scrapedAt": "2025-06-01T22:56:32.002018Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 August 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/08/02",
+      "scrapedAt": "2025-06-01T22:57:32.705486Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 1 August 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/08/01",
+      "scrapedAt": "2025-06-01T22:57:48.534581Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/02",
+      "scrapedAt": "2025-06-01T22:58:03.461617Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 31 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/31",
+      "scrapedAt": "2025-06-01T22:58:19.012973Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 29 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/29",
+      "scrapedAt": "2025-06-01T22:58:34.106590Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 30 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/30",
+      "scrapedAt": "2025-06-01T22:58:49.914130Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 28 July 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/07/28",
+      "scrapedAt": "2025-06-01T22:59:05.175182Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 3 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/03",
+      "scrapedAt": "2025-06-01T22:59:20.894225Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 3 August 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/08/03",
+      "scrapedAt": "2025-06-01T22:59:37.072097Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 7 September 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/09/07",
+      "scrapedAt": "2025-06-01T23:00:39.762031Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 September 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/09/02",
+      "scrapedAt": "2025-06-01T23:00:54.951345Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 5 September 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/09/05",
+      "scrapedAt": "2025-06-01T23:01:09.961427Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 6 September 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/09/06",
+      "scrapedAt": "2025-06-01T23:01:25.850778Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 4 September 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/09/04",
+      "scrapedAt": "2025-06-01T23:01:41.029289Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/02",
+      "scrapedAt": "2025-06-01T23:01:56.445091Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 3 September 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/09/03",
+      "scrapedAt": "2025-06-01T23:02:11.986152Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 1 September 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/09/01",
+      "scrapedAt": "2025-06-01T23:02:27.665386Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 3 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/03",
+      "scrapedAt": "2025-06-01T23:02:42.989552Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 29 September 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/09/29",
+      "scrapedAt": "2025-06-01T23:03:43.780754Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/02",
+      "scrapedAt": "2025-06-01T23:03:59.077152Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 1 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/01",
+      "scrapedAt": "2025-06-01T23:04:14.385714Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/02",
+      "scrapedAt": "2025-06-01T23:04:29.206856Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 30 September 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/09/30",
+      "scrapedAt": "2025-06-01T23:04:44.395177Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 5 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/05",
+      "scrapedAt": "2025-06-01T23:05:00.214252Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 1 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/01",
+      "scrapedAt": "2025-06-01T23:05:14.987693Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 4 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/04",
+      "scrapedAt": "2025-06-01T23:05:29.869288Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 3 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/03",
+      "scrapedAt": "2025-06-01T23:05:44.868385Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 27 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/27",
+      "scrapedAt": "2025-06-01T23:06:46.531535Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 1 November 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/11/01",
+      "scrapedAt": "2025-06-01T23:07:02.021602Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 1 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/01",
+      "scrapedAt": "2025-06-01T23:07:17.269417Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 31 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/31",
+      "scrapedAt": "2025-06-01T23:07:32.445963Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/02",
+      "scrapedAt": "2025-06-01T23:07:47.978362Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 29 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/29",
+      "scrapedAt": "2025-06-01T23:08:01.968168Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 November 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/11/02",
+      "scrapedAt": "2025-06-01T23:08:15.856812Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 28 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/28",
+      "scrapedAt": "2025-06-01T23:08:29.677685Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 30 October 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/10/30",
+      "scrapedAt": "2025-06-01T23:08:43.306171Z",
+      "extractionMethod": "html-dynamic"
+    }
+  ],
+  "source": "2025-06 to 2025-11",
+  "action": "multi_crawl"
+}

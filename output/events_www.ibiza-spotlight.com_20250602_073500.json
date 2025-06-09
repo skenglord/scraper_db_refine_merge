@@ -1,0 +1,15 @@
+{
+  "events": [
+    {
+      "title": "[UNVRS], Ibiza",
+      "url": "https://www.ibiza-spotlight.com/night/venue/unvrs",
+      "scrap\u6781At": "2025-06-02T00:35:00.657858Z",
+      "extractionMethod": "html-dynamic",
+      "location": {
+        "venue": "unvrs"
+      }
+    }
+  ],
+  "source": "https://www.ibiza-spotlight.com/night/venue/unvrs",
+  "action": "scrape"
+}

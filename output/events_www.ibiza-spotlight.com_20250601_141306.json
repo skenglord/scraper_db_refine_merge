@@ -1,0 +1,54 @@
+{
+  "events": [
+    {
+      "title": "Ibiza Spotlight Party Calendar 29 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/29",
+      "scrapedAt": "2025-06-01T07:12:50.941460Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 27 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/27",
+      "scrapedAt": "2025-06-01T07:12:52.760541Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 31 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/31",
+      "scrapedAt": "2025-06-01T07:12:54.993917Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 2 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/02",
+      "scrapedAt": "2025-06-01T07:12:56.886054Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 1 June 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/06/01",
+      "scrapedAt": "2025-06-01T07:12:59.258040Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 26 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/26",
+      "scrapedAt": "2025-06-01T07:13:01.036958Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 28 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/28",
+      "scrapedAt": "2025-06-01T07:13:03.144072Z",
+      "extractionMethod": "html-dynamic"
+    },
+    {
+      "title": "Ibiza Spotlight Party Calendar 30 May 2025",
+      "url": "https://www.ibiza-spotlight.com/night/events/2025/05/30",
+      "scrapedAt": "2025-06-01T07:13:04.973314Z",
+      "extractionMethod": "html-dynamic"
+    }
+  ],
+  "source_url": "https://www.ibiza-spotlight.com/night/events/2025/06",
+  "action": "crawl"
+}
