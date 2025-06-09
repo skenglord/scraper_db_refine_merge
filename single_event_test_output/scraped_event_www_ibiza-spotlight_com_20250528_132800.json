@@ -1,0 +1,21 @@
+[
+  {
+    "url": "https://www.ibiza-spotlight.com/night/promoters/float-your-boat-sunset-experience",
+    "title": "Float Your Boat",
+    "venue": null,
+    "date_text": "Sat03May",
+    "start_date": null,
+    "end_date": null,
+    "start_time": null,
+    "end_time": null,
+    "price_text": "4949€General Admission",
+    "price_value": 4949.0,
+    "currency": "EUR",
+    "lineup": [],
+    "description": null,
+    "promoter": "Float Your Boat | Ibiza Sunset Experience - Boat Parties - San Antonio - 2025",
+    "categories": [],
+    "scraped_at": "2025-05-28T06:28:00.450520+00:00",
+    "extraction_method": "detail_page_html"
+  }
+]

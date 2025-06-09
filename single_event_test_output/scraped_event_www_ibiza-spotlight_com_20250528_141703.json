@@ -1,0 +1,21 @@
+[
+  {
+    "url": "https://www.ibiza-spotlight.com/night/promoters/float-your-boat-sunset-experience",
+    "title": "Float Your Boat",
+    "venue": null,
+    "date_text": "Sat03May",
+    "start_date": "2025-05-03",
+    "end_date": null,
+    "start_time": null,
+    "end_time": null,
+    "price_text": "4949€General Admission",
+    "price_value": 4949.0,
+    "currency": "EUR",
+    "lineup": [],
+    "description": "Having hosted boat parties on Ibiza for many years,\nFloat Your Boat\n(FYB) is back with attitude for 2025. This year, FYB's adult-only boats start setting-off twice a week in peak summer.",
+    "promoter": "Float Your Boat | Ibiza Sunset Experience - Boat Parties - San Antonio - 2025",
+    "categories": [],
+    "scraped_at": "2025-05-28T07:17:03.424841+00:00",
+    "extraction_method": "detail_page_html"
+  }
+]

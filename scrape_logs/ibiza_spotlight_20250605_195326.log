@@ -1,0 +1,4 @@
+2025-06-05 19:53:26,981 - __main__ - INFO - MongoDB connected to classy_skkkrapey
+2025-06-05 19:53:26,981 - __main__ - INFO - Initialized IbizaSpotlightScraper with config: ibiza_spotlight
+2025-06-05 19:53:26,981 - __main__ - INFO - Starting enhanced scraper run_id: 20250605_195326. CSV: scraped_events_20250605_195326.csv
+2025-06-05 19:53:26,981 - __main__ - INFO - Starting with URL: https://www.ibiza-spotlight.com/night/events/2025/06

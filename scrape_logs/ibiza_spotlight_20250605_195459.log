@@ -1,0 +1,38 @@
+2025-06-05 19:54:59,128 - __main__ - INFO - MongoDB connected to classy_skkkrapey
+2025-06-05 19:54:59,128 - __main__ - INFO - Initialized IbizaSpotlightScraper with config: ibiza_spotlight
+2025-06-05 19:54:59,128 - __main__ - INFO - Starting enhanced scraper run_id: 20250605_195459. CSV: scraped_events_20250605_195459.csv
+2025-06-05 19:54:59,128 - __main__ - INFO - Starting with URL: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 19:54:59,135 - __main__ - INFO - Processing [0]: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 19:54:59,136 - __main__ - INFO - Main events page detected - extracting venue URLs only
+2025-06-05 19:54:59,168 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 19:55:02,206 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 19:55:07,217 - __main__ - INFO - Scroll attempt 1: height 9675
+2025-06-05 19:55:09,222 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 19:55:09,222 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 19:55:09,686 - __main__ - INFO - Found 6 sidebar/navigation containers
+2025-06-05 19:55:09,688 - __main__ - DEBUG - Found venue URL in sidebar: https://www.ibiza-spotlight.com/night/clubs/boat_party_i.htm
+2025-06-05 19:55:09,688 - __main__ - DEBUG - Found venue URL in sidebar: https://www.ibiza-spotlight.com/night/clubs/boat_party_i.htm
+2025-06-05 19:55:09,689 - __main__ - WARNING - Expected 26 venue URLs but found 1
+2025-06-05 19:55:09,689 - __main__ - INFO - Extracted 1 venue/club URLs from https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 19:55:09,689 - __main__ - INFO - DEBUG: Found 1 venue URLs from main events page
+2025-06-05 19:55:09,689 - __main__ - DEBUG - Added venue URL to queue: https://www.ibiza-spotlight.com/night/clubs/boat_party_i.htm
+2025-06-05 19:55:09,689 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/clubs/boat_party_i.htm
+2025-06-05 19:55:09,689 - __main__ - DEBUG - Updated venue context: boat_party_i.htm
+2025-06-05 19:55:09,689 - __main__ - INFO - Venue page detected - extracting promoter URLs from: https://www.ibiza-spotlight.com/night/clubs/boat_party_i.htm
+2025-06-05 19:55:09,689 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/clubs/boat_party_i.htm
+2025-06-05 19:55:12,257 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 19:55:17,268 - __main__ - INFO - Scroll attempt 1: height 3528
+2025-06-05 19:55:19,273 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 19:55:19,273 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 19:55:19,369 - __main__ - INFO - DEBUG: Found 0 promoter URLs from venue 'boat_party_i.htm'
+2025-06-05 19:55:19,369 - __main__ - WARNING - No promoter URLs found on venue page: https://www.ibiza-spotlight.com/night/clubs/boat_party_i.htm
+2025-06-05 19:55:19,370 - __main__ - INFO - ================================================================================
+2025-06-05 19:55:19,370 - __main__ - INFO - SCRAPING COMPLETE - SUMMARY STATISTICS
+2025-06-05 19:55:19,370 - __main__ - INFO - ================================================================================
+2025-06-05 19:55:19,370 - __main__ - INFO - Total venues found: 1
+2025-06-05 19:55:19,371 - __main__ - INFO - Total promoters found: 0
+2025-06-05 19:55:19,371 - __main__ - INFO - Total events scraped: 0
+2025-06-05 19:55:19,371 - __main__ - INFO - Total URLs visited: 2
+2025-06-05 19:55:19,371 - __main__ - INFO - CSV file: classy_skkkrapey/scrape_logs/scraped_events_20250605_195459.csv
+2025-06-05 19:55:19,371 - __main__ - INFO - ================================================================================
+2025-06-05 19:55:19,371 - __main__ - INFO - Scraping completed. Total events: 0

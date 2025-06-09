@@ -1,0 +1,89 @@
+{
+  "timestamp": "2025-06-08T09:15:17.027259",
+  "mongodb_test": {
+    "connection_status": true,
+    "database_info": {
+      "uri": "mongodb://localhost:27017/",
+      "database": "classy_skkkrapey",
+      "collections": [
+        "events"
+      ]
+    },
+    "sample_data": {
+      "total_documents": 2355,
+      "sample_fields": [
+        "_id",
+        "promoterUrl",
+        "date",
+        "title",
+        "_quality",
+        "description",
+        "extractionMethod",
+        "scrapedAt"
+      ],
+      "sample_values": {
+        "promoterUrl": "https://www.ibiza-spotlight.com/night/promoters/an",
+        "date": "",
+        "title": "Event at https://www.ibiza-spotlight.com/night/pro",
+        "_quality": "dict",
+        "description": "Riding the wave of his groundbreaking twelve show ",
+        "extractionMethod": "markdown-fallback",
+        "scrapedAt": "2025-06-04T17:22:56.838175Z"
+      }
+    },
+    "errors": []
+  },
+  "save_method_test": {
+    "save_method_test": true,
+    "schema_compliance": true,
+    "errors": []
+  },
+  "quality_scorer_test": {
+    "quality_scorer_available": false,
+    "scoring_test": false,
+    "errors": [
+      "Quality scorer test failed: unindent does not match any outer indentation level (scraper_ibizaspotlight_revised_0506.py, line 974)"
+    ]
+  },
+  "migration_readiness_test": {
+    "migration_ready": false,
+    "current_schema_analysis": {
+      "total_documents": 2355,
+      "sample_size": 10,
+      "unique_fields": [
+        "title",
+        "promoterUrl",
+        "_quality",
+        "description",
+        "extractionMethod",
+        "scrapedAt",
+        "_id",
+        "date"
+      ],
+      "common_fields": [
+        "title",
+        "promoterUrl",
+        "_quality",
+        "description",
+        "extractionMethod",
+        "scrapedAt",
+        "_id",
+        "date"
+      ]
+    },
+    "migration_requirements": {
+      "mappable_fields": {
+        "url": true,
+        "scrapedAt": true,
+        "extractionMethod": true,
+        "title": true,
+        "dateTime": true,
+        "artists_data": false
+      },
+      "migration_feasible": false,
+      "backup_recommended": true
+    },
+    "errors": []
+  },
+  "overall_status": "\u2705 GOOD - Core functionality working"
+}

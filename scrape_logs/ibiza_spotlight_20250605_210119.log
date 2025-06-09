@@ -1,0 +1,1177 @@
+2025-06-05 21:01:19,254 - __main__ - INFO - MongoDB connected to classy_skkkrapey
+2025-06-05 21:01:19,254 - __main__ - INFO - Initialized IbizaSpotlightScraper with URL: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 21:01:19,254 - __main__ - INFO - Starting enhanced scraper run_id: 20250605_210119. CSV: scraped_events_20250605_210119.csv
+2025-06-05 21:01:19,255 - __main__ - INFO - Starting with URL: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 21:01:19,258 - __main__ - INFO - Processing [0]: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 21:01:19,258 - __main__ - INFO - Main events page detected - extracting venue/club/promoter URLs only
+2025-06-05 21:01:19,285 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 21:01:23,453 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:01:28,465 - __main__ - INFO - Scroll attempt 1: height 9675
+2025-06-05 21:01:30,470 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:01:30,470 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:01:30,724 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/unvrs
+2025-06-05 21:01:30,724 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/hi-ibiza
+2025-06-05 21:01:30,724 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/akasha
+2025-06-05 21:01:30,724 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/chinois-ibiza
+2025-06-05 21:01:30,724 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/cova-santa
+2025-06-05 21:01:30,724 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/playa-soleil-tnl
+2025-06-05 21:01:30,724 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/tipic-formentera
+2025-06-05 21:01:30,725 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/hard-rock-hotel
+2025-06-05 21:01:30,725 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-playa-den-bossa
+2025-06-05 21:01:30,725 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-san-antonio
+2025-06-05 21:01:30,725 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-playa-den-bossa
+2025-06-05 21:01:30,725 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-playa-den-bossa
+2025-06-05 21:01:30,725 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-san-antonio
+2025-06-05 21:01:30,725 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-playa-den-bossa
+2025-06-05 21:01:30,725 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-san-antonio
+2025-06-05 21:01:30,725 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-san-antonio
+2025-06-05 21:01:30,737 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/unvrs
+2025-06-05 21:01:30,737 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/hi-ibiza
+2025-06-05 21:01:30,737 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/akasha
+2025-06-05 21:01:30,737 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/chinois-ibiza
+2025-06-05 21:01:30,737 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/cova-santa
+2025-06-05 21:01:30,737 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/playa-soleil-tnl
+2025-06-05 21:01:30,737 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/venue/bam-bu-ku-ibiza
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/tipic-formentera
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/hard-rock-hotel
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-playa-den-bossa
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-san-antonio
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-playa-den-bossa
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-playa-den-bossa
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-san-antonio
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-playa-den-bossa
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-san-antonio
+2025-06-05 21:01:30,738 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/venue/boat-parties-san-antonio
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/unvrs-opening-party
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/do-not-sleep-amnesia
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/pacha-pre-season-parties
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/camelphat-pacha
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/abracadabra-pacha
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/defected
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/music-on
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/pure-pacha
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/pacha-pre-season-parties
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/mestiza-hi
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/black-coffee
+2025-06-05 21:01:30,768 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/hi-glitterbox
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/tomorrowland-presents-dimitri-vegas-mike
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/calvin-harris-friday
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ants
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/namaste
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/sven-vath-akasha
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/seladoria
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/supernova-las-dalias
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/nido
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/nothing-trouble-eden
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/drama-club
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/deeperfect-eden
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/one-more-time-eden
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/reboot-presents-eden
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/bukkle-ibiza
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/abode-eden
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/daydreamers
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/reboot-rocks
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/craig-davids-ts5
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ibiza-anthems-ibiza-rocks
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ibiza-rocks-pool-days
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/lovejuice-ibiza-rocks
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/r-and-b-affair
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/d4-d4nce-o-beach
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/kisstory-o-beach
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/house-paradise
+2025-06-05 21:01:30,769 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/one
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/pool-party-o-beach
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/soul-heaven
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/sin-sundays
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/appetite-chinois
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/chinois-presents
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/chinois-presents
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/masquerade-chinois
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/chinois-presents
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/gala-cova-santa
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/summerians-cova-santa
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/woomoon
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/utopic
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/pantheon
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/kaluki-528
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/saturdays
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/heavy-house-society-528
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/you-know-vibes
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/tuesdays-es-paradis
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/bubbles-champagne
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/thursdays-es-paradis
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/puro-reggaeton
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/fiesta-del-agua
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/sundays-es-paradis
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/all-i-need-playa-soleil
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/blanche-london
+2025-06-05 21:01:30,770 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/playground-toy-room
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/tiempo-nomis
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/vintage-lio
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/pandora
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/travieso
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/el-kiddo-bam-bu-ku
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ibiza-brunch-club-classics
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/latin-pool-bbk
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/el-kiddo-bam-bu-ku
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/el-paripe
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/fridays-at-tipic
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/saturdays-tipic
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/el-paripe
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/children-80s
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/pukka-up-saturdays
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/five-star-boat-party-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/five-star-boat-party-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/five-star-boat-party-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/five-star-boat-party-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/five-star-boat-party-ibiza-boat-club
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/oceanbeat-ibiza-boat-party
+2025-06-05 21:01:30,771 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/oceanbeat-ibiza-boat-party
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/oceanbeat-ibiza-boat-party
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/oceanbeat-ibiza-boat-party
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/oceanbeat-ibiza-boat-party
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/oceanbeat-ibiza-boat-party
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/pukka_up_i.htm
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/pukka_up_i.htm
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ibiza-boat-club-formentera
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ibiza-boat-club-formentera
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ibiza-boat-club-formentera
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ibiza-boat-club-formentera
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ibiza-boat-club-formentera
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/ibiza-boat-club-formentera
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/day-paradise
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/day-paradise
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/day-paradise
+2025-06-05 21:01:30,772 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/promoters/float-your-boat-sunset-experience
+2025-06-05 21:01:30,874 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.es/night/events/2025/06
+2025-06-05 21:01:30,874 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.de/night/events/2025/06
+2025-06-05 21:01:30,874 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.it/night/events/2025/06
+2025-06-05 21:01:30,874 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.es/night/events/2025/06
+2025-06-05 21:01:30,874 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.de/night/events/2025/06
+2025-06-05 21:01:30,874 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.it/night/events/2025/06
+2025-06-05 21:01:30,874 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06/05
+2025-06-05 21:01:30,874 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06/06
+2025-06-05 21:01:30,874 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/07
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/07
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/08
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/09
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/10
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=23/06/2025-29/06/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=30/06/2025-06/07/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/05?daterange=19/05/2025-25/05/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/05/26
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/05/27
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/05/28
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/05/29
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/05/30
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/05/31
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06/01
+2025-06-05 21:01:30,875 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=23/06/2025-29/06/2025
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=30/06/2025-06/07/2025
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2008/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2009/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2010/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2011/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2012/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2013/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2014/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2015/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2016/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2017/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2018/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2019/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2020/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2021/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2022/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2023/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Found potential venue/club/promoter URL: https://www.ibiza-spotlight.com/night/events/2024/06
+2025-06-05 21:01:30,876 - __main__ - INFO - Extracted 132 potential venue/club/promoter URLs from https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 21:01:30,876 - __main__ - INFO - DEBUG: Found 132 potential URLs from main events page
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2022/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2019/06
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/craig-davids-ts5
+2025-06-05 21:01:30,876 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/soul-heaven
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/namaste
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/day-paradise
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/calvin-harris-friday
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/deeperfect-eden
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/float-your-boat-sunset-experience
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/chinois-presents
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/ibiza-anthems-ibiza-rocks
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2011/06
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/seladoria
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/08
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/saturdays
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/r-and-b-affair
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/all-i-need-playa-soleil
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/ibiza-brunch-club-classics
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.de/night/events/2025/06
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/you-know-vibes
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/pool-party-o-beach
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/05/29
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/mestiza-hi
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.it/night/events/2025/06
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2014/06
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/bubbles-champagne
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/05/30
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/travieso
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/woomoon
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/one
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/chinois-ibiza
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/akasha
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/el-kiddo-bam-bu-ku
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/drama-club
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/tomorrowland-presents-dimitri-vegas-mike
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/pukka_up_i.htm
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/reboot-rocks
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/tuesdays-es-paradis
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2018/06
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2024/06
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/music-on
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/boat-parties-san-antonio
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/cova-santa
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/defected
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/summerians-cova-santa
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/fiesta-del-agua
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/do-not-sleep-amnesia
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/hi-ibiza
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/bukkle-ibiza
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/fridays-at-tipic
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=23/06/2025-29/06/2025
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/black-coffee
+2025-06-05 21:01:30,877 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/tiempo-nomis
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/05/31
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/pandora
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/05/27
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/kaluki-528
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2017/06
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/playground-toy-room
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/pacha-pre-season-parties
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/abracadabra-pacha
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/pure-pacha
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/utopic
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/10
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/gala-cova-santa
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/ants
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/masquerade-chinois
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2016/06
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/heavy-house-society-528
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2008/06
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/tipic-formentera
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/camelphat-pacha
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=30/06/2025-06/07/2025
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/06/05
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2009/06
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2012/06
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/venue/bam-bu-ku-ibiza
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/06/01
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/el-paripe
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/07
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/nothing-trouble-eden
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/pantheon
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2015/06
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/sundays-es-paradis
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/nido
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/09
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/house-paradise
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/ibiza-rocks-pool-days
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/05/26
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/oceanbeat-ibiza-boat-party
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/supernova-las-dalias
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/blanche-london
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/puro-reggaeton
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/daydreamers
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/reboot-presents-eden
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/unvrs-opening-party
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2023/06
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2021/06
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/sven-vath-akasha
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/playa-soleil-tnl
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/children-80s
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/ibiza-boat-club-formentera
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2013/06
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/hard-rock-hotel
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/appetite-chinois
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/latin-pool-bbk
+2025-06-05 21:01:30,878 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/hi-glitterbox
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/saturdays-tipic
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2020/06
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/kisstory-o-beach
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/pukka-up-saturdays
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/one-more-time-eden
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/d4-d4nce-o-beach
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/sin-sundays
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/unvrs
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/05/28
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/05?daterange=19/05/2025-25/05/2025
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/five-star-boat-party-ibiza-boat-club
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2010/06
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/vintage-lio
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/thursdays-es-paradis
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/venue/boat-parties-playa-den-bossa
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.es/night/events/2025/06
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/events/2025/06/06
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/abode-eden
+2025-06-05 21:01:30,879 - __main__ - DEBUG - Added URL to queue: https://www.ibiza-spotlight.com/night/promoters/lovejuice-ibiza-rocks
+2025-06-05 21:01:36,208 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/events/2022/06
+2025-06-05 21:01:36,208 - __main__ - INFO - Skipping non-target page type or already processed initial page type: https://www.ibiza-spotlight.com/night/events/2022/06
+2025-06-05 21:01:40,589 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/events/2019/06
+2025-06-05 21:01:40,589 - __main__ - INFO - Skipping non-target page type or already processed initial page type: https://www.ibiza-spotlight.com/night/events/2019/06
+2025-06-05 21:01:43,385 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/craig-davids-ts5
+2025-06-05 21:01:43,385 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/craig-davids-ts5
+2025-06-05 21:01:43,385 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/craig-davids-ts5
+2025-06-05 21:01:46,643 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:01:51,654 - __main__ - INFO - Scroll attempt 1: height 5307
+2025-06-05 21:01:53,659 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:01:53,659 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:01:53,782 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/craig-davids-ts5
+2025-06-05 21:01:53,900 - __main__ - INFO - Added JSON-LD event: Craig David's TS5 Opening Party
+2025-06-05 21:01:53,900 - __main__ - INFO - Added JSON-LD event: Craig David's TS5 Pool Party
+2025-06-05 21:01:53,901 - __main__ - INFO - Added JSON-LD event: Craig David's TS5 Closing Party
+2025-06-05 21:01:54,088 - __main__ - INFO - Found 3 events on promoter page craig-davids-ts5
+2025-06-05 21:01:54,088 - __main__ - ERROR - Error saving event 'Craig David's TS5 Opening Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:01:54,090 - __main__ - ERROR - Error saving event 'Craig David's TS5 Pool Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:01:54,090 - __main__ - ERROR - Error saving event 'Craig David's TS5 Closing Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:01:54,091 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    json.dumps(v) if isinstance(v, (list, dict)) else v)
+    ~~~~~~~~~~^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:01:57,385 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/soul-heaven
+2025-06-05 21:01:57,386 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/soul-heaven
+2025-06-05 21:01:57,386 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/soul-heaven
+2025-06-05 21:02:00,452 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:02:05,463 - __main__ - INFO - Scroll attempt 1: height 6058
+2025-06-05 21:02:07,469 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:02:07,469 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:02:07,620 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/soul-heaven
+2025-06-05 21:02:07,819 - __main__ - INFO - Added JSON-LD event: Soul Heaven Opening Party
+2025-06-05 21:02:07,819 - __main__ - INFO - Added JSON-LD event: Soul Heaven
+2025-06-05 21:02:07,819 - __main__ - INFO - Added JSON-LD event: Soul Heaven Closing Party
+2025-06-05 21:02:08,060 - __main__ - INFO - Found 3 events on promoter page soul-heaven
+2025-06-05 21:02:08,060 - __main__ - ERROR - Error saving event 'Soul Heaven Opening Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:08,060 - __main__ - ERROR - Error saving event 'Soul Heaven': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:08,061 - __main__ - ERROR - Error saving event 'Soul Heaven Closing Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:08,061 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    json.dumps(v) if isinstance(v, (list, dict)) else v)
+    ~~~~~~~~~~^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:02:13,611 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/namaste
+2025-06-05 21:02:13,612 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/namaste
+2025-06-05 21:02:13,612 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/namaste
+2025-06-05 21:02:16,433 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:02:21,445 - __main__ - INFO - Scroll attempt 1: height 7031
+2025-06-05 21:02:23,450 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:02:23,451 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:02:23,596 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/namaste
+2025-06-05 21:02:23,819 - __main__ - INFO - Added JSON-LD event: Namaste
+2025-06-05 21:02:23,819 - __main__ - INFO - Added JSON-LD event: Namaste Primavera Sessions
+2025-06-05 21:02:23,819 - __main__ - INFO - Added JSON-LD event: Namaste Opening Party
+2025-06-05 21:02:24,034 - __main__ - INFO - Found 3 events on promoter page namaste
+2025-06-05 21:02:24,034 - __main__ - ERROR - Error saving event 'Namaste': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:24,035 - __main__ - ERROR - Error saving event 'Namaste Primavera Sessions': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:24,035 - __main__ - ERROR - Error saving event 'Namaste Opening Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:24,035 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    json.dumps(v) if isinstance(v, (list, dict)) else v)
+    ~~~~~~~~~~^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:02:27,227 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/day-paradise
+2025-06-05 21:02:27,228 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/day-paradise
+2025-06-05 21:02:27,228 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/day-paradise
+2025-06-05 21:02:29,858 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:02:34,919 - __main__ - INFO - Scroll attempt 1: height 8271
+2025-06-05 21:02:36,924 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:02:36,924 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:02:37,109 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/day-paradise
+2025-06-05 21:02:37,407 - __main__ - INFO - Added JSON-LD event: A Day In Paradise Boat Trip
+2025-06-05 21:02:38,141 - __main__ - INFO - Found 1 events on promoter page day-paradise
+2025-06-05 21:02:38,141 - __main__ - ERROR - Error saving event 'A Day In Paradise Boat Trip': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:38,141 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    json.dumps(v) if isinstance(v, (list, dict)) else v)
+    ~~~~~~~~~~^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:02:42,636 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/calvin-harris-friday
+2025-06-05 21:02:42,636 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/calvin-harris-friday
+2025-06-05 21:02:42,636 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/calvin-harris-friday
+2025-06-05 21:02:45,148 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:02:50,157 - __main__ - INFO - Scroll attempt 1: height 5309
+2025-06-05 21:02:52,162 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:02:52,162 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:02:52,270 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/calvin-harris-friday
+2025-06-05 21:02:52,370 - __main__ - INFO - Added JSON-LD event: Calvin Harris Opening Party | Friday
+2025-06-05 21:02:52,370 - __main__ - INFO - Added JSON-LD event: Calvin Harris  | Friday
+2025-06-05 21:02:52,370 - __main__ - INFO - Added JSON-LD event: Calvin Harris Closing Party | Friday
+2025-06-05 21:02:52,756 - __main__ - INFO - Found 3 events on promoter page calvin-harris-friday
+2025-06-05 21:02:52,756 - __main__ - ERROR - Error saving event 'Calvin Harris Opening Party | Friday': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:52,757 - __main__ - ERROR - Error saving event 'Calvin Harris  | Friday': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:52,757 - __main__ - ERROR - Error saving event 'Calvin Harris Closing Party | Friday': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:02:52,758 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    json.dumps(v) if isinstance(v, (list, dict)) else v)
+    ~~~~~~~~~~^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:02:58,044 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/deeperfect-eden
+2025-06-05 21:02:58,045 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/deeperfect-eden
+2025-06-05 21:02:58,045 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/deeperfect-eden
+2025-06-05 21:03:01,218 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:03:06,229 - __main__ - INFO - Scroll attempt 1: height 5102
+2025-06-05 21:03:08,234 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:03:08,234 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:03:08,351 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/deeperfect-eden
+2025-06-05 21:03:08,446 - __main__ - INFO - Added JSON-LD event: Deeperfect Opening Party
+2025-06-05 21:03:08,446 - __main__ - INFO - Added JSON-LD event: Deeperfect
+2025-06-05 21:03:08,446 - __main__ - INFO - Added JSON-LD event: Deeperfect Closing Party
+2025-06-05 21:03:08,590 - __main__ - INFO - Found 3 events on promoter page deeperfect-eden
+2025-06-05 21:03:08,590 - __main__ - ERROR - Error saving event 'Deeperfect Opening Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:08,591 - __main__ - ERROR - Error saving event 'Deeperfect': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:08,591 - __main__ - ERROR - Error saving event 'Deeperfect Closing Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    quality_data = self.scorer.calculate_event_quality(event)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:08,592 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    json.dumps(v) if isinstance(v, (list, dict)) else v)
+    ~~~~~~~~~~^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:03:14,233 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/float-your-boat-sunset-experience
+2025-06-05 21:03:14,234 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/float-your-boat-sunset-experience
+2025-06-05 21:03:14,234 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/float-your-boat-sunset-experience
+2025-06-05 21:03:16,939 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:03:21,950 - __main__ - INFO - Scroll attempt 1: height 6420
+2025-06-05 21:03:23,955 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:03:23,956 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:03:24,091 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/float-your-boat-sunset-experience
+2025-06-05 21:03:24,302 - __main__ - INFO - Added JSON-LD event: Float Your Boat
+2025-06-05 21:03:24,425 - __main__ - INFO - Found 1 events on promoter page float-your-boat-sunset-experience
+2025-06-05 21:03:24,425 - __main__ - ERROR - Error saving event 'Float Your Boat': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:24,426 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    all_keys = set()
+    
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:03:29,521 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/chinois-presents
+2025-06-05 21:03:29,521 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/chinois-presents
+2025-06-05 21:03:29,521 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/chinois-presents
+2025-06-05 21:03:32,353 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:03:37,364 - __main__ - INFO - Scroll attempt 1: height 5528
+2025-06-05 21:03:39,370 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:03:39,370 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:03:39,519 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/chinois-presents
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Chinois presents Acid Pauli
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Chinois presents Maceo Plex
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Chinois presents Roger Sanchez
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Chinois Presents
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Chinois presents Joris Voorn
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Chinois presents Sam Divine
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Chinois presents Butch
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Chinois presents Dennis Ferrer
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Portside After Party
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: Chinois presents Jan Blomqvist
+2025-06-05 21:03:39,634 - __main__ - INFO - Added JSON-LD event: SG Lewis presents Forever Days
+2025-06-05 21:03:40,043 - __main__ - INFO - Found 11 events on promoter page chinois-presents
+2025-06-05 21:03:40,043 - __main__ - ERROR - Error saving event 'Chinois presents Acid Pauli': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,044 - __main__ - ERROR - Error saving event 'Chinois presents Maceo Plex': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,044 - __main__ - ERROR - Error saving event 'Chinois presents Roger Sanchez': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,045 - __main__ - ERROR - Error saving event 'Chinois Presents': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,045 - __main__ - ERROR - Error saving event 'Chinois presents Joris Voorn': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,046 - __main__ - ERROR - Error saving event 'Chinois presents Sam Divine': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,046 - __main__ - ERROR - Error saving event 'Chinois presents Butch': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,046 - __main__ - ERROR - Error saving event 'Chinois presents Dennis Ferrer': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,047 - __main__ - ERROR - Error saving event 'Portside After Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,047 - __main__ - ERROR - Error saving event 'Chinois presents Jan Blomqvist': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,047 - __main__ - ERROR - Error saving event 'SG Lewis presents Forever Days': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:40,048 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    all_keys = set()
+    
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:03:42,953 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/ibiza-anthems-ibiza-rocks
+2025-06-05 21:03:42,953 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/ibiza-anthems-ibiza-rocks
+2025-06-05 21:03:42,953 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/ibiza-anthems-ibiza-rocks
+2025-06-05 21:03:45,544 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:03:50,555 - __main__ - INFO - Scroll attempt 1: height 5766
+2025-06-05 21:03:52,561 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:03:52,561 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:03:52,701 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/ibiza-anthems-ibiza-rocks
+2025-06-05 21:03:52,915 - __main__ - INFO - Added JSON-LD event: Ibiza Anthems Opening Party
+2025-06-05 21:03:52,915 - __main__ - INFO - Added JSON-LD event: Ibiza Anthems Pool Party
+2025-06-05 21:03:52,916 - __main__ - INFO - Added JSON-LD event: Ibiza Anthems Closing Party
+2025-06-05 21:03:53,174 - __main__ - INFO - Found 3 events on promoter page ibiza-anthems-ibiza-rocks
+2025-06-05 21:03:53,174 - __main__ - ERROR - Error saving event 'Ibiza Anthems Opening Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:53,175 - __main__ - ERROR - Error saving event 'Ibiza Anthems Pool Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:53,175 - __main__ - ERROR - Error saving event 'Ibiza Anthems Closing Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    # Update context for events pages (e.g., /night/events/2025/06)
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:03:53,176 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    all_keys = set()
+    
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:03:57,557 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 21:03:57,557 - __main__ - INFO - Skipping non-target page type or already processed initial page type: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 21:04:01,287 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:04:01,287 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:04:01,287 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:04:03,870 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:04:08,884 - __main__ - INFO - Scroll attempt 1: height 9350
+2025-06-05 21:04:10,889 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:04:10,889 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:04:11,180 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:04:11,742 - __main__ - INFO - Added JSON-LD event: Aftersun Ibiza Boat Party
+2025-06-05 21:04:11,742 - __main__ - INFO - Added JSON-LD event: Aftersun Ibiza Boat Party | Easter Sailing
+2025-06-05 21:04:12,078 - __main__ - INFO - Found 2 events on promoter page aftersun-ibiza-ibiza-boat-club
+2025-06-05 21:04:12,078 - __main__ - ERROR - Error saving event 'Aftersun Ibiza Boat Party': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    new_venue_context = path_parts[-1]
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:04:12,078 - __main__ - ERROR - Error saving event 'Aftersun Ibiza Boat Party | Easter Sailing': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    new_venue_context = path_parts[-1]
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:04:12,079 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    except Exception as e:
+    
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:04:15,905 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/events/2011/06
+2025-06-05 21:04:15,905 - __main__ - INFO - Skipping non-target page type or already processed initial page type: https://www.ibiza-spotlight.com/night/events/2011/06
+2025-06-05 21:04:18,975 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/seladoria
+2025-06-05 21:04:18,975 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/seladoria
+2025-06-05 21:04:18,975 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/seladoria
+2025-06-05 21:04:21,741 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:04:26,751 - __main__ - INFO - Scroll attempt 1: height 4958
+2025-06-05 21:04:28,757 - __main__ - INFO - No new content detected after scroll attempt 1
+2025-06-05 21:04:28,757 - __main__ - INFO - Completed scrolling after 1 attempts
+2025-06-05 21:04:28,843 - __main__ - INFO - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/seladoria
+2025-06-05 21:04:28,903 - __main__ - INFO - Added JSON-LD event: Seladoria
+2025-06-05 21:04:28,966 - __main__ - INFO - Found 1 events on promoter page seladoria
+2025-06-05 21:04:28,966 - __main__ - ERROR - Error saving event 'Seladoria': 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1222, in save_event
+    new_venue_context = path_parts[-1]
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 46, in calculate_event_quality
+    scores["location"], validation_details["location"] = self._score_location(
+                                                         ~~~~~~~~~~~~~~~~~~~~^
+        event_data.get("location", {})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/database/quality_scorer.py", line 130, in _score_location
+    if location.get("venue"):
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-06-05 21:04:28,967 - __main__ - ERROR - Error CSV append: Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1259, in append_to_csv
+    except Exception as e:
+    
+  File "/home/creekz/miniconda/lib/python3.13/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/home/creekz/miniconda/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-05 21:04:33,374 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/events/2025/08
+2025-06-05 21:04:33,374 - __main__ - INFO - Skipping non-target page type or already processed initial page type: https://www.ibiza-spotlight.com/night/events/2025/08
+2025-06-05 21:04:36,023 - __main__ - INFO - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/saturdays
+2025-06-05 21:04:36,024 - __main__ - INFO - Promoter page detected - scraping events from: https://www.ibiza-spotlight.com/night/promoters/saturdays
+2025-06-05 21:04:36,024 - __main__ - INFO - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/promoters/saturdays
+2025-06-05 21:04:38,829 - __main__ - INFO - Waiting 5 seconds for initial page load...
+2025-06-05 21:04:39,003 - __main__ - WARNING - Scraper run interrupted by user.
+2025-06-05 21:04:39,003 - __main__ - INFO - Scraper shutdown for run_id: 20250605_210119.

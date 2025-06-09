@@ -1,0 +1,67 @@
+2025-06-05 17:15:37,452 - INFO - scraper_ibizaspotlight_revised_0506.py:172 - File logging configured at: /home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/scrape_logs/scraper_run_20250605_171537.log
+2025-06-05 17:15:37,452 - INFO - scraper_ibizaspotlight_revised_0506.py:579 - Starting enhanced scraper run_id: 20250605_171537. CSV: scraped_events_20250605_171537.csv
+2025-06-05 17:15:37,453 - INFO - scraper_ibizaspotlight_revised_0506.py:585 - Detected events page - starting direct scraping
+2025-06-05 17:15:37,453 - INFO - scraper_ibizaspotlight_revised_0506.py:601 - Processing [0]: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 17:15:37,453 - INFO - scraper_ibizaspotlight_revised_0506.py:609 - Scraping events from: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 17:15:37,514 - INFO - scraper_ibizaspotlight_revised_0506.py:189 - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 17:15:42,314 - INFO - scraper_ibizaspotlight_revised_0506.py:196 - Waiting 5 seconds for initial page load...
+2025-06-05 17:15:47,319 - INFO - scraper_ibizaspotlight_revised_0506.py:217 - Scroll attempt 1: height 9675
+2025-06-05 17:15:49,322 - INFO - scraper_ibizaspotlight_revised_0506.py:210 - No new content detected after scroll attempt 1
+2025-06-05 17:15:49,322 - INFO - scraper_ibizaspotlight_revised_0506.py:223 - Completed scrolling after 1 attempts
+2025-06-05 17:15:49,627 - INFO - scraper_ibizaspotlight_revised_0506.py:370 - Year context 2025 for https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 17:15:49,728 - WARNING - scraper_ibizaspotlight_revised_0506.py:436 - No events found with any extraction method on https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 17:15:49,786 - INFO - scraper_ibizaspotlight_revised_0506.py:477 - Queued next page: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 17:15:49,786 - INFO - scraper_ibizaspotlight_revised_0506.py:477 - Queued next page: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 17:15:49,787 - INFO - scraper_ibizaspotlight_revised_0506.py:477 - Queued next page: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 17:15:49,787 - WARNING - scraper_ibizaspotlight_revised_0506.py:617 - No events found on https://www.ibiza-spotlight.com/night/events/2025/06
+2025-06-05 17:15:51,343 - INFO - scraper_ibizaspotlight_revised_0506.py:601 - Processing [1]: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 17:15:51,343 - INFO - scraper_ibizaspotlight_revised_0506.py:609 - Scraping events from: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 17:15:51,343 - INFO - scraper_ibizaspotlight_revised_0506.py:189 - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 17:15:54,253 - INFO - scraper_ibizaspotlight_revised_0506.py:196 - Waiting 5 seconds for initial page load...
+2025-06-05 17:15:59,259 - INFO - scraper_ibizaspotlight_revised_0506.py:217 - Scroll attempt 1: height 14471
+2025-06-05 17:16:01,262 - INFO - scraper_ibizaspotlight_revised_0506.py:210 - No new content detected after scroll attempt 1
+2025-06-05 17:16:01,262 - INFO - scraper_ibizaspotlight_revised_0506.py:223 - Completed scrolling after 1 attempts
+2025-06-05 17:16:01,685 - INFO - scraper_ibizaspotlight_revised_0506.py:370 - Year context 2025 for https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 17:16:01,822 - WARNING - scraper_ibizaspotlight_revised_0506.py:436 - No events found with any extraction method on https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 17:16:01,897 - INFO - scraper_ibizaspotlight_revised_0506.py:477 - Queued next page: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 17:16:01,897 - INFO - scraper_ibizaspotlight_revised_0506.py:477 - Queued next page: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 17:16:01,897 - WARNING - scraper_ibizaspotlight_revised_0506.py:617 - No events found on https://www.ibiza-spotlight.com/night/events/2025/06?daterange=09/06/2025-15/06/2025
+2025-06-05 17:16:03,462 - INFO - scraper_ibizaspotlight_revised_0506.py:601 - Processing [1]: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 17:16:03,462 - INFO - scraper_ibizaspotlight_revised_0506.py:609 - Scraping events from: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 17:16:03,462 - INFO - scraper_ibizaspotlight_revised_0506.py:189 - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 17:16:07,271 - INFO - scraper_ibizaspotlight_revised_0506.py:196 - Waiting 5 seconds for initial page load...
+2025-06-05 17:16:12,277 - INFO - scraper_ibizaspotlight_revised_0506.py:217 - Scroll attempt 1: height 14587
+2025-06-05 17:16:14,280 - INFO - scraper_ibizaspotlight_revised_0506.py:210 - No new content detected after scroll attempt 1
+2025-06-05 17:16:14,280 - INFO - scraper_ibizaspotlight_revised_0506.py:223 - Completed scrolling after 1 attempts
+2025-06-05 17:16:14,743 - INFO - scraper_ibizaspotlight_revised_0506.py:370 - Year context 2025 for https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 17:16:14,886 - WARNING - scraper_ibizaspotlight_revised_0506.py:436 - No events found with any extraction method on https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 17:16:14,960 - INFO - scraper_ibizaspotlight_revised_0506.py:477 - Queued next page: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=12/06/2025-18/06/2025
+2025-06-05 17:16:14,961 - WARNING - scraper_ibizaspotlight_revised_0506.py:617 - No events found on https://www.ibiza-spotlight.com/night/events/2025/06?daterange=05/06/2025-11/06/2025
+2025-06-05 17:16:16,049 - INFO - scraper_ibizaspotlight_revised_0506.py:601 - Processing [1]: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 17:16:16,049 - INFO - scraper_ibizaspotlight_revised_0506.py:609 - Scraping events from: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 17:16:16,049 - INFO - scraper_ibizaspotlight_revised_0506.py:189 - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 17:16:18,962 - INFO - scraper_ibizaspotlight_revised_0506.py:196 - Waiting 5 seconds for initial page load...
+2025-06-05 17:16:23,967 - INFO - scraper_ibizaspotlight_revised_0506.py:217 - Scroll attempt 1: height 14346
+2025-06-05 17:16:25,970 - INFO - scraper_ibizaspotlight_revised_0506.py:210 - No new content detected after scroll attempt 1
+2025-06-05 17:16:25,970 - INFO - scraper_ibizaspotlight_revised_0506.py:223 - Completed scrolling after 1 attempts
+2025-06-05 17:16:26,344 - INFO - scraper_ibizaspotlight_revised_0506.py:370 - Year context 2025 for https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 17:16:26,466 - WARNING - scraper_ibizaspotlight_revised_0506.py:436 - No events found with any extraction method on https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 17:16:26,530 - WARNING - scraper_ibizaspotlight_revised_0506.py:617 - No events found on https://www.ibiza-spotlight.com/night/events/2025/06?daterange=02/06/2025-08/06/2025
+2025-06-05 17:16:27,868 - INFO - scraper_ibizaspotlight_revised_0506.py:601 - Processing [2]: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 17:16:27,868 - INFO - scraper_ibizaspotlight_revised_0506.py:609 - Scraping events from: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 17:16:27,868 - INFO - scraper_ibizaspotlight_revised_0506.py:189 - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 17:16:30,776 - INFO - scraper_ibizaspotlight_revised_0506.py:196 - Waiting 5 seconds for initial page load...
+2025-06-05 17:16:35,782 - INFO - scraper_ibizaspotlight_revised_0506.py:217 - Scroll attempt 1: height 15432
+2025-06-05 17:16:37,785 - INFO - scraper_ibizaspotlight_revised_0506.py:210 - No new content detected after scroll attempt 1
+2025-06-05 17:16:37,785 - INFO - scraper_ibizaspotlight_revised_0506.py:223 - Completed scrolling after 1 attempts
+2025-06-05 17:16:38,253 - INFO - scraper_ibizaspotlight_revised_0506.py:370 - Year context 2025 for https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 17:16:38,400 - WARNING - scraper_ibizaspotlight_revised_0506.py:436 - No events found with any extraction method on https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 17:16:38,478 - INFO - scraper_ibizaspotlight_revised_0506.py:477 - Queued next page: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=23/06/2025-29/06/2025
+2025-06-05 17:16:38,478 - WARNING - scraper_ibizaspotlight_revised_0506.py:617 - No events found on https://www.ibiza-spotlight.com/night/events/2025/06?daterange=16/06/2025-22/06/2025
+2025-06-05 17:16:39,800 - INFO - scraper_ibizaspotlight_revised_0506.py:601 - Processing [2]: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=12/06/2025-18/06/2025
+2025-06-05 17:16:39,800 - INFO - scraper_ibizaspotlight_revised_0506.py:609 - Scraping events from: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=12/06/2025-18/06/2025
+2025-06-05 17:16:39,800 - INFO - scraper_ibizaspotlight_revised_0506.py:189 - Fetching with enhanced Playwright scrolling: https://www.ibiza-spotlight.com/night/events/2025/06?daterange=12/06/2025-18/06/2025
+2025-06-05 17:16:43,704 - INFO - scraper_ibizaspotlight_revised_0506.py:196 - Waiting 5 seconds for initial page load...
+2025-06-05 17:16:48,711 - INFO - scraper_ibizaspotlight_revised_0506.py:217 - Scroll attempt 1: height 14772
+2025-06-05 17:16:50,706 - WARNING - scraper_ibizaspotlight_revised_0506.py:696 - Scraper run interrupted by user.
+2025-06-05 17:16:50,706 - INFO - scraper_ibizaspotlight_revised_0506.py:698 - Scraper shutdown for run_id: 20250605_171537.

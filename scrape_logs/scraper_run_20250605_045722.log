@@ -1,0 +1,155 @@
+2025-06-05 04:57:22,080 - INFO - scraper_ibizaspotlight_revised_0406.py:159 - File logging configured at: /home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/scrape_logs/scraper_run_20250605_045722.log
+2025-06-05 04:57:22,080 - INFO - scraper_ibizaspotlight_revised_0406.py:146 - Initialized with venue context: unvrs
+2025-06-05 04:57:22,080 - INFO - scraper_ibizaspotlight_revised_0406.py:467 - Starting scraper run_id: 20250605_045722. CSV: scraped_events_20250605_045722.csv
+2025-06-05 04:57:22,080 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [0]: https://www.ibiza-spotlight.com/night/venue/unvrs
+2025-06-05 04:57:22,116 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/venue/unvrs
+2025-06-05 04:57:28,493 - INFO - scraper_ibizaspotlight_revised_0406.py:493 - Found 10 promoter URLs on https://www.ibiza-spotlight.com/night/venue/unvrs
+2025-06-05 04:57:29,671 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/sara-landry-unvrs
+2025-06-05 04:57:29,671 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/sara-landry-unvrs
+2025-06-05 04:57:35,512 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/sara-landry-unvrs
+2025-06-05 04:57:35,514 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Sara Landry presents Eternalism
+2025-06-05 04:57:35,526 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 1 events to scraped_events_20250605_045722.csv
+2025-06-05 04:57:37,090 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/elrow-unvrs
+2025-06-05 04:57:37,090 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/elrow-unvrs
+2025-06-05 04:57:42,996 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/elrow-unvrs
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza Opening Party | Nowmads New World
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Nowmads New World
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Hallucinarium
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Nowmads New World
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Hallucinarium
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Neo Kaos Garden
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Hallucinarium
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Neo Kaos Garden
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | BBC Radio 1 Dance X
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Neo Kaos Garden
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Nowmads New World
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Neo Kaos Garden
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Hallucinarium
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Nowmads New World
+2025-06-05 04:57:43,001 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Neo Kaos Garden
+2025-06-05 04:57:43,002 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Nowmads New World
+2025-06-05 04:57:43,002 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza | Neo Kaos Garden
+2025-06-05 04:57:43,002 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: elrow Ibiza Closing Party | New Theme TBA
+2025-06-05 04:57:43,037 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 18 events to scraped_events_20250605_045722.csv
+2025-06-05 04:57:44,424 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/eric-prydz-unvrs
+2025-06-05 04:57:44,424 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/eric-prydz-unvrs
+2025-06-05 04:57:50,556 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/eric-prydz-unvrs
+2025-06-05 04:57:50,560 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0 Opening Party
+2025-06-05 04:57:50,560 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,560 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,560 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,560 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,560 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,561 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,561 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,561 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,561 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,561 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,561 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,561 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0
+2025-06-05 04:57:50,561 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Eric Prydz presents Holosphere 2.0 Closing Party
+2025-06-05 04:57:50,592 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 14 events to scraped_events_20250605_045722.csv
+2025-06-05 04:57:51,397 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/fisher-unvrs
+2025-06-05 04:57:51,397 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/fisher-unvrs
+2025-06-05 04:57:57,474 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/fisher-unvrs
+2025-06-05 04:57:57,479 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER Opening Party
+2025-06-05 04:57:57,479 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,479 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,479 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,479 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER
+2025-06-05 04:57:57,480 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: FISHER Closing Party
+2025-06-05 04:57:57,516 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 17 events to scraped_events_20250605_045722.csv
+2025-06-05 04:57:59,278 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/paradise-unvrs
+2025-06-05 04:57:59,278 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/paradise-unvrs
+2025-06-05 04:58:05,160 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/paradise-unvrs
+2025-06-05 04:58:05,165 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise Opening Party
+2025-06-05 04:58:05,165 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,165 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,165 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise
+2025-06-05 04:58:05,166 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Paradise Closing Party
+2025-06-05 04:58:05,204 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 16 events to scraped_events_20250605_045722.csv
+2025-06-05 04:58:06,847 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/anotr-unvrs
+2025-06-05 04:58:06,847 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/anotr-unvrs
+2025-06-05 04:58:12,750 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/anotr-unvrs
+2025-06-05 04:58:12,753 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: ANOTR On A Trip
+2025-06-05 04:58:12,765 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 1 events to scraped_events_20250605_045722.csv
+2025-06-05 04:58:13,771 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/david-guetta-unvrs
+2025-06-05 04:58:13,771 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/david-guetta-unvrs
+2025-06-05 04:58:19,676 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/david-guetta-unvrs
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus Opening Party
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus
+2025-06-05 04:58:19,681 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: David Guetta presents Galactic Circus Closing Party
+2025-06-05 04:58:19,707 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 17 events to scraped_events_20250605_045722.csv
+2025-06-05 04:58:21,025 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/unvrs-opening-party
+2025-06-05 04:58:21,025 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/unvrs-opening-party
+2025-06-05 04:58:26,870 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/unvrs-opening-party
+2025-06-05 04:58:26,873 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: [UNVRS] Opening Party
+2025-06-05 04:58:26,884 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 1 events to scraped_events_20250605_045722.csv
+2025-06-05 04:58:28,554 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/anyma-unvrs
+2025-06-05 04:58:28,554 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/anyma-unvrs
+2025-06-05 04:58:34,409 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/anyma-unvrs
+2025-06-05 04:58:34,412 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Anyma Opening Party
+2025-06-05 04:58:34,412 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Anyma
+2025-06-05 04:58:34,412 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Anyma
+2025-06-05 04:58:34,412 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Anyma
+2025-06-05 04:58:34,412 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Anyma
+2025-06-05 04:58:34,412 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Anyma
+2025-06-05 04:58:34,412 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Anyma
+2025-06-05 04:58:34,412 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Anyma Closing Party
+2025-06-05 04:58:34,429 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 8 events to scraped_events_20250605_045722.csv
+2025-06-05 04:58:35,143 - INFO - scraper_ibizaspotlight_revised_0406.py:480 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/carl-cox
+2025-06-05 04:58:35,143 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/carl-cox
+2025-06-05 04:58:41,291 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/carl-cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox Opening Party
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,296 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,297 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox
+2025-06-05 04:58:41,297 - INFO - scraper_ibizaspotlight_revised_0406.py:369 - Added JSON-LD event: Carl Cox Closing Party
+2025-06-05 04:58:41,333 - INFO - scraper_ibizaspotlight_revised_0406.py:463 - Appended 14 events to scraped_events_20250605_045722.csv
+2025-06-05 04:58:42,987 - INFO - scraper_ibizaspotlight_revised_0406.py:501 - Run 20250605_045722 completed. Visited 11 URLs. Found 107 total events.
+2025-06-05 04:58:42,987 - INFO - scraper_ibizaspotlight_revised_0406.py:512 - Scraper shutdown for run_id: 20250605_045722.

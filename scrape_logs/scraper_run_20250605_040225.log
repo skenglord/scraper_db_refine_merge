@@ -1,0 +1,46 @@
+2025-06-05 04:02:25,196 - INFO - scraper_ibizaspotlight_revised_0406.py:159 - File logging configured at: /home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/scrape_logs/scraper_run_20250605_040225.log
+2025-06-05 04:02:25,196 - INFO - scraper_ibizaspotlight_revised_0406.py:146 - Initialized with venue context: unvrs
+2025-06-05 04:02:25,197 - INFO - scraper_ibizaspotlight_revised_0406.py:434 - Starting scraper run_id: 20250605_040225. CSV: scraped_events_20250605_040225.csv
+2025-06-05 04:02:25,197 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [0]: https://www.ibiza-spotlight.com/night/venue/unvrs
+2025-06-05 04:02:25,253 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/venue/unvrs
+2025-06-05 04:02:46,460 - INFO - scraper_ibizaspotlight_revised_0406.py:460 - Found 10 promoter URLs on https://www.ibiza-spotlight.com/night/venue/unvrs
+2025-06-05 04:02:47,984 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/paradise-unvrs
+2025-06-05 04:02:47,984 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/paradise-unvrs
+2025-06-05 04:03:00,704 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/paradise-unvrs
+2025-06-05 04:03:01,925 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/eric-prydz-unvrs
+2025-06-05 04:03:01,925 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/eric-prydz-unvrs
+2025-06-05 04:03:19,651 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/eric-prydz-unvrs
+2025-06-05 04:03:21,203 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/anotr-unvrs
+2025-06-05 04:03:21,203 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/anotr-unvrs
+2025-06-05 04:03:36,449 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/anotr-unvrs
+2025-06-05 04:03:37,806 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/sara-landry-unvrs
+2025-06-05 04:03:37,806 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/sara-landry-unvrs
+2025-06-05 04:03:56,070 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/sara-landry-unvrs
+2025-06-05 04:03:57,656 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/unvrs-opening-party
+2025-06-05 04:03:57,657 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/unvrs-opening-party
+2025-06-05 04:04:09,605 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/unvrs-opening-party
+2025-06-05 04:04:10,904 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/carl-cox
+2025-06-05 04:04:10,904 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/carl-cox
+2025-06-05 04:04:33,482 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/carl-cox
+2025-06-05 04:04:34,768 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/anyma-unvrs
+2025-06-05 04:04:34,768 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/anyma-unvrs
+2025-06-05 04:04:49,668 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/anyma-unvrs
+2025-06-05 04:04:51,349 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/david-guetta-unvrs
+2025-06-05 04:04:51,349 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/david-guetta-unvrs
+2025-06-05 04:05:00,198 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/david-guetta-unvrs
+2025-06-05 04:05:01,846 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/elrow-unvrs
+2025-06-05 04:05:01,846 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/elrow-unvrs
+2025-06-05 04:05:26,412 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/elrow-unvrs
+2025-06-05 04:05:27,718 - INFO - scraper_ibizaspotlight_revised_0406.py:447 - Processing [1]: https://www.ibiza-spotlight.com/night/promoters/fisher-unvrs
+2025-06-05 04:05:27,718 - INFO - scraper_ibizaspotlight_revised_0406.py:173 - Fetching with Playwright: https://www.ibiza-spotlight.com/night/promoters/fisher-unvrs
+2025-06-05 04:05:42,885 - INFO - scraper_ibizaspotlight_revised_0406.py:332 - Year context 2025 for https://www.ibiza-spotlight.com/night/promoters/fisher-unvrs
+2025-06-05 04:05:44,641 - CRITICAL - scraper_ibizaspotlight_revised_0406.py:478 - Scraper failed: 'IbizaSpotlightScraper' object has no attribute 'all_scraped_events极_run'
+Traceback (most recent call last):
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0406.py", line 476, in main
+    try: scraper.run()
+         ~~~~~~~~~~~^^
+  File "/home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/my_scrapers/scraper_ibizaspotlight_revised_0406.py", line 468, in run
+    logger.info(f"Run {self.run_timestamp} completed. Visited {len(self.visited_urls)} URLs. Found {len(self.all_scraped_events极_run)} total events.")
+                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IbizaSpotlightScraper' object has no attribute 'all_scraped_events极_run'. Did you mean: 'all_scraped_events_for_run'?
+2025-06-05 04:05:44,642 - INFO - scraper_ibizaspotlight_revised_0406.py:479 - Scraper shutdown for run_id: 20250605_040225.

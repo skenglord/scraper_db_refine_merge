@@ -1,0 +1,480 @@
+{
+  "timestamp": "2025-06-08T09:12:41.873166",
+  "mongodb_test": {
+    "connection_status": true,
+    "database_info": {
+      "uri": "mongodb://localhost:27017/",
+      "database": "classy_skkkrapey",
+      "collections": [
+        "events"
+      ]
+    },
+    "schema_analysis": {
+      "total_documents": 2355,
+      "field_distribution": [
+        {
+          "_id": "scrapedAt",
+          "count": 2355
+        },
+        {
+          "_id": "_id",
+          "count": 2355
+        },
+        {
+          "_id": "extractionMethod",
+          "count": 2355
+        },
+        {
+          "_id": "title",
+          "count": 2355
+        },
+        {
+          "_id": "_quality",
+          "count": 2355
+        },
+        {
+          "_id": "page_year_context",
+          "count": 2345
+        },
+        {
+          "_id": "promoter",
+          "count": 2345
+        },
+        {
+          "_id": "tier_2",
+          "count": 2345
+        },
+        {
+          "_id": "genres",
+          "count": 2345
+        },
+        {
+          "_id": "tier_3",
+          "count": 2345
+        },
+        {
+          "_id": "tier_1",
+          "count": 2345
+        },
+        {
+          "_id": "full_description",
+          "count": 2345
+        },
+        {
+          "_id": "tickets_url",
+          "count": 2345
+        },
+        {
+          "_id": "venue",
+          "count": 2345
+        },
+        {
+          "_id": "datetime_obj",
+          "count": 2345
+        },
+        {
+          "_id": "raw_date_string",
+          "count": 2343
+        },
+        {
+          "_id": "json_ld_url",
+          "count": 2343
+        },
+        {
+          "_id": "location",
+          "count": 2343
+        },
+        {
+          "_id": "event_date_key_part",
+          "count": 2343
+        },
+        {
+          "_id": "json_ld_description",
+          "count": 2343
+        }
+      ],
+      "current_schema_fields": [
+        "scrapedAt",
+        "_id",
+        "extractionMethod",
+        "title",
+        "_quality",
+        "page_year_context",
+        "promoter",
+        "tier_2",
+        "genres",
+        "tier_3",
+        "tier_1",
+        "full_description",
+        "tickets_url",
+        "venue",
+        "datetime_obj",
+        "raw_date_string",
+        "json_ld_url",
+        "location",
+        "event_date_key_part",
+        "json_ld_description",
+        "artists",
+        "description",
+        "date",
+        "promoterUrl",
+        "social_media_links",
+        "content_sections",
+        "markdown_content",
+        "data_quality",
+        "page_social_media",
+        "datetime_info"
+      ],
+      "new_schema_fields": [
+        "url",
+        "scrapedAt",
+        "extractionMethod",
+        "title",
+        "location",
+        "dateTime",
+        "lineUp",
+        "ticketInfo",
+        "_quality"
+      ]
+    },
+    "sample_documents": [
+      {
+        "promoterUrl": "https://www.ibiza-spotlight.com/night/promoters/anyma-unvrs",
+        "date": "",
+        "title": "Event at https://www.ibiza-spotlight.com/night/promoters/anyma-unvrs",
+        "_quality": {
+          "_quality": {
+            "scores": {
+              "title": 0.7999999999999999,
+              "location": 0.0,
+              "dateTime": 0.0,
+              "lineUp": 0.0,
+              "ticketInfo": 0.0
+            },
+            "overall": 0.2,
+            "lastCalculated": "2025-06-04 17:22:56.844000"
+          },
+          "_validation": {
+            "title": {
+              "confidence": 0.7999999999999999,
+              "flags": [],
+              "lastChecked": "2025-06-04 17:22:56.844000"
+            },
+            "location": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_location"
+              ],
+              "lastChecked": "2025-06-04 17:22:56.844000"
+            },
+            "dateTime": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_datetime"
+              ],
+              "lastChecked": "2025-06-04 17:22:56.844000"
+            },
+            "lineUp": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_lineup"
+              ],
+              "lastChecked": "2025-06-04 17:22:56.844000",
+              "itemValidation": {}
+            },
+            "ticketInfo": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_ticket_info"
+              ],
+              "lastChecked": "2025-06-04 17:22:56.844000"
+            }
+          }
+        },
+        "description": "Riding the wave of his groundbreaking twelve show residency The End of Genesys at the Las Vegas Sphe",
+        "extractionMethod": "markdown-fallback",
+        "scrapedAt": "2025-06-04T17:22:56.838175Z"
+      },
+      {
+        "promoterUrl": "https://www.ibiza-spotlight.com/night/promoters/sara-landry-unvrs",
+        "date": "",
+        "title": "Event at https://www.ibiza-spotlight.com/night/promoters/sara-landry-unvrs",
+        "_quality": {
+          "_quality": {
+            "scores": {
+              "title": 0.7999999999999999,
+              "location": 0.0,
+              "dateTime": 0.0,
+              "lineUp": 0.0,
+              "ticketInfo": 0.0
+            },
+            "overall": 0.2,
+            "lastCalculated": "2025-06-04 17:22:49.669000"
+          },
+          "_validation": {
+            "title": {
+              "confidence": 0.7999999999999999,
+              "flags": [],
+              "lastChecked": "2025-06-04 17:22:49.669000"
+            },
+            "location": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_location"
+              ],
+              "lastChecked": "2025-06-04 17:22:49.669000"
+            },
+            "dateTime": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_datetime"
+              ],
+              "lastChecked": "2025-06-04 17:22:49.669000"
+            },
+            "lineUp": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_lineup"
+              ],
+              "lastChecked": "2025-06-04 17:22:49.669000",
+              "itemValidation": {}
+            },
+            "ticketInfo": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_ticket_info"
+              ],
+              "lastChecked": "2025-06-04 17:22:49.669000"
+            }
+          }
+        },
+        "description": "This September, for one night only, the High Priestess of Hard Techno reigns dominion over Ibiza's f",
+        "extractionMethod": "markdown-fallback",
+        "scrapedAt": "2025-06-04T17:22:49.664437Z"
+      },
+      {
+        "promoterUrl": "https://www.ibiza-spotlight.com/night/promoters/fisher-unvrs",
+        "date": "",
+        "title": "Event at https://www.ibiza-spotlight.com/night/promoters/fisher-unvrs",
+        "_quality": {
+          "_quality": {
+            "scores": {
+              "title": 0.7999999999999999,
+              "location": 0.0,
+              "dateTime": 0.0,
+              "lineUp": 0.0,
+              "ticketInfo": 0.0
+            },
+            "overall": 0.2,
+            "lastCalculated": "2025-06-04 17:22:52.481000"
+          },
+          "_validation": {
+            "title": {
+              "confidence": 0.7999999999999999,
+              "flags": [],
+              "lastChecked": "2025-06-04 17:22:52.481000"
+            },
+            "location": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_location"
+              ],
+              "lastChecked": "2025-06-04 17:22:52.481000"
+            },
+            "dateTime": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_datetime"
+              ],
+              "lastChecked": "2025-06-04 17:22:52.481000"
+            },
+            "lineUp": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_lineup"
+              ],
+              "lastChecked": "2025-06-04 17:22:52.481000",
+              "itemValidation": {}
+            },
+            "ticketInfo": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_ticket_info"
+              ],
+              "lastChecked": "2025-06-04 17:22:52.481000"
+            }
+          }
+        },
+        "description": "\"_You're gonna need a bigger boat_ \"\nAfter commandeering The Theatre at H\u00ef Ibiza for the last three ",
+        "extractionMethod": "markdown-fallback",
+        "scrapedAt": "2025-06-04T17:22:52.472893Z"
+      },
+      {
+        "promoterUrl": "https://www.ibiza-spotlight.com/night/promoters/carl-cox",
+        "date": "",
+        "title": "Event at https://www.ibiza-spotlight.com/night/promoters/carl-cox",
+        "_quality": {
+          "_quality": {
+            "scores": {
+              "title": 0.7999999999999999,
+              "location": 0.0,
+              "dateTime": 0.0,
+              "lineUp": 0.0,
+              "ticketInfo": 0.0
+            },
+            "overall": 0.2,
+            "lastCalculated": "2025-06-04 17:22:43.780000"
+          },
+          "_validation": {
+            "title": {
+              "confidence": 0.7999999999999999,
+              "flags": [],
+              "lastChecked": "2025-06-04 17:22:43.780000"
+            },
+            "location": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_location"
+              ],
+              "lastChecked": "2025-06-04 17:22:43.780000"
+            },
+            "dateTime": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_datetime"
+              ],
+              "lastChecked": "2025-06-04 17:22:43.780000"
+            },
+            "lineUp": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_lineup"
+              ],
+              "lastChecked": "2025-06-04 17:22:43.780000",
+              "itemValidation": {}
+            },
+            "ticketInfo": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_ticket_info"
+              ],
+              "lastChecked": "2025-06-04 17:22:43.780000"
+            }
+          }
+        },
+        "description": "Few DJs on the planet have the gravitational pull of **Carl Cox**. The larger than life DJ is box of",
+        "extractionMethod": "markdown-fallback",
+        "scrapedAt": "2025-06-04T17:22:43.769853Z"
+      },
+      {
+        "promoterUrl": "https://www.ibiza-spotlight.com/night/promoters/paradise-unvrs",
+        "date": "",
+        "title": "Event at https://www.ibiza-spotlight.com/night/promoters/paradise-unvrs",
+        "_quality": {
+          "_quality": {
+            "scores": {
+              "title": 0.7999999999999999,
+              "location": 0.0,
+              "dateTime": 0.0,
+              "lineUp": 0.0,
+              "ticketInfo": 0.0
+            },
+            "overall": 0.2,
+            "lastCalculated": "2025-06-04 17:22:46.826000"
+          },
+          "_validation": {
+            "title": {
+              "confidence": 0.7999999999999999,
+              "flags": [],
+              "lastChecked": "2025-06-04 17:22:46.826000"
+            },
+            "location": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_location"
+              ],
+              "lastChecked": "2025-06-04 17:22:46.826000"
+            },
+            "dateTime": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_datetime"
+              ],
+              "lastChecked": "2025-06-04 17:22:46.826000"
+            },
+            "lineUp": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_lineup"
+              ],
+              "lastChecked": "2025-06-04 17:22:46.826000",
+              "itemValidation": {}
+            },
+            "ticketInfo": {
+              "confidence": 0.0,
+              "flags": [
+                "missing_ticket_info"
+              ],
+              "lastChecked": "2025-06-04 17:22:46.826000"
+            }
+          }
+        },
+        "description": "Devised by talismanic **Jamie Jones** and built around the sound of Hot Creations, Paradise always a",
+        "extractionMethod": "markdown-fallback",
+        "scrapedAt": "2025-06-04T17:22:46.817656Z"
+      }
+    ],
+    "errors": []
+  },
+  "scraper_test": {
+    "import_status": false,
+    "dependencies": {
+      "requests": "\u2705 Available",
+      "bs4": "\u2705 Available",
+      "pymongo": "\u2705 Available",
+      "dateutil": "\u2705 Available",
+      "html2text": "\u2705 Available",
+      "tqdm": "\u2705 Available",
+      "pytz": "\u2705 Available",
+      "playwright": "\u2705 Available"
+    },
+    "scraper_init": false,
+    "errors": [
+      "Scraper file not found: /home/creekz/Projects/classy_skrrrapey_mvp/classy_skkkrapey/../my_scrapers/scraper_ibizaspotlight_revised_0506.py"
+    ]
+  },
+  "schema_analysis": {
+    "field_mapping": {
+      "promoterUrl": "url + ticketInfo.url",
+      "date": "dateTime.start + dateTime.displayText",
+      "title": "title (no change)",
+      "description": "Remove or map to content field",
+      "_quality": "Restructure to new format",
+      "extractionMethod": "extractionMethod (no change)",
+      "scrapedAt": "scrapedAt (no change)"
+    },
+    "missing_fields": [
+      "location.venue",
+      "location.address",
+      "dateTime.end",
+      "lineUp",
+      "ticketInfo.status",
+      "ticketInfo.startingPrice"
+    ],
+    "transformation_needed": [
+      "Convert 'date' string to dateTime object structure",
+      "Extract venue information from existing data",
+      "Create lineUp array from artist data",
+      "Structure ticketInfo object from URL and price data",
+      "Restructure _quality scores to new format"
+    ],
+    "recommendations": [
+      "Create migration script to transform existing data",
+      "Update scraper to output new schema format",
+      "Backup existing data before migration",
+      "Test new schema with sample data first",
+      "Implement gradual migration strategy"
+    ]
+  },
+  "overall_health": "\u26a0\ufe0f PARTIAL - MongoDB OK, scraper issues"
+}
