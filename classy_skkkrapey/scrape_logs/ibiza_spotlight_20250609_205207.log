@@ -1,0 +1,21 @@
+2025-06-09 20:52:07,419 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:52:07,419 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:52:07,428 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Appended 1 events to scraped_events_20250609_205207.csv
+2025-06-09 20:52:07,429 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:52:07,429 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:52:07,430 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Appended 1 events to scraped_events_20250609_205207.csv
+2025-06-09 20:52:07,431 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:52:07,448 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:52:07,450 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:52:07,451 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:52:07,451 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - ERROR - Error saving event 'Test Event Location Dict': Invalid isoformat string: '2025-06-09T20:52:07.451225+00:00+00:00'
+Traceback (most recent call last):
+  File "/app/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1339, in save_event
+    event["scrapedAt"] = datetime.fromisoformat(event["scrapedAt"].replace('Z', '+00:00'))
+ValueError: Invalid isoformat string: '2025-06-09T20:52:07.451225+00:00+00:00'
+2025-06-09 20:52:07,452 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:52:07,453 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - ERROR - Error saving event 'Test Event Location String': Invalid isoformat string: '2025-06-09T20:52:07.452905+00:00+00:00'
+Traceback (most recent call last):
+  File "/app/my_scrapers/scraper_ibizaspotlight_revised_0506_final.py", line 1339, in save_event
+    event["scrapedAt"] = datetime.fromisoformat(event["scrapedAt"].replace('Z', '+00:00'))
+ValueError: Invalid isoformat string: '2025-06-09T20:52:07.452905+00:00+00:00'

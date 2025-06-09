@@ -13,7 +13,7 @@ import logging
 import re
 from pathlib import Path
 
-from mongodb_setup import MongoDBSetup
+# from mongodb_setup import MongoDBSetup
 from quality_scorer import QualityScorer
 
 logging.basicConfig(level=logging.INFO)
