@@ -1,0 +1,135 @@
+2025-06-08 07:41:31,583 [INFO] Starting FAST Ibiza Spotlight Scraper...
+2025-06-08 07:41:32,099 [INFO] Fast browser initialized.
+2025-06-08 07:41:32,461 [INFO] Setting up lightweight network interception...
+2025-06-08 07:41:34,162 [INFO] Fast navigation to https://www.ibiza-spotlight.com/night/events
+2025-06-08 07:41:34,230 [INFO] Cookie handled
+2025-06-08 07:41:34,306 [INFO] Processing month: June 2025
+2025-06-08 07:41:34,309 [INFO] Days to process: 30
+2025-06-08 07:41:34,859 [INFO] Found 18 events with fallback: .card-ticket
+2025-06-08 07:41:34,859 [INFO] Day 1: 18 cards found
+2025-06-08 07:41:35,398 [INFO] Found 18 events with fallback: .card-ticket
+2025-06-08 07:41:35,398 [INFO] Day 2: 18 cards found
+2025-06-08 07:41:36,722 [INFO] Found 8 events with fallback: .card-ticket
+2025-06-08 07:41:36,722 [INFO] Day 3: 8 cards found
+2025-06-08 07:41:37,162 [INFO] Found 15 events with fallback: .card-ticket
+2025-06-08 07:41:37,162 [INFO] Day 4: 15 cards found
+2025-06-08 07:42:07,620 [INFO] Found 14 events with fallback: .card-ticket
+2025-06-08 07:42:07,620 [INFO] Day 5: 14 cards found
+2025-06-08 07:42:08,148 [INFO] Found 18 events with fallback: .card-ticket
+2025-06-08 07:42:08,149 [INFO] Day 6: 18 cards found
+2025-06-08 07:42:08,633 [INFO] Found 20 events with fallback: .card-ticket
+2025-06-08 07:42:08,633 [INFO] Day 7: 20 cards found
+2025-06-08 07:42:09,215 [INFO] Found 23 events with fallback: .card-ticket
+2025-06-08 07:42:09,215 [INFO] Day 8: 23 cards found
+2025-06-08 07:42:09,786 [INFO] Found 20 events with fallback: .card-ticket
+2025-06-08 07:42:09,786 [INFO] Day 9: 20 cards found
+2025-06-08 07:42:10,357 [INFO] Found 12 events with fallback: .card-ticket
+2025-06-08 07:42:10,357 [INFO] Day 10: 12 cards found
+2025-06-08 07:42:10,840 [INFO] Found 12 events with fallback: .card-ticket
+2025-06-08 07:42:10,840 [INFO] Day 11: 12 cards found
+2025-06-08 07:42:11,320 [INFO] Found 12 events with fallback: .card-ticket
+2025-06-08 07:42:11,320 [INFO] Day 12: 12 cards found
+2025-06-08 07:42:11,798 [INFO] Found 16 events with fallback: .card-ticket
+2025-06-08 07:42:11,798 [INFO] Day 13: 16 cards found
+2025-06-08 07:42:12,295 [INFO] Found 19 events with fallback: .card-ticket
+2025-06-08 07:42:12,295 [INFO] Day 14: 19 cards found
+2025-06-08 07:42:12,803 [INFO] Found 20 events with fallback: .card-ticket
+2025-06-08 07:42:12,803 [INFO] Day 15: 20 cards found
+2025-06-08 07:42:13,373 [INFO] Found 20 events with fallback: .card-ticket
+2025-06-08 07:42:13,374 [INFO] Day 16: 20 cards found
+2025-06-08 07:42:13,970 [INFO] Found 14 events with fallback: .card-ticket
+2025-06-08 07:42:13,970 [INFO] Day 17: 14 cards found
+2025-06-08 07:42:14,461 [INFO] Found 14 events with fallback: .card-ticket
+2025-06-08 07:42:14,461 [INFO] Day 18: 14 cards found
+2025-06-08 07:42:14,995 [INFO] Found 20 events with fallback: .card-ticket
+2025-06-08 07:42:14,995 [INFO] Day 19: 20 cards found
+2025-06-08 07:42:15,877 [INFO] Found 20 events with fallback: .card-ticket
+2025-06-08 07:42:15,877 [INFO] Day 20: 20 cards found
+2025-06-08 07:42:16,398 [INFO] Found 20 events with fallback: .card-ticket
+2025-06-08 07:42:16,398 [INFO] Day 21: 20 cards found
+2025-06-08 07:42:16,920 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:42:16,920 [INFO] Day 22: 22 cards found
+2025-06-08 07:42:17,529 [INFO] Found 25 events with fallback: .card-ticket
+2025-06-08 07:42:17,529 [INFO] Day 23: 25 cards found
+2025-06-08 07:42:18,127 [INFO] Found 15 events with fallback: .card-ticket
+2025-06-08 07:42:18,127 [INFO] Day 24: 15 cards found
+2025-06-08 07:42:18,657 [INFO] Found 15 events with fallback: .card-ticket
+2025-06-08 07:42:18,657 [INFO] Day 25: 15 cards found
+2025-06-08 07:42:19,138 [INFO] Found 15 events with fallback: .card-ticket
+2025-06-08 07:42:19,138 [INFO] Day 26: 15 cards found
+2025-06-08 07:42:19,620 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:42:19,620 [INFO] Day 27: 22 cards found
+2025-06-08 07:42:20,189 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:42:20,189 [INFO] Day 28: 22 cards found
+2025-06-08 07:42:20,761 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:42:20,761 [INFO] Day 29: 22 cards found
+2025-06-08 07:42:21,344 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:42:21,344 [INFO] Day 30: 22 cards found
+2025-06-08 07:42:53,047 [INFO] Processing month: July 2025
+2025-06-08 07:42:53,050 [INFO] Days to process: 31
+2025-06-08 07:42:53,266 [INFO] Found 16 events with fallback: .card-ticket
+2025-06-08 07:42:53,266 [INFO] Day 1: 16 cards found
+2025-06-08 07:42:53,775 [INFO] Found 16 events with fallback: .card-ticket
+2025-06-08 07:42:53,775 [INFO] Day 2: 16 cards found
+2025-06-08 07:42:54,306 [INFO] Found 20 events with fallback: .card-ticket
+2025-06-08 07:42:54,306 [INFO] Day 3: 20 cards found
+2025-06-08 07:42:54,894 [INFO] Found 21 events with fallback: .card-ticket
+2025-06-08 07:42:54,894 [INFO] Day 4: 21 cards found
+2025-06-08 07:43:25,436 [INFO] Found 23 events with fallback: .card-ticket
+2025-06-08 07:43:25,436 [INFO] Day 5: 23 cards found
+2025-06-08 07:43:25,970 [INFO] Found 23 events with fallback: .card-ticket
+2025-06-08 07:43:25,970 [INFO] Day 6: 23 cards found
+2025-06-08 07:43:26,528 [INFO] Found 23 events with fallback: .card-ticket
+2025-06-08 07:43:26,528 [INFO] Day 7: 23 cards found
+2025-06-08 07:43:27,111 [INFO] Found 21 events with fallback: .card-ticket
+2025-06-08 07:43:27,111 [INFO] Day 8: 21 cards found
+2025-06-08 07:43:28,477 [INFO] Found 21 events with fallback: .card-ticket
+2025-06-08 07:43:28,477 [INFO] Day 9: 21 cards found
+2025-06-08 07:43:28,997 [INFO] Found 21 events with fallback: .card-ticket
+2025-06-08 07:43:28,997 [INFO] Day 10: 21 cards found
+2025-06-08 07:43:29,568 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:43:29,568 [INFO] Day 11: 22 cards found
+2025-06-08 07:43:30,141 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:43:30,141 [INFO] Day 12: 22 cards found
+2025-06-08 07:43:31,525 [INFO] Found 24 events with fallback: .card-ticket
+2025-06-08 07:43:31,525 [INFO] Day 13: 24 cards found
+2025-06-08 07:43:32,100 [INFO] Found 24 events with fallback: .card-ticket
+2025-06-08 07:43:32,101 [INFO] Day 14: 24 cards found
+2025-06-08 07:44:03,451 [INFO] Found 17 events with fallback: .card-ticket
+2025-06-08 07:44:03,451 [INFO] Day 15: 17 cards found
+2025-06-08 07:44:03,943 [INFO] Found 17 events with fallback: .card-ticket
+2025-06-08 07:44:03,943 [INFO] Day 16: 17 cards found
+2025-06-08 07:44:04,438 [INFO] Found 20 events with fallback: .card-ticket
+2025-06-08 07:44:04,438 [INFO] Day 17: 20 cards found
+2025-06-08 07:44:04,980 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:44:04,981 [INFO] Day 18: 22 cards found
+2025-06-08 07:44:36,334 [INFO] Found 21 events with fallback: .card-ticket
+2025-06-08 07:44:36,334 [INFO] Day 19: 21 cards found
+2025-06-08 07:44:36,904 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:44:36,904 [INFO] Day 20: 22 cards found
+2025-06-08 07:44:37,474 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:44:37,474 [INFO] Day 21: 22 cards found
+2025-06-08 07:44:38,085 [INFO] Found 17 events with fallback: .card-ticket
+2025-06-08 07:44:38,085 [INFO] Day 22: 17 cards found
+2025-06-08 07:44:38,592 [INFO] Found 17 events with fallback: .card-ticket
+2025-06-08 07:44:38,592 [INFO] Day 23: 17 cards found
+2025-06-08 07:44:39,074 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:44:39,074 [INFO] Day 24: 22 cards found
+2025-06-08 07:44:39,617 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:44:39,617 [INFO] Day 25: 22 cards found
+2025-06-08 07:44:40,175 [INFO] Found 22 events with fallback: .card-ticket
+2025-06-08 07:44:40,175 [INFO] Day 26: 22 cards found
+2025-06-08 07:44:40,760 [INFO] Found 25 events with fallback: .card-ticket
+2025-06-08 07:44:40,761 [INFO] Day 27: 25 cards found
+2025-06-08 07:45:12,114 [INFO] Found 21 events with fallback: .card-ticket
+2025-06-08 07:45:12,114 [INFO] Day 28: 21 cards found
+2025-06-08 07:45:12,671 [INFO] Found 21 events with fallback: .card-ticket
+2025-06-08 07:45:12,671 [INFO] Day 29: 21 cards found
+2025-06-08 07:45:13,216 [INFO] Found 17 events with fallback: .card-ticket
+2025-06-08 07:45:13,216 [INFO] Day 30: 17 cards found
+2025-06-08 07:45:13,752 [INFO] Found 21 events with fallback: .card-ticket
+2025-06-08 07:45:13,752 [INFO] Day 31: 21 cards found
+2025-06-08 07:45:14,072 [INFO] Total events collected: 155
+2025-06-08 07:45:14,076 [INFO] Saved 155 events to ibiza_spotlight_calendar_events.json
+2025-06-08 07:45:14,076 [INFO] SUCCESS: 155 events in 222.5s
+2025-06-08 07:45:14,158 [INFO] Finished in 222.6 seconds

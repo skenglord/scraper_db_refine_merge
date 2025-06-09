@@ -1,0 +1,3560 @@
+{
+  "metadata": {
+    "total_events": 155,
+    "scraped_at": "2025-06-08T00:45:14.072291",
+    "version": "fast_v1.0"
+  },
+  "events": [
+    {
+      "scraped_at": "2025-06-08T00:41:34.859642",
+      "index": 0,
+      "title": "Introducing... Baddest Behaviour",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/pacha-pre-season-parties",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Mau P",
+          "room": "Main"
+        },
+        {
+          "name": "CAMELPHAT",
+          "room": "Main"
+        }
+      ],
+      "venue": "Pacha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.860375",
+      "index": 1,
+      "title": "Glitterbox",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/hi-glitterbox",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "Dave Lee",
+          "room": "Main"
+        },
+        {
+          "name": "Dimitri From Paris",
+          "room": "Main"
+        },
+        {
+          "name": "Kenny Dope",
+          "room": "Main"
+        },
+        {
+          "name": "Suze IJÓ",
+          "room": "Main"
+        },
+        {
+          "name": "Coco & Breezy",
+          "room": "Main"
+        },
+        {
+          "name": "Inner City (DJ set)",
+          "room": "Main"
+        },
+        {
+          "name": "Natasha Diggs",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.861121",
+      "index": 2,
+      "title": "Nido",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/nido",
+      "time": "19:00",
+      "lineup": [
+        {
+          "name": "Cris44",
+          "room": "Main"
+        },
+        {
+          "name": "Mitch Oliver",
+          "room": "Main"
+        },
+        {
+          "name": "Panyer",
+          "room": "Main"
+        },
+        {
+          "name": "N1NJA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Las Dalias - Akasha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.861716",
+      "index": 3,
+      "title": "ABODE x CUE",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/abode-eden",
+      "time": "23:45\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Cait",
+          "room": "Main"
+        },
+        {
+          "name": "Chooper",
+          "room": "Main"
+        },
+        {
+          "name": "Fish56Octagon",
+          "room": "Main"
+        },
+        {
+          "name": "Jamie Aramayo",
+          "room": "Main"
+        },
+        {
+          "name": "Will Wiley",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.862338",
+      "index": 4,
+      "title": "R&B Affair Pool Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/r-and-b-affair",
+      "time": "13:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "Volatile",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Policy",
+          "room": "Main"
+        },
+        {
+          "name": "Ibz",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Cal",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.935121",
+      "index": 5,
+      "title": "SIN Sundays",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/sin-sundays",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "Billie & Chris",
+          "room": "Main"
+        },
+        {
+          "name": "Andreas Georgiou",
+          "room": "Main"
+        },
+        {
+          "name": "Beats by Tom",
+          "room": "Main"
+        },
+        {
+          "name": "Jake Laird",
+          "room": "Main"
+        },
+        {
+          "name": "Louie Dunn",
+          "room": "Main"
+        },
+        {
+          "name": "Danny Black",
+          "room": "Main"
+        },
+        {
+          "name": "Liam Cooper",
+          "room": "Main"
+        },
+        {
+          "name": "Danny Black",
+          "room": "Main"
+        },
+        {
+          "name": "Plus O Beach Resident",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.935814",
+      "index": 6,
+      "title": "Portside After Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/chinois-presents",
+      "time": "23:30\n                                                                             - 06:30",
+      "lineup": [
+        {
+          "name": "Luciano",
+          "room": "Main"
+        },
+        {
+          "name": "Bedouin",
+          "room": "Main"
+        },
+        {
+          "name": "Dorian Craft B2B Baron",
+          "room": "Main"
+        },
+        {
+          "name": "Cameron Jack",
+          "room": "Main"
+        }
+      ],
+      "venue": "Chinois Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.936492",
+      "index": 7,
+      "title": "Pantheøn",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/pantheon",
+      "time": "19:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "wAFF",
+          "room": "Main"
+        },
+        {
+          "name": "Yaya",
+          "room": "Main"
+        },
+        {
+          "name": "Sante Sansone",
+          "room": "Main"
+        },
+        {
+          "name": "Art No Logia",
+          "room": "Main"
+        },
+        {
+          "name": "Janse",
+          "room": "Main"
+        },
+        {
+          "name": "C.I.S.C.O",
+          "room": "Main"
+        }
+      ],
+      "venue": "Cova Santa"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.937182",
+      "index": 8,
+      "title": "Heavy House Society",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/heavy-house-society-528",
+      "time": "16:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Sidney Charles B2B Alisha",
+          "room": "Main"
+        },
+        {
+          "name": "Job de Jong B2B jWave",
+          "room": "Main"
+        },
+        {
+          "name": "Locky B2B Mad.Again",
+          "room": "Main"
+        },
+        {
+          "name": "Joss Dean",
+          "room": "Main"
+        }
+      ],
+      "venue": "528 Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.937836",
+      "index": 9,
+      "title": "Clásico",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/sundays-es-paradis",
+      "time": "23:00\n                                                                             - 06:00",
+      "venue": "Es Paradis"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.984577",
+      "index": 10,
+      "title": "All I Need",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/all-i-need-playa-soleil",
+      "time": "18:00\n                                                                             - 03:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Playa Soleil"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.985116",
+      "index": 11,
+      "title": "Travieso",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/travieso",
+      "time": "23:45\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Travieso",
+          "room": "Main"
+        }
+      ],
+      "venue": "Lío Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.985751",
+      "index": 12,
+      "title": "El Paripé",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/el-paripe",
+      "time": "23:45\n                                                                             - 06:00",
+      "venue": "tipic. Formentera"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.986292",
+      "index": 13,
+      "title": "A Day In Paradise Boat Trip",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/day-paradise",
+      "time": "12:00\n                                                                             - 17:00",
+      "venue": "A Day In Paradise Boat Trip"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:34.986812",
+      "index": 14,
+      "title": "Formentera With Benefits",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/ibiza-boat-club-formentera",
+      "time": "10:30\n                                                                             - 21:00",
+      "venue": "Formentera With Benefits"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:35.012796",
+      "index": 15,
+      "title": "Five Star Boat Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/five-star-boat-party-ibiza-boat-club",
+      "time": "13:00\n                                                                             - 16:00",
+      "venue": "Five Star Boat Party"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:35.013358",
+      "index": 16,
+      "title": "Aftersun Ibiza Boat Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/aftersun-ibiza-ibiza-boat-club",
+      "time": "18:15\n                                                                             - 21:15",
+      "venue": "Aftersun Ibiza Boat Party"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:35.013892",
+      "index": 17,
+      "title": "Oceanbeat Ibiza Afternoon Boat Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/oceanbeat-ibiza-boat-party",
+      "time": "15:00\n                                                                             - 18:00",
+      "venue": "Oceanbeat Ibiza Afternoon Boat Party"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:36.722600",
+      "index": 0,
+      "title": "Eric Prydz presents Holosphere 2.0 Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/eric-prydz-unvrs",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "Eric Prydz",
+          "room": "Main"
+        },
+        {
+          "name": "Rivo",
+          "room": "Main"
+        },
+        {
+          "name": "J Ribbon",
+          "room": "Main"
+        },
+        {
+          "name": "Bender",
+          "room": "Main"
+        }
+      ],
+      "venue": "[UNVRS]"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:36.723369",
+      "index": 1,
+      "title": "Bad Gyal",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/bad-gyal-pacha",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Bad Gyal (live PA)",
+          "room": "Main"
+        },
+        {
+          "name": "Andrea Vandall",
+          "room": "Main"
+        },
+        {
+          "name": "Mygal",
+          "room": "Main"
+        },
+        {
+          "name": "Sergio Vicedo",
+          "room": "Main"
+        }
+      ],
+      "venue": "Pacha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:36.724040",
+      "index": 2,
+      "title": "Peace N' Music Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/peace-n-music",
+      "time": "18:00",
+      "lineup": [
+        {
+          "name": "Joan Ribas",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Pippi",
+          "room": "Main"
+        },
+        {
+          "name": "Davide Garra",
+          "room": "Main"
+        },
+        {
+          "name": "Ramboiage",
+          "room": "Main"
+        },
+        {
+          "name": "Santacreu",
+          "room": "Main"
+        }
+      ],
+      "venue": "Las Dalias - Akasha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:36.724703",
+      "index": 3,
+      "title": "Nothing But Trouble",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/nothing-trouble-eden",
+      "time": "23:45\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Cody Wong",
+          "room": "Main"
+        },
+        {
+          "name": "Daire",
+          "room": "Main"
+        },
+        {
+          "name": "Ely Oaks",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:36.725351",
+      "index": 4,
+      "title": "Ben Hemsley presents bebé",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/daydreamers",
+      "time": "13:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "Ben Hemsley",
+          "room": "Main"
+        },
+        {
+          "name": "Ammara",
+          "room": "Main"
+        },
+        {
+          "name": "Kyle Starkey",
+          "room": "Main"
+        },
+        {
+          "name": "Sam Alfred",
+          "room": "Main"
+        },
+        {
+          "name": "Jake Smith",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:36.788135",
+      "index": 5,
+      "title": "D4 D4NCE",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/d4-d4nce-o-beach",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "Alex Mills",
+          "room": "Main"
+        },
+        {
+          "name": "Beyond Chicago",
+          "room": "Main"
+        },
+        {
+          "name": "Paul Reynolds",
+          "room": "Main"
+        },
+        {
+          "name": "Ryan Arnold",
+          "room": "Main"
+        },
+        {
+          "name": "Jamie Love",
+          "room": "Main"
+        },
+        {
+          "name": "Lucy Jane",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:36.788761",
+      "index": 6,
+      "title": "You Know The Vibes",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/you-know-vibes",
+      "time": "23:45\n                                                                             - 07:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Es Paradis"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.162912",
+      "index": 0,
+      "title": "Do Not Sleep",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/do-not-sleep-amnesia",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Elliot Schooling & Liam Palmer B2B Gaskin B2B L.P. Rhythm",
+          "room": "Main"
+        },
+        {
+          "name": "Ellia Jaya",
+          "room": "Main"
+        },
+        {
+          "name": "jWave",
+          "room": "Main"
+        },
+        {
+          "name": "Seb Zito B2B Ozzie Guven",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.163486",
+      "index": 1,
+      "title": "CAMELPHAT",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/camelphat-pacha",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "CAMELPHAT",
+          "room": "Main"
+        },
+        {
+          "name": "Hot Since 82",
+          "room": "Main"
+        },
+        {
+          "name": "Tigerblind",
+          "room": "Main"
+        }
+      ],
+      "venue": "Pacha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.164403",
+      "index": 2,
+      "title": "Outset Ibiza Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/outset-ibiza",
+      "time": "23:45\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Black Traffic",
+          "room": "Main"
+        },
+        {
+          "name": "blk.",
+          "room": "Main"
+        },
+        {
+          "name": "Datsko",
+          "room": "Main"
+        },
+        {
+          "name": "Fionn Curran",
+          "room": "Main"
+        },
+        {
+          "name": "Morgan Kasiera",
+          "room": "Main"
+        },
+        {
+          "name": "Veseli",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.164957",
+      "index": 3,
+      "title": "Reboot Rocks",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/reboot-rocks",
+      "time": "13:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "Black Traffic",
+          "room": "Main"
+        },
+        {
+          "name": "Datsko",
+          "room": "Main"
+        },
+        {
+          "name": "Fionn Curran",
+          "room": "Main"
+        },
+        {
+          "name": "Hyyken",
+          "room": "Main"
+        },
+        {
+          "name": "Jakkob",
+          "room": "Main"
+        },
+        {
+          "name": "Reboot DJs",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.165462",
+      "index": 4,
+      "title": "Kisstory",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/kisstory-o-beach",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "DJ Cameo",
+          "room": "Main"
+        },
+        {
+          "name": "Lucy Jane",
+          "room": "Main"
+        },
+        {
+          "name": "Sam Dungate",
+          "room": "Main"
+        },
+        {
+          "name": "Albert Bace (live percussion)",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.219686",
+      "index": 5,
+      "title": "PIV Ibiza Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/piv-label-showcase",
+      "time": "19:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Artmann",
+          "room": "Main"
+        },
+        {
+          "name": "Dennis Quin",
+          "room": "Main"
+        },
+        {
+          "name": "Jamback",
+          "room": "Main"
+        },
+        {
+          "name": "Job de Jong",
+          "room": "Main"
+        },
+        {
+          "name": "Kellie Allen",
+          "room": "Main"
+        },
+        {
+          "name": "M-High",
+          "room": "Main"
+        },
+        {
+          "name": "Prunk",
+          "room": "Main"
+        },
+        {
+          "name": "Retrouve",
+          "room": "Main"
+        },
+        {
+          "name": "Ruze",
+          "room": "Main"
+        }
+      ],
+      "venue": "Cova Santa"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.220235",
+      "index": 6,
+      "title": "Pikes Presents Opening Party | Hot Chip",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/pikes-presents-528",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Hot Chip (DJ set)",
+          "room": "Main"
+        },
+        {
+          "name": "Colleen Cosmo Murphy",
+          "room": "Main"
+        },
+        {
+          "name": "Camilo Miranda",
+          "room": "Main"
+        },
+        {
+          "name": "Ryan O Gorman",
+          "room": "Main"
+        },
+        {
+          "name": "Lanty Jackson",
+          "room": "Main"
+        }
+      ],
+      "venue": "528 Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.221139",
+      "index": 7,
+      "title": "Ibiza Records",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/tuesdays-es-paradis",
+      "time": "23:30\n                                                                             - 06:00",
+      "venue": "Es Paradis"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.221709",
+      "index": 8,
+      "title": "Blanche Ibiza",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/blanche-london",
+      "time": "23:45\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Lío Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.222272",
+      "index": 9,
+      "title": "El Kiddo",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/el-kiddo-bam-bu-ku",
+      "time": "11:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "Harry Mc",
+          "room": "Main"
+        },
+        {
+          "name": "+ special guests",
+          "room": "Main"
+        }
+      ],
+      "venue": "Bam Bu Ku Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.263230",
+      "index": 10,
+      "title": "IDOL Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/idol-tipic",
+      "time": "22:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Todd Terry",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Pippi",
+          "room": "Main"
+        },
+        {
+          "name": "Parris Taylor",
+          "room": "Main"
+        },
+        {
+          "name": "Perry Martin",
+          "room": "Main"
+        }
+      ],
+      "venue": "Sundara"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.263778",
+      "index": 11,
+      "title": "Pukka Up Sunset Boat Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/pukka_up_i.htm",
+      "time": "15:00\n                                                                             - 18:00",
+      "venue": "Oceanbeat Ibiza Afternoon Boat Party"
+    },
+    {
+      "scraped_at": "2025-06-08T00:41:37.265378",
+      "index": 14,
+      "title": "Aftersun Ibiza Boat Party"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.620244",
+      "index": 0,
+      "title": "Abracadabra",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/abracadabra-pacha",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "BLONDISH",
+          "room": "Main"
+        },
+        {
+          "name": "Vintage Culture",
+          "room": "Main"
+        },
+        {
+          "name": "Notre Dame B2B Apache",
+          "room": "Main"
+        }
+      ],
+      "venue": "Pacha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.620993",
+      "index": 1,
+      "title": "Tomorrowland presents Dimitri Vegas & Like Mike",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/tomorrowland-presents-dimitri-vegas-mike",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Dimitri Vegas & Like Mike",
+          "room": "Main"
+        },
+        {
+          "name": "Timmy Trumpet",
+          "room": "Main"
+        },
+        {
+          "name": "Bassjackers",
+          "room": "Main"
+        },
+        {
+          "name": "Lucas Estrada",
+          "room": "Main"
+        },
+        {
+          "name": "Lana Scolaro",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.621674",
+      "index": 2,
+      "title": "Namaste",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/namaste",
+      "time": "19:00",
+      "lineup": [
+        {
+          "name": "Oso Blanco & Nima",
+          "room": "Main"
+        },
+        {
+          "name": "Deer Jade",
+          "room": "Main"
+        },
+        {
+          "name": "Joselito & Marco Tegui (live decompression set)",
+          "room": "Main"
+        },
+        {
+          "name": "Mikaël Is Love",
+          "room": "Main"
+        },
+        {
+          "name": "Shuna Bake Huni Kuin",
+          "room": "Main"
+        },
+        {
+          "name": "Diass B2B Pomboklap (all night long)",
+          "room": "Main"
+        }
+      ],
+      "venue": "Las Dalias - Akasha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.622354",
+      "index": 3,
+      "title": "Deeperfect",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/deeperfect-eden",
+      "time": "23:45\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Art No Logia",
+          "room": "Main"
+        },
+        {
+          "name": "Dimmish",
+          "room": "Main"
+        },
+        {
+          "name": "Joe Vanditti",
+          "room": "Main"
+        },
+        {
+          "name": "Stefano Norferini",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.623051",
+      "index": 4,
+      "title": "Ibiza Rocks House Band Pool Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/the-sound-of-ibiza-rocks",
+      "time": "13:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "Ibiza Rocks House Band",
+          "room": "Main"
+        },
+        {
+          "name": "Dupex",
+          "room": "Main"
+        },
+        {
+          "name": "Ibiza Rocks resident DJs",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.687613",
+      "index": 5,
+      "title": "House In Paradise",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/house-paradise",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "House In Paradise resident DJs",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.688147",
+      "index": 6,
+      "title": "Bubbles",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/bubbles-champagne",
+      "time": "23:45\n                                                                             - 06:00",
+      "venue": "Es Paradis"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.688685",
+      "index": 7,
+      "title": "La Troya Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/la-troya-playa-soleil",
+      "time": "23:00",
+      "lineup": [
+        {
+          "name": "Emanuele Inglese",
+          "room": "Main"
+        },
+        {
+          "name": "Oscar Colorado",
+          "room": "Main"
+        },
+        {
+          "name": "Davina Moss",
+          "room": "Main"
+        },
+        {
+          "name": "Kahlea",
+          "room": "Main"
+        }
+      ],
+      "venue": "Playa Soleil"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.689206",
+      "index": 8,
+      "title": "Toy Room",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/playground-toy-room",
+      "time": "23:45\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Lío Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.689719",
+      "index": 9,
+      "title": "Ibiza Brunch Club Classics",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/ibiza-brunch-club-classics",
+      "time": "13:00\n                                                                             - 20:00",
+      "venue": "Bam Bu Ku Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:07.725934",
+      "index": 10,
+      "title": "Promised Land Opening Party | Todd Terry",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/promised-land-sundara",
+      "time": "22:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Todd Terry",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Pippi",
+          "room": "Main"
+        },
+        {
+          "name": "Parris Taylor",
+          "room": "Main"
+        },
+        {
+          "name": "Perry Martin",
+          "room": "Main"
+        }
+      ],
+      "venue": "Sundara"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.149140",
+      "index": 0,
+      "title": "FISHER Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/fisher-unvrs",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "FISHER",
+          "room": "Main"
+        },
+        {
+          "name": "HUGEL",
+          "room": "Main"
+        },
+        {
+          "name": "Little Fritter",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "[UNVRS]"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.149837",
+      "index": 1,
+      "title": "Defected",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/defected",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Darius Syrossian",
+          "room": "Main"
+        },
+        {
+          "name": "Gorgon City",
+          "room": "Main"
+        },
+        {
+          "name": "Groove Armada (DJ set)",
+          "room": "Main"
+        },
+        {
+          "name": "Manu Gonzalez",
+          "room": "Main"
+        }
+      ],
+      "venue": "Pacha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.150530",
+      "index": 2,
+      "title": "Renaissance",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/renaissance-akasha",
+      "time": "19:00",
+      "lineup": [
+        {
+          "name": "Christian Löffler (live)",
+          "room": "Main"
+        },
+        {
+          "name": "Joplyn (live)",
+          "room": "Main"
+        },
+        {
+          "name": "Marcus James",
+          "room": "Main"
+        },
+        {
+          "name": "Trikk",
+          "room": "Main"
+        },
+        {
+          "name": "Ageless",
+          "room": "Main"
+        },
+        {
+          "name": "EdOne",
+          "room": "Main"
+        }
+      ],
+      "venue": "Las Dalias - Akasha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.151222",
+      "index": 3,
+      "title": "One More Time Ibiza",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/one-more-time-eden",
+      "time": "23:45\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Tall Paul",
+          "room": "Main"
+        },
+        {
+          "name": "Rob Tissera",
+          "room": "Main"
+        },
+        {
+          "name": "Holly Hutch",
+          "room": "Main"
+        },
+        {
+          "name": "Vicky Devine",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.151913",
+      "index": 4,
+      "title": "Ibiza Anthems Pool Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/ibiza-anthems-ibiza-rocks",
+      "time": "13:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "Switch Disco",
+          "room": "Main"
+        },
+        {
+          "name": "Ellie Sax (live saxophonist)",
+          "room": "Main"
+        },
+        {
+          "name": "Dupex",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Cal",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.210854",
+      "index": 5,
+      "title": "ON111",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/one",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "Scottie B",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Cameo",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Policy",
+          "room": "Main"
+        },
+        {
+          "name": "Sam Dungate",
+          "room": "Main"
+        },
+        {
+          "name": "Albert Bace (live percussion)",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.211530",
+      "index": 6,
+      "title": "Honey F#cking Dijon Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/honey-dijon-chinois",
+      "time": "23:30\n                                                                             - 06:30",
+      "lineup": [
+        {
+          "name": "Honey Dijon",
+          "room": "Main"
+        },
+        {
+          "name": "Âme (DJ set)",
+          "room": "Main"
+        },
+        {
+          "name": "Cameron Jack",
+          "room": "Main"
+        }
+      ],
+      "venue": "Chinois Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.212178",
+      "index": 7,
+      "title": "Afrodise & Moots",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/afrodise-moots",
+      "time": "19:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Aaron Sevilla",
+          "room": "Main"
+        },
+        {
+          "name": "Claudia León",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Cova Santa"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.212837",
+      "index": 8,
+      "title": "Es Paradis",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/thursdays-es-paradis",
+      "time": "23:00\n                                                                             - 06:00",
+      "venue": "Es Paradis"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.213472",
+      "index": 9,
+      "title": "Bâzâr by Sasson",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/bazar-playa-soleil",
+      "time": "21:00\n                                                                             - 03:00",
+      "lineup": [
+        {
+          "name": "Fiona Kraft",
+          "room": "Main"
+        },
+        {
+          "name": "Labench",
+          "room": "Main"
+        },
+        {
+          "name": "Rockin Moroccin",
+          "room": "Main"
+        },
+        {
+          "name": "Sasson",
+          "room": "Main"
+        }
+      ],
+      "venue": "Playa Soleil"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.252130",
+      "index": 10,
+      "title": "Tiempo by Nomis",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/tiempo-nomis",
+      "time": "23:45\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Nomis",
+          "room": "Main"
+        }
+      ],
+      "venue": "Lío Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.252672",
+      "index": 11,
+      "title": "Latin Pool",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/latin-pool-bbk",
+      "time": "13:00\n                                                                             - 21:00",
+      "venue": "Bam Bu Ku Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.633972",
+      "index": 0,
+      "title": "Amnesia: The Real Clubbing Experience",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/real-clubbing-experience",
+      "time": "23:59\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "4Pleasure",
+          "room": "Main"
+        },
+        {
+          "name": "Caal",
+          "room": "Main"
+        },
+        {
+          "name": "Ion Pananides",
+          "room": "Main"
+        },
+        {
+          "name": "Jaco Reigosa",
+          "room": "Main"
+        },
+        {
+          "name": "Luca Donzelli",
+          "room": "Main"
+        },
+        {
+          "name": "Mar-T",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.634539",
+      "index": 1,
+      "title": "Music On",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/music-on",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Marco Carola",
+          "room": "Main"
+        },
+        {
+          "name": "Cloonee",
+          "room": "Main"
+        },
+        {
+          "name": "Sosa B2B Ale De Tuglie",
+          "room": "Main"
+        }
+      ],
+      "venue": "Pacha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.635114",
+      "index": 2,
+      "title": "MËSTIZA",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/mestiza-hi",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "MËSTIZA",
+          "room": "Main"
+        },
+        {
+          "name": "Guy Gerber",
+          "room": "Main"
+        },
+        {
+          "name": "Sparrow & Barbossa",
+          "room": "Main"
+        },
+        {
+          "name": "Burlak",
+          "room": "Main"
+        },
+        {
+          "name": "Adrian Mills",
+          "room": "Main"
+        },
+        {
+          "name": "Serafina",
+          "room": "Main"
+        },
+        {
+          "name": "Aerea (live)",
+          "room": "Main"
+        },
+        {
+          "name": "Peter Blue",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.635718",
+      "index": 3,
+      "title": "Calvin Harris  | Friday",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/calvin-harris-friday",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Calvin Harris",
+          "room": "Main"
+        },
+        {
+          "name": "MK",
+          "room": "Main"
+        },
+        {
+          "name": "Tyson O'Brien",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.636330",
+      "index": 4,
+      "title": "tINI & the gang",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/akasha-summer-weekend-parties",
+      "time": "23:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Anthea B2B Oshana B2B tINI (HOE SHANA)",
+          "room": "Main"
+        }
+      ],
+      "venue": "Las Dalias - Akasha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.698243",
+      "index": 5,
+      "title": "Reboot Ibiza",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/reboot-presents-eden",
+      "time": "23:45\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Alex Mills",
+          "room": "Main"
+        },
+        {
+          "name": "Flashmob",
+          "room": "Main"
+        },
+        {
+          "name": "KILIMANJARO",
+          "room": "Main"
+        },
+        {
+          "name": "Low Steppa",
+          "room": "Main"
+        },
+        {
+          "name": "Hyyken",
+          "room": "Main"
+        },
+        {
+          "name": "Andy Smith (from Portishead) & DJ Smoove (all night long)",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.698777",
+      "index": 6,
+      "title": "Pool Days",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/ibiza-rocks-pool-days",
+      "time": "13:00\n                                                                             - 20:00",
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.699286",
+      "index": 7,
+      "title": "Pool Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/pool-party-o-beach",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "DJ Cameo",
+          "room": "Main"
+        },
+        {
+          "name": "Jamie Love",
+          "room": "Main"
+        },
+        {
+          "name": "Lucy Jane",
+          "room": "Main"
+        },
+        {
+          "name": "Parris Taylor",
+          "room": "Main"
+        },
+        {
+          "name": "Sam Dungate",
+          "room": "Main"
+        },
+        {
+          "name": "Albert Bace (live percussion)",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.700291",
+      "index": 9,
+      "title": "Woomoon",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/woomoon",
+      "time": "19:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Viken Arman",
+          "room": "Main"
+        },
+        {
+          "name": "Avangart Tabldot",
+          "room": "Main"
+        },
+        {
+          "name": "Acid Trainer (Acid Flora & Animal Trainer)",
+          "room": "Main"
+        },
+        {
+          "name": "Cris44",
+          "room": "Main"
+        },
+        {
+          "name": "Medusa Odyssey (live)",
+          "room": "Main"
+        }
+      ],
+      "venue": "Cova Santa"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.761761",
+      "index": 10,
+      "title": "Claptone presents The Masquerade",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/masquerade-chinois",
+      "time": "23:30\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Claptone",
+          "room": "Main"
+        },
+        {
+          "name": "A-Trak B2B andhim",
+          "room": "Main"
+        },
+        {
+          "name": "Juliet Sikora",
+          "room": "Main"
+        },
+        {
+          "name": "Lars Moston",
+          "room": "Main"
+        }
+      ],
+      "venue": "Chinois Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.762456",
+      "index": 11,
+      "title": "Masaka Africana",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/masaka-cova-santa",
+      "time": "19:00\n                                                                             - 05:30",
+      "lineup": [
+        {
+          "name": "Mickey Dastinz",
+          "room": "Main"
+        },
+        {
+          "name": "Audera",
+          "room": "Main"
+        },
+        {
+          "name": "Delum",
+          "room": "Main"
+        }
+      ],
+      "venue": "Cova Santa"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.763000",
+      "index": 12,
+      "title": "Saturdays",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/saturdays",
+      "time": "20:00\n                                                                             - 04:00",
+      "lineup": [
+        {
+          "name": "Andy Wilson",
+          "room": "Main"
+        },
+        {
+          "name": "Graham Sahara",
+          "room": "Main"
+        },
+        {
+          "name": "Jon Pleased Wimmin",
+          "room": "Main"
+        },
+        {
+          "name": "Jason Bye",
+          "room": "Main"
+        }
+      ],
+      "venue": "528 Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.763525",
+      "index": 13,
+      "title": "Fiesta del Agua",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/fiesta-del-agua",
+      "time": "23:45\n                                                                             - 06:00",
+      "venue": "Es Paradis"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.764049",
+      "index": 14,
+      "title": "Pandora",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/pandora",
+      "time": "23:45\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "DJ Oliver",
+          "room": "Main"
+        }
+      ],
+      "venue": "Lío Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.808030",
+      "index": 15,
+      "title": "BLOQ Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/bloq",
+      "time": "13:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "Scottie B",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Cameo",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Policy",
+          "room": "Main"
+        }
+      ],
+      "venue": "Bam Bu Ku Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.808584",
+      "index": 16,
+      "title": "Ibiza Talents",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/saturdays-tipic",
+      "time": "23:45\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Joe Vanditti",
+          "room": "Main"
+        },
+        {
+          "name": "Skizzo",
+          "room": "Main"
+        },
+        {
+          "name": "White Off",
+          "room": "Main"
+        },
+        {
+          "name": "Roberto Navarro",
+          "room": "Main"
+        },
+        {
+          "name": "Artec",
+          "room": "Main"
+        },
+        {
+          "name": "Day-N",
+          "room": "Main"
+        }
+      ],
+      "venue": "tipic. Formentera"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.809623",
+      "index": 18,
+      "title": "Pukka Up Afternoon Boat Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/pukka-up-saturdays",
+      "time": "14:00\n                                                                             - 17:00",
+      "venue": "Pukka Up Afternoon Boat Party"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:08.810143",
+      "index": 19,
+      "title": "Float Your Boat",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/float-your-boat-sunset-experience",
+      "time": "18:00\n                                                                             - 21:00",
+      "venue": "Float Your Boat"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.215366",
+      "index": 0,
+      "title": "elrow Ibiza Opening Party | Nowmads New World",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/elrow-unvrs",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "Bastian Bux",
+          "room": "Main"
+        },
+        {
+          "name": "Franky Rizardo",
+          "room": "Main"
+        },
+        {
+          "name": "Ilario Alicante",
+          "room": "Main"
+        },
+        {
+          "name": "Kölsch",
+          "room": "Main"
+        }
+      ],
+      "venue": "[UNVRS]"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.216109",
+      "index": 1,
+      "title": "BRESH Ibiza Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/bresh-amnesia",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.217159",
+      "index": 2,
+      "title": "Flower Power Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/flower_power_i.htm",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Bora Uza (live)",
+          "room": "Main"
+        },
+        {
+          "name": "Boy George (DJ set)",
+          "room": "Main"
+        },
+        {
+          "name": "Sam Oui",
+          "room": "Main"
+        }
+      ],
+      "venue": "Pacha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.218214",
+      "index": 3,
+      "title": "Black Coffee",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/black-coffee",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "Black Coffee",
+          "room": "Main"
+        },
+        {
+          "name": "Andrea Oliva B2B Arodes",
+          "room": "Main"
+        },
+        {
+          "name": "FKA Mash",
+          "room": "Main"
+        },
+        {
+          "name": "Damian Lazarus",
+          "room": "Main"
+        },
+        {
+          "name": "Bushwacka",
+          "room": "Main"
+        },
+        {
+          "name": "Omri.",
+          "room": "Main"
+        },
+        {
+          "name": "Paul Reynolds",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.219717",
+      "index": 4,
+      "title": "ANTS",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/ants",
+      "time": "15:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "AJ Christou",
+          "room": "Main"
+        },
+        {
+          "name": "Andrea Oliva",
+          "room": "Main"
+        },
+        {
+          "name": "Chelina Manuhutu",
+          "room": "Main"
+        },
+        {
+          "name": "Francisco Allendes",
+          "room": "Main"
+        },
+        {
+          "name": "Patrick Topping",
+          "room": "Main"
+        },
+        {
+          "name": "Raul Rodriguez",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.284974",
+      "index": 5,
+      "title": "Supernova",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/supernova-las-dalias",
+      "time": "18:00",
+      "lineup": [
+        {
+          "name": "Bebbo",
+          "room": "Main"
+        },
+        {
+          "name": "La Santa",
+          "room": "Main"
+        },
+        {
+          "name": "Chus B2B Vanjee",
+          "room": "Main"
+        },
+        {
+          "name": "Bebbo",
+          "room": "Main"
+        },
+        {
+          "name": "Chus B2B Vanjee",
+          "room": "Main"
+        },
+        {
+          "name": "Iban Mendoza",
+          "room": "Main"
+        }
+      ],
+      "venue": "Las Dalias - Akasha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.285639",
+      "index": 6,
+      "title": "Bukkle Ibiza",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/bukkle-ibiza",
+      "time": "23:45\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Bassel Darwish",
+          "room": "Main"
+        },
+        {
+          "name": "Stella",
+          "room": "Main"
+        },
+        {
+          "name": "Svan Gianz",
+          "room": "Main"
+        },
+        {
+          "name": "Jordi Román",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.286277",
+      "index": 7,
+      "title": "Old Skool Bingo",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/eden-non-clubbing-and-pre-midnight-entertainment-events",
+      "time": "20:00\n                                                                             - 23:00",
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.286917",
+      "index": 8,
+      "title": "LoveJuice Ibiza Pool Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/lovejuice-ibiza-rocks",
+      "time": "13:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "George Mensah",
+          "room": "Main"
+        },
+        {
+          "name": "Smokey Bubblin' B",
+          "room": "Main"
+        },
+        {
+          "name": "Goody",
+          "room": "Main"
+        },
+        {
+          "name": "Freddie Lineker",
+          "room": "Main"
+        },
+        {
+          "name": "Acid Harry",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.287553",
+      "index": 9,
+      "title": "Soul Heaven",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/soul-heaven",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "Michael Gray",
+          "room": "Main"
+        },
+        {
+          "name": "Jamie Love",
+          "room": "Main"
+        },
+        {
+          "name": "Juliet Thurbz",
+          "room": "Main"
+        },
+        {
+          "name": "Lucy Jane",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.328591",
+      "index": 10,
+      "title": "FourThirtyTwo",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/fourthirtytwo-528",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Richy Ahmed",
+          "room": "Main"
+        },
+        {
+          "name": "Mason Collective",
+          "room": "Main"
+        },
+        {
+          "name": "Frank Storm",
+          "room": "Main"
+        },
+        {
+          "name": "DXNBY",
+          "room": "Main"
+        },
+        {
+          "name": "Ashoju",
+          "room": "Main"
+        }
+      ],
+      "venue": "528 Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.787101",
+      "index": 0,
+      "title": "Pyramid Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/pyramid",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Ricardo Villalobos B2B Raresh",
+          "room": "Main"
+        },
+        {
+          "name": "Josh Baker B2B Rossi.",
+          "room": "Main"
+        },
+        {
+          "name": "Mar-T",
+          "room": "Main"
+        },
+        {
+          "name": "Nina Kraviz",
+          "room": "Main"
+        },
+        {
+          "name": "Deborah de Luca",
+          "room": "Main"
+        },
+        {
+          "name": "Marco Faraone",
+          "room": "Main"
+        },
+        {
+          "name": "Luca Donzelli",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.787827",
+      "index": 1,
+      "title": "Solomun +1 Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/solomun_plus1_i.htm",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Solomun (all night long)",
+          "room": "Main"
+        }
+      ],
+      "venue": "Pacha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.789211",
+      "index": 3,
+      "title": "Armin van Buuren Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/armin-van-buuren",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Armin van Buuren (all day long)",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.854165",
+      "index": 7,
+      "title": "Boat Club",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/boat-club",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "G-Chase",
+          "room": "Main"
+        },
+        {
+          "name": "Harty",
+          "room": "Main"
+        },
+        {
+          "name": "Lottie J",
+          "room": "Main"
+        },
+        {
+          "name": "Michael Younger",
+          "room": "Main"
+        },
+        {
+          "name": "O'Neil McDowall",
+          "room": "Main"
+        },
+        {
+          "name": "Jamie Love",
+          "room": "Main"
+        },
+        {
+          "name": "Sam Dungate",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:09.854835",
+      "index": 8,
+      "title": "Sondela",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/sondela-chinois",
+      "time": "23:30\n                                                                             - 06:30",
+      "lineup": [
+        {
+          "name": "Nitefreak",
+          "room": "Main"
+        },
+        {
+          "name": "Ankhoï B2B Luch",
+          "room": "Main"
+        },
+        {
+          "name": "Jamiie",
+          "room": "Main"
+        },
+        {
+          "name": "Cleido B2B Louie Dunmore",
+          "room": "Main"
+        }
+      ],
+      "venue": "Chinois Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:10.357892",
+      "index": 1,
+      "title": "Sonny Fodera Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/sonny-fodera",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Sonny Fodera",
+          "room": "Main"
+        },
+        {
+          "name": "Kerri Chandler",
+          "room": "Main"
+        },
+        {
+          "name": "Danny Howard",
+          "room": "Main"
+        }
+      ],
+      "venue": "Pacha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:10.358542",
+      "index": 2,
+      "title": "David Guetta presents F*** ME I'M FAMOUS! Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/f-me-im-famous-ushuaia",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "David Guetta",
+          "room": "Main"
+        },
+        {
+          "name": "The Chainsmokers",
+          "room": "Main"
+        },
+        {
+          "name": "Moojo",
+          "room": "Main"
+        },
+        {
+          "name": "Paul Reynolds",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:10.425070",
+      "index": 8,
+      "title": "SummerRockz Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/summerrockz",
+      "time": "13:00\n                                                                             - 21:00",
+      "venue": "Bam Bu Ku Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:11.799567",
+      "index": 0,
+      "title": "Mixmag Ibiza Sessions",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/mixmag-lab-ibiza",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Ares Carter",
+          "room": "Main"
+        },
+        {
+          "name": "Armand Van Helden",
+          "room": "Main"
+        },
+        {
+          "name": "Harvy Valencia B2B Jesse Calosso B2B Jean Pierre",
+          "room": "Main"
+        },
+        {
+          "name": "Sam Divine",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:11.871911",
+      "index": 7,
+      "title": "Gala by Ibán Mendoza",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/gala-cova-santa",
+      "time": "19:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Ibán Mendoza",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Cova Santa"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:11.872555",
+      "index": 8,
+      "title": "Casa de Sueños Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/wednesdays-es-paradis",
+      "time": "23:45\n                                                                             - 06:00",
+      "venue": "Es Paradis"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:12.296686",
+      "index": 1,
+      "title": "Boiler Room Ibiza | Bicep",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/boiler-room-amnesia",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Bicep (DJ set)",
+          "room": "Main"
+        },
+        {
+          "name": "Icemorph",
+          "room": "Main"
+        },
+        {
+          "name": "Interplanetary Criminal",
+          "room": "Main"
+        },
+        {
+          "name": "Job Jobse",
+          "room": "Main"
+        },
+        {
+          "name": "Juicy Romance",
+          "room": "Main"
+        },
+        {
+          "name": "Malugi",
+          "room": "Main"
+        },
+        {
+          "name": "Suchi",
+          "room": "Main"
+        },
+        {
+          "name": "Young Marco",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:12.298504",
+      "index": 3,
+      "title": "Hilight Tribe",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/las-dalias-live-music",
+      "time": "19:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Hilight Tribe (live)",
+          "room": "Main"
+        }
+      ],
+      "venue": "Las Dalias - Akasha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:12.368157",
+      "index": 8,
+      "title": "Summerians",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/summerians-cova-santa",
+      "time": "19:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Kintar",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Cova Santa"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:12.803320",
+      "index": 0,
+      "title": "David Guetta presents Galactic Circus Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/david-guetta-unvrs",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "David Guetta",
+          "room": "Main"
+        },
+        {
+          "name": "Miss Monique",
+          "room": "Main"
+        },
+        {
+          "name": "MORTEN",
+          "room": "Main"
+        }
+      ],
+      "venue": "[UNVRS]"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:12.873072",
+      "index": 7,
+      "title": "Francis Mercier presents Solèy Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/francis-mercier-chinois",
+      "time": "23:30\n                                                                             - 06:30",
+      "lineup": [
+        {
+          "name": "Francis Mercier",
+          "room": "Main"
+        },
+        {
+          "name": "MoBlack",
+          "room": "Main"
+        },
+        {
+          "name": "Lilya Mandre",
+          "room": "Main"
+        },
+        {
+          "name": "Queen Rami",
+          "room": "Main"
+        }
+      ],
+      "venue": "Chinois Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:12.874671",
+      "index": 9,
+      "title": "Puro Reggaeton Ibiza",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/puro-reggaeton",
+      "time": "23:30\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Es Paradis"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:12.954678",
+      "index": 10,
+      "title": "UTOPIC",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/utopic",
+      "time": "19:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Husa & Zeyada (live)",
+          "room": "Main"
+        },
+        {
+          "name": "Kate Gozz",
+          "room": "Main"
+        },
+        {
+          "name": "Kimonos",
+          "room": "Main"
+        },
+        {
+          "name": "Magnetizm",
+          "room": "Main"
+        },
+        {
+          "name": "Procer",
+          "room": "Main"
+        },
+        {
+          "name": "Raxon",
+          "room": "Main"
+        }
+      ],
+      "venue": "Cova Santa"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:13.451194",
+      "index": 8,
+      "title": "Soul Heaven",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/o-beach-ibiza-birthday",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "DJ Cameo",
+          "room": "Main"
+        },
+        {
+          "name": "Jamie Love",
+          "room": "Main"
+        },
+        {
+          "name": "Sam Dungate",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:13.972293",
+      "index": 2,
+      "title": "Meduza & James Hype present Our House Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/our-house-hi-ibiza",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "Meduza³",
+          "room": "Main"
+        },
+        {
+          "name": "James Hype",
+          "room": "Main"
+        },
+        {
+          "name": "MistaJam",
+          "room": "Main"
+        },
+        {
+          "name": "Tita Lau",
+          "room": "Main"
+        },
+        {
+          "name": "Hannah Laing",
+          "room": "Main"
+        },
+        {
+          "name": "Ammara",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:14.035496",
+      "index": 5,
+      "title": "Mamacita Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/mamacita-eden",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:14.038547",
+      "index": 9,
+      "title": "Nasty Beats Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/nasty-beats",
+      "time": "23:45\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Paco Núñez",
+          "room": "Main"
+        }
+      ],
+      "venue": "Lío Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:14.997507",
+      "index": 2,
+      "title": "The Martinez Brothers Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/martinez-brothers",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "The Martinez Brothers",
+          "room": "Main"
+        },
+        {
+          "name": "Dennis Cruz",
+          "room": "Main"
+        },
+        {
+          "name": "Natalia Roth",
+          "room": "Main"
+        },
+        {
+          "name": "Paco Osuna",
+          "room": "Main"
+        },
+        {
+          "name": "Melanie Ribbe",
+          "room": "Main"
+        },
+        {
+          "name": "Manu Gonzalez",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:14.998854",
+      "index": 3,
+      "title": "Eladio Carrión",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/eladio-carrion",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Eladio Carrión (live)",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:15.074236",
+      "index": 7,
+      "title": "Appetite Ibiza",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/appetite-chinois",
+      "time": "23:30\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Max Dean",
+          "room": "Main"
+        },
+        {
+          "name": "Sarah Story",
+          "room": "Main"
+        },
+        {
+          "name": "Elliot Schooling & Liam Palmer",
+          "room": "Main"
+        },
+        {
+          "name": "DJammin",
+          "room": "Main"
+        },
+        {
+          "name": "Vithz",
+          "room": "Main"
+        }
+      ],
+      "venue": "Chinois Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:15.454504",
+      "index": 12,
+      "title": "Latin Club",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/latin-club-baloo",
+      "time": "23:00\n                                                                             - 05:00",
+      "venue": "Baloo Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:16.921830",
+      "index": 2,
+      "title": "John Summit presents Experts Only",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/john-summit-hi",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "John Summit",
+          "room": "Main"
+        },
+        {
+          "name": "Chris Avantgarde B2B Kevin de Vries",
+          "room": "Main"
+        },
+        {
+          "name": "Max Styler",
+          "room": "Main"
+        },
+        {
+          "name": "Kitty Amor",
+          "room": "Main"
+        },
+        {
+          "name": "Ewan McVicar",
+          "room": "Main"
+        },
+        {
+          "name": "Sally C",
+          "room": "Main"
+        },
+        {
+          "name": "Dam Swindle",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:16.923218",
+      "index": 4,
+      "title": "OFF BRAND",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/off-brand",
+      "time": "23:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Lex Wolf",
+          "room": "Main"
+        },
+        {
+          "name": "Josh Caffé",
+          "room": "Main"
+        },
+        {
+          "name": "Man Power",
+          "room": "Main"
+        },
+        {
+          "name": "Antonio Prosper",
+          "room": "Main"
+        },
+        {
+          "name": "The Brothers Grim",
+          "room": "Main"
+        }
+      ],
+      "venue": "Las Dalias - Akasha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:17.054675",
+      "index": 11,
+      "title": "Vintage",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/vintage-lio",
+      "time": "23:45\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Sebastian Gamboa",
+          "room": "Main"
+        }
+      ],
+      "venue": "Lío Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:17.055201",
+      "index": 12,
+      "title": "Be Latin Bitch",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/be-latin-bitch",
+      "time": "23:00\n                                                                             - 05:00",
+      "venue": "Baloo Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:17.056249",
+      "index": 14,
+      "title": "tipic. | Friday",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/fridays-at-tipic",
+      "time": "23:45\n                                                                             - 06:00",
+      "venue": "tipic. Formentera"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:17.098163",
+      "index": 15,
+      "title": "Funkinyou",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/funkinyou",
+      "time": "23:45\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "DJ Oliver",
+          "room": "Main"
+        }
+      ],
+      "venue": "Lío Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:17.098698",
+      "index": 16,
+      "title": "Children of the 80s",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/children-80s",
+      "time": "13:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "DJ Russke",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Cameo",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Policy",
+          "room": "Main"
+        }
+      ],
+      "venue": "Bam Bu Ku Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:17.629987",
+      "index": 8,
+      "title": "KISS Dance Live",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/kiss-uk-pool-party",
+      "time": "13:00\n                                                                             - 22:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:18.128407",
+      "index": 1,
+      "title": "Amnesia Presents Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/amnesia-presents",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Ben Hemsley",
+          "room": "Main"
+        },
+        {
+          "name": "Kettama",
+          "room": "Main"
+        },
+        {
+          "name": "Denis Sulta",
+          "room": "Main"
+        },
+        {
+          "name": "Leena Punks",
+          "room": "Main"
+        },
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:19.620324",
+      "index": 0,
+      "title": "Paradise",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/paradise-unvrs",
+      "time": "23:00",
+      "lineup": [
+        {
+          "name": "Jamie Jones B2B Rossi. B2B Josh Baker",
+          "room": "Main"
+        },
+        {
+          "name": "Richy Ahmed",
+          "room": "Main"
+        },
+        {
+          "name": "Max Dean",
+          "room": "Main"
+        },
+        {
+          "name": "Alisha",
+          "room": "Main"
+        },
+        {
+          "name": "Wheats",
+          "room": "Main"
+        }
+      ],
+      "venue": "[UNVRS]"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:19.622346",
+      "index": 3,
+      "title": "Blackworks",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/blackworks-hi",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "Novah",
+          "room": "Main"
+        },
+        {
+          "name": "Nico Moreno",
+          "room": "Main"
+        },
+        {
+          "name": "Trym",
+          "room": "Main"
+        },
+        {
+          "name": "Pawlowski",
+          "room": "Main"
+        },
+        {
+          "name": "Skryption",
+          "room": "Main"
+        },
+        {
+          "name": "KOROLOVA",
+          "room": "Main"
+        },
+        {
+          "name": "Agents Of Time",
+          "room": "Main"
+        },
+        {
+          "name": "Henri Bergmann",
+          "room": "Main"
+        },
+        {
+          "name": "Miara B2B Greenjack B2B Beat Inside",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:19.697356",
+      "index": 6,
+      "title": "Todd Terry presents Freeze Project Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/todd-terry-presents-freeze-project",
+      "time": "23:45\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Todd Terry",
+          "room": "Main"
+        },
+        {
+          "name": "Special guest TBA",
+          "room": "Main"
+        },
+        {
+          "name": "Angelo Ferreri",
+          "room": "Main"
+        },
+        {
+          "name": "Doctor Feelgood",
+          "room": "Main"
+        },
+        {
+          "name": "Janika Tenn",
+          "room": "Main"
+        },
+        {
+          "name": "Julie McKnight (live PA)",
+          "room": "Main"
+        }
+      ],
+      "venue": "Eden"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:19.699265",
+      "index": 9,
+      "title": "TRIP Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/trip-club-chinois",
+      "time": "23:30\n                                                                             - 06:30",
+      "lineup": [
+        {
+          "name": "Apollonia (Dan Ghenacia, Dyed Soundorom & Shonky)",
+          "room": "Main"
+        },
+        {
+          "name": "Cesar Vinzent B2B Isbel",
+          "room": "Main"
+        },
+        {
+          "name": "Paramida",
+          "room": "Main"
+        }
+      ],
+      "venue": "Chinois Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:19.742467",
+      "index": 14,
+      "title": "Marea",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/marea-baloo",
+      "time": "23:00\n                                                                             - 05:00",
+      "venue": "Baloo Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:19.772491",
+      "index": 16,
+      "title": "Solos Y Solas",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/weekdays-tipic",
+      "time": "23:45\n                                                                             - 06:00",
+      "venue": "tipic. Formentera"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:20.191239",
+      "index": 2,
+      "title": "HUGEL presents Make The Girls Dance Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/hugel-hi",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "HUGEL",
+          "room": "Main"
+        },
+        {
+          "name": "Shimza",
+          "room": "Main"
+        },
+        {
+          "name": "Bontan",
+          "room": "Main"
+        },
+        {
+          "name": "Juany Bravo",
+          "room": "Main"
+        },
+        {
+          "name": "Miss Monique",
+          "room": "Main"
+        },
+        {
+          "name": "Kölsch",
+          "room": "Main"
+        },
+        {
+          "name": "Fred Lenix",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:20.191903",
+      "index": 3,
+      "title": "Martin Garrix",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/martin-garrix",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Martin Garrix",
+          "room": "Main"
+        },
+        {
+          "name": "Disciples",
+          "room": "Main"
+        },
+        {
+          "name": "Italobros",
+          "room": "Main"
+        },
+        {
+          "name": "Eleganto",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:20.267455",
+      "index": 5,
+      "title": "Clubland",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/clubland_i.htm",
+      "time": "13:00\n                                                                             - 20:00",
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:20.831996",
+      "index": 9,
+      "title": "Kaluki",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/kaluki-528",
+      "time": "23:30\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Claptone",
+          "room": "Main"
+        },
+        {
+          "name": "2manydjs",
+          "room": "Main"
+        },
+        {
+          "name": "Bastian Bux",
+          "room": "Main"
+        },
+        {
+          "name": "Diego San Diego",
+          "room": "Main"
+        }
+      ],
+      "venue": "Chinois Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:20.914477",
+      "index": 13,
+      "title": "Crême de Crême",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/playa-soleil-parties",
+      "time": "21:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Playa Soleil"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:54.308751",
+      "index": 3,
+      "title": "Calvin Harris | Tuesday Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/calvin-harris-tuesday",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Calvin Harris",
+          "room": "Main"
+        },
+        {
+          "name": "Steve Angello",
+          "room": "Main"
+        },
+        {
+          "name": "Tyson O'Brien",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:42:54.897698",
+      "index": 3,
+      "title": "Dom Dolla Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/dom-dolla",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "Dom Dolla",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        },
+        {
+          "name": "Patrick Topping",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:43:25.022964",
+      "index": 10,
+      "title": "Hot Since 82 presents Knee Deep In Ibiza",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/knee-deep-ibiza-528",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Hot Since 82",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "528 Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:43:25.024395",
+      "index": 12,
+      "title": "RUMORS",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/rumors-playa-soleil",
+      "time": "21:00\n                                                                             - 02:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Playa Soleil"
+    },
+    {
+      "scraped_at": "2025-06-08T00:43:25.437960",
+      "index": 2,
+      "title": "Joseph Capriati presents Metamorfosi Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/metamorfosi-hi",
+      "time": "23:30",
+      "lineup": [
+        {
+          "name": "Joseph Capriati",
+          "room": "Main"
+        },
+        {
+          "name": "Ben Böhmer (live)",
+          "room": "Main"
+        },
+        {
+          "name": "Rossi.",
+          "room": "Main"
+        },
+        {
+          "name": "Paramida",
+          "room": "Main"
+        },
+        {
+          "name": "Indira Paganotto",
+          "room": "Main"
+        },
+        {
+          "name": "Ida Engberg",
+          "room": "Main"
+        }
+      ],
+      "venue": "Hï Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:43:25.439243",
+      "index": 4,
+      "title": "Tales of the Unexpected",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/tales-unexpected-akasha",
+      "time": "19:00",
+      "lineup": [
+        {
+          "name": "Ivan Smagghe",
+          "room": "Main"
+        },
+        {
+          "name": "Jeremy Weeks",
+          "room": "Main"
+        },
+        {
+          "name": "David Phillips",
+          "room": "Main"
+        },
+        {
+          "name": "Mike Salta",
+          "room": "Main"
+        },
+        {
+          "name": "The Brothers Grim",
+          "room": "Main"
+        }
+      ],
+      "venue": "Las Dalias - Akasha"
+    },
+    {
+      "scraped_at": "2025-06-08T00:43:27.111219",
+      "index": 0,
+      "title": "Carl Cox",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/carl-cox",
+      "time": "22:30",
+      "lineup": [
+        {
+          "name": "Carl Cox",
+          "room": "Main"
+        },
+        {
+          "name": "Carl Cox B2B PAWSA",
+          "room": "Main"
+        },
+        {
+          "name": "PAWSA",
+          "room": "Main"
+        },
+        {
+          "name": "TSHA",
+          "room": "Main"
+        },
+        {
+          "name": "Chelina Manuhutu",
+          "room": "Main"
+        },
+        {
+          "name": "TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "[UNVRS]"
+    },
+    {
+      "scraped_at": "2025-06-08T00:43:27.198499",
+      "index": 9,
+      "title": "Bedouin present Saga",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/saga-chinois",
+      "time": "23:30\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Morgan Seatree",
+          "room": "Main"
+        },
+        {
+          "name": "+ more TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:43:28.477712",
+      "index": 0,
+      "title": "Anyma Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/anyma-unvrs",
+      "time": "23:00",
+      "lineup": [
+        {
+          "name": "Anyma",
+          "room": "Main"
+        },
+        {
+          "name": "Adriatique",
+          "room": "Main"
+        },
+        {
+          "name": "Son of Son",
+          "room": "Main"
+        }
+      ],
+      "venue": "[UNVRS]"
+    },
+    {
+      "scraped_at": "2025-06-08T00:43:29.694745",
+      "index": 14,
+      "title": "Marea",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/afrobibi",
+      "time": "23:00\n                                                                             - 05:00",
+      "venue": "Baloo Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:43:31.063888",
+      "index": 11,
+      "title": "Fuego By Silvia Superstar",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/fuego-silvia-superstar",
+      "time": "19:00\n                                                                             - 05:00",
+      "lineup": [
+        {
+          "name": "Silvia Superstar",
+          "room": "Main"
+        },
+        {
+          "name": "Carlos Areces",
+          "room": "Main"
+        },
+        {
+          "name": "Arista Invitado",
+          "room": "Main"
+        },
+        {
+          "name": "Lola Von Dage",
+          "room": "Main"
+        },
+        {
+          "name": "Colin Peters",
+          "room": "Main"
+        },
+        {
+          "name": "Simone",
+          "room": "Main"
+        },
+        {
+          "name": "Diego Calvo",
+          "room": "Main"
+        },
+        {
+          "name": "Sambawe",
+          "room": "Main"
+        }
+      ],
+      "venue": "Cova Santa"
+    },
+    {
+      "scraped_at": "2025-06-08T00:44:04.439350",
+      "index": 1,
+      "title": "Eastenderz Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/eastenderz-amnesia",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "East End Dubs",
+          "room": "Main"
+        },
+        {
+          "name": "Alisha B2B Max Dean",
+          "room": "Main"
+        },
+        {
+          "name": "DXNBY",
+          "room": "Main"
+        },
+        {
+          "name": "Ryan Resso B2B Stef Davidse",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:44:36.335577",
+      "index": 1,
+      "title": "Maddix presents Extatic",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/maddix-amnesia",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Maddix",
+          "room": "Main"
+        },
+        {
+          "name": "Shvdz",
+          "room": "Main"
+        },
+        {
+          "name": "Space92",
+          "room": "Main"
+        },
+        {
+          "name": "Trym",
+          "room": "Main"
+        },
+        {
+          "name": "Will Atkinson",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:44:39.618771",
+      "index": 1,
+      "title": "RESISTANCE Opening Party",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/resistance-amnesia",
+      "time": "23:00\n                                                                             - 06:00",
+      "lineup": [
+        {
+          "name": "Adam Beyer B2B Mau P",
+          "room": "Main"
+        },
+        {
+          "name": "ARTBAT",
+          "room": "Main"
+        },
+        {
+          "name": "Massano",
+          "room": "Main"
+        },
+        {
+          "name": "Max Styler",
+          "room": "Main"
+        },
+        {
+          "name": "Mathame",
+          "room": "Main"
+        },
+        {
+          "name": "Eli Brown",
+          "room": "Main"
+        },
+        {
+          "name": "KOROLOVA",
+          "room": "Main"
+        },
+        {
+          "name": "Kasia",
+          "room": "Main"
+        }
+      ],
+      "venue": "Amnesia"
+    },
+    {
+      "scraped_at": "2025-06-08T00:44:39.621286",
+      "index": 4,
+      "title": "elrow Outdoors",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/elrow-ushuaia",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Line-up TBA",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:44:39.696733",
+      "index": 7,
+      "title": "Ibiza Rocks 20th Birthday Party | Dizzee Rascal",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/ibiza-rocks",
+      "time": "13:00\n                                                                             - 20:00",
+      "lineup": [
+        {
+          "name": "Dizzee Rascal (live)",
+          "room": "Main"
+        },
+        {
+          "name": "Songer (live PA)",
+          "room": "Main"
+        },
+        {
+          "name": "Patrick Nazemi",
+          "room": "Main"
+        },
+        {
+          "name": "Ibiza Rocks resident DJs",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ibiza Rocks Hotel"
+    },
+    {
+      "scraped_at": "2025-06-08T00:45:11.693989",
+      "index": 11,
+      "title": "FUSE X Brunch Electronik",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/fuse-528",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Dyed Soundorom",
+          "room": "Main"
+        },
+        {
+          "name": "Enzo Siragusa",
+          "room": "Main"
+        },
+        {
+          "name": "Gene On Earth",
+          "room": "Main"
+        },
+        {
+          "name": "Laidlaw",
+          "room": "Main"
+        },
+        {
+          "name": "Shanti Celeste",
+          "room": "Main"
+        },
+        {
+          "name": "tINI",
+          "room": "Main"
+        }
+      ],
+      "venue": "528 Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:45:12.118065",
+      "index": 4,
+      "title": "Kygo",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/kygo",
+      "time": "17:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Kygo",
+          "room": "Main"
+        },
+        {
+          "name": "Matt Sassari",
+          "room": "Main"
+        },
+        {
+          "name": "Austin Millz",
+          "room": "Main"
+        },
+        {
+          "name": "Frank Walker",
+          "room": "Main"
+        }
+      ],
+      "venue": "Ushuaïa Ibiza"
+    },
+    {
+      "scraped_at": "2025-06-08T00:45:12.188882",
+      "index": 8,
+      "title": "Ibiza Spray",
+      "url": "https://www.ibiza-spotlight.com/night/promoters/ibiza-spray",
+      "time": "13:00\n                                                                             - 23:00",
+      "lineup": [
+        {
+          "name": "Molly D",
+          "room": "Main"
+        },
+        {
+          "name": "Leon Eales",
+          "room": "Main"
+        },
+        {
+          "name": "DJ Cameo",
+          "room": "Main"
+        },
+        {
+          "name": "Aik",
+          "room": "Main"
+        },
+        {
+          "name": "Kenzie",
+          "room": "Main"
+        }
+      ],
+      "venue": "O Beach Ibiza"
+    }
+  ]
+}
