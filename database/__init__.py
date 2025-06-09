@@ -10,7 +10,7 @@ _current_dir = os.path.dirname(os.path.abspath(__file__))
 if _current_dir not in sys.path:
     sys.path.insert(0, _current_dir)
 
-from .mongodb_setup import MongoDBSetup
+# from .mongodb_setup import MongoDBSetup
 from .quality_scorer import QualityScorer
 from .data_migration import DataMigration
 
@@ -20,4 +20,5 @@ if _current_dir in sys.path and sys.path[0] == _current_dir :
 
 
 __version__ = "1.0.0"
-__all__ = ["MongoDBSetup", "QualityScorer", "DataMigration"]
+__all__ = [ "QualityScorer", "DataMigration"]
+# __all__ = ["MongoDBSetup", "QualityScorer", "DataMigration"]

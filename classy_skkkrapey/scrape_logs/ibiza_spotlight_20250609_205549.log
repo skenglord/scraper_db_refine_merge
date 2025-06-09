@@ -1,0 +1,14 @@
+2025-06-09 20:55:49,806 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,807 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,809 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Appended 1 events to scraped_events_20250609_205549.csv
+2025-06-09 20:55:49,811 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,811 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,811 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Appended 1 events to scraped_events_20250609_205549.csv
+2025-06-09 20:55:49,812 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,833 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,834 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,835 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,836 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,836 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - WARNING - MongoDB not available. Event not saved to DB.
+2025-06-09 20:55:49,837 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - INFO - Initialized IbizaSpotlightScraper with URL: http://example.com
+2025-06-09 20:55:49,837 - my_scrapers.scraper_ibizaspotlight_revised_0506_final - WARNING - MongoDB not available. Event not saved to DB.

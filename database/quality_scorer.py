@@ -119,7 +119,26 @@ class QualityScorer:
         score = 0.0
         flags = []
         
-        if not location:
+        if isinstance(location, str):
+            # If location is a string, treat it as a venue name.
+            # Assign a base score for having some text, then penalize for missing structure.
+            flags.append("location_is_string_input")
+            if location.strip(): # Non-empty string
+                location_dict = {
+                    "venue": location,
+                    "address": None,
+                    "city": None,
+                    "coordinates": None # Explicitly None
+                }
+                score += 0.2 # Base score for having a venue name (even if it's just a string)
+                flags.append("missing_address") # Will be flagged as address is None
+                flags.append("missing_city")    # Will be flagged as city is None
+            else: # Empty string
+                location_dict = {} # Treat as empty essentially
+                flags.append("missing_location") # Or location_string_empty
+                score = 0.0
+            location = location_dict # Proceed with scoring based on this dict
+        elif not location: # Handles None or empty dict
             return 0.0, {
                 "confidence": 0.0,
                 "flags": ["missing_location"],
@@ -131,7 +150,8 @@ class QualityScorer:
             score += 0.3
             # Known Ibiza venues get bonus
             known_venues = ["Hï Ibiza", "Ushuaïa", "Pacha", "Amnesia", "DC10", "Privilege"]
-            if any(venue in location["venue"] for venue in known_venues):
+            # Ensure location["venue"] is a string before "in" operator
+            if isinstance(location["venue"], str) and any(venue in location["venue"] for venue in known_venues):
                 score += 0.1
         else:
             flags.append("missing_venue")
@@ -139,15 +159,17 @@ class QualityScorer:
         # Address
         if location.get("address"):
             score += 0.2
-        else:
+        # No 'else' here if already flagged by string input handling
+        elif "missing_address" not in flags:
             flags.append("missing_address")
         
         # City (should be Ibiza)
         if location.get("city"):
             score += 0.2
-            if "ibiza" in location["city"].lower():
+            if isinstance(location["city"], str) and "ibiza" in location["city"].lower():
                 score += 0.1
-        else:
+        # No 'else' here if already flagged by string input handling
+        elif "missing_city" not in flags:
             flags.append("missing_city")
         
         # Coordinates

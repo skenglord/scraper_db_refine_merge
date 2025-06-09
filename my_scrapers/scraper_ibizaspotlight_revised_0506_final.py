@@ -37,8 +37,8 @@ import pytz
 from tqdm import tqdm
 import html2text
 
-from classy_skkkrapey.config import settings
-from classy_skkkrapey.database.quality_scorer import QualityScorer
+from config import settings
+from database.quality_scorer import QualityScorer
 from pymongo import MongoClient, errors
 from pymongo.database import Database
 
@@ -46,16 +46,10 @@ from pymongo.database import Database
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-# Add file handler for detailed logs
-log_dir = Path("classy_skkkrapey/scrape_logs")
-log_dir.mkdir(exist_ok=True)
-file_handler = logging.FileHandler(log_dir / f"ibiza_spotlight_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
-file_handler.setLevel(logging.DEBUG)
+# Define formatter here, as it's used by both handlers
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(formatter)
-logger.addHandler(file_handler)
 
-# Add console handler for INFO and above
+# Add console handler for INFO and above (remains at module level)
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.INFO)
 console_handler.setFormatter(formatter)
@@ -68,7 +62,7 @@ class ScraperConfig:
     min_delay: float = 0.7
     max_delay: float = 1.8
     save_to_db: bool = True
-    headers: Dict[str, str] = field(default_factory=lambda: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'})
+    headers: Dict[str, str] = field(default_factory=lambda: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
 
 def get_mongodb_connection(retries=3, delay=2) -> Optional[Database]:
     """Get MongoDB connection with retry logic"""
@@ -106,6 +100,24 @@ class IbizaSpotlightScraper:
         """Initialize scraper with configuration"""
         self.config = config
         
+        # Moved log_dir and file_handler setup into __init__
+        self.log_dir = Path("classy_skkkrapey/scrape_logs")
+        self.log_dir.mkdir(parents=True, exist_ok=True) # Ensure parents=True for robustness
+
+        # Create a unique log file for each scraper instance if desired, or use a shared one
+        # For now, keeping the original dynamic name generation but tied to instance
+        instance_run_timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        file_handler = logging.FileHandler(self.log_dir / f"ibiza_spotlight_{instance_run_timestamp}.log")
+        file_handler.setLevel(logging.DEBUG)
+        # formatter is already defined at module level
+        file_handler.setFormatter(formatter)
+
+        # Add file_handler only if not already present (e.g. if multiple instances share a logger)
+        # A more robust approach might involve instance-specific loggers or careful handler management.
+        # For now, this ensures the handler is added.
+        if not any(isinstance(h, logging.FileHandler) and h.baseFilename == file_handler.baseFilename for h in logger.handlers):
+             logger.addHandler(file_handler)
+
         self.session = requests.Session()
         self.session.headers.update(self.config.headers)
         
@@ -121,8 +133,8 @@ class IbizaSpotlightScraper:
         self.scorer = QualityScorer()
         
         # CSV setup
-        self.run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.csv_file_path = log_dir / f"scraped_events_{self.run_timestamp}.csv"
+        self.run_timestamp = instance_run_timestamp # Use the same timestamp for CSV as for log file
+        self.csv_file_path = self.log_dir / f"scraped_events_{self.run_timestamp}.csv" # Use self.log_dir
         self.csv_headers_written = False
         self.all_scraped_events_for_run: List[Dict[str, Any]] = []
         
