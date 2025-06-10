@@ -1,0 +1,5 @@
+2025-06-10 07:58:56,282 - ClubTicketsMainExecution - INFO - scraper_utils.setup_logger:42 - Logger 'ClubTicketsMainExecution' initialized. Logging to: scraper_logs/clubtickets_test/clubtickets_main_refactored_run_20250610_075856.log
+2025-06-10 07:58:56,282 - ClubTicketsMainExecution - INFO - classy_clubtickets_nav_scraper.<module>:333 - Starting ClubTickets Scraper refactored main execution...
+2025-06-10 07:58:56,282 - ClubTicketsMainExecution - INFO - classy_clubtickets_nav_scraper.<module>:344 - Test run configuration overrides: {'headless': True, 'max_pages_to_process': 1, 'mongodb_uri': 'mongodb://localhost:27017/', 'db_name': 'clubtickets_test_db', 'collection_name': 'clubtickets_test_output', 'output_dir': 'output/clubtickets_test_run', 'log_dir': 'scraper_logs/clubtickets_test_run'}
+2025-06-10 07:58:56,283 - ClubTicketsMainExecution - INFO - scraper_utils.setup_logger:23 - Logger 'ClubTicketsMainExecution' already configured. Returning existing instance.
+2025-06-10 07:58:57,527 - ClubTicketsMainExecution - INFO - classy_clubtickets_nav_scraper.<module>:356 - Targeting URL: https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25
