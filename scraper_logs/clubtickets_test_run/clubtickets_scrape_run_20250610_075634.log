@@ -1,0 +1,28 @@
+2025-06-10 07:56:34,830 - ClubTicketsScraper - INFO - scraper_utils.setup_logger:42 - Logger 'ClubTicketsScraper' initialized. Logging to: scraper_logs/clubtickets_test_run/clubtickets_scrape_run_20250610_075634.log
+2025-06-10 07:56:34,830 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.__init__:65 - ClubTicketsScraper initialized. Effective config (output_dir): output/clubtickets_test_run
+2025-06-10 07:56:34,831 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.__enter__:68 - Starting Playwright...
+2025-06-10 07:56:35,441 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.__enter__:76 - Playwright browser launched.
+2025-06-10 07:56:35,441 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.crawl_events:261 - Starting crawl of: https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25, Max date tabs to process: 1
+2025-06-10 07:56:35,441 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.navigate_to:123 - Navigating to: https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25
+2025-06-10 07:56:36,453 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.navigate_to:139 - New page created for navigation to https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25.
+2025-06-10 07:56:36,453 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.retry_action:107 - Attempt 1/2: Navigate to https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25
+2025-06-10 07:56:51,359 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.retry_action:109 - Successfully performed: Navigate to https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25
+2025-06-10 07:56:51,359 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.navigate_to:149 - Successfully navigated to https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25.
+2025-06-10 07:56:51,359 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.handle_cookie_popup:160 - Checking for cookie consent popup...
+2025-06-10 07:56:53,049 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.handle_cookie_popup:173 - Cookie popup found with selector: 'button:has-text('Accept All')'. Attempting to click.
+2025-06-10 07:56:53,049 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.retry_action:107 - Attempt 1/2: Click cookie button: 'button:has-text('Accept All')'
+2025-06-10 07:56:53,193 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.retry_action:109 - Successfully performed: Click cookie button: 'button:has-text('Accept All')'
+2025-06-10 07:56:53,194 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.handle_cookie_popup:175 - Clicked cookie consent button using: 'button:has-text('Accept All')'.
+2025-06-10 07:56:55,960 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.crawl_events:271 - Performed scroll 1 on https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25
+2025-06-10 07:56:56,297 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.crawl_events:271 - Performed scroll 2 on https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25
+2025-06-10 07:56:56,617 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.process_current_page_events:232 - Processing current page events for context: initial_page, URL: https://www.clubtickets.com/search?dates=31%2F05%2F25+-+01%2F11%2F25
+2025-06-10 07:56:56,617 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.retry_action:107 - Attempt 1/2: Wait for event cards using selector '.content-text-card' for context 'initial_page'
+2025-06-10 07:56:56,698 - ClubTicketsScraper - DEBUG - classy_clubtickets_nav_scraper.retry_action:109 - Successfully performed: Wait for event cards using selector '.content-text-card' for context 'initial_page'
+2025-06-10 07:56:56,698 - ClubTicketsScraper - ERROR - classy_clubtickets_nav_scraper.process_current_page_events:245 - Error locating event cards with selector '.content-text-card': 'Locator' object has no attribute 'all_element_handles'
+Traceback (most recent call last):
+  File "/app/my_scrapers/classy_clubtickets_nav_scraper.py", line 243, in process_current_page_events
+    card_elements = self.page.locator(card_selector).all_element_handles()
+AttributeError: 'Locator' object has no attribute 'all_element_handles'
+2025-06-10 07:56:56,698 - ClubTicketsScraper - WARNING - classy_clubtickets_nav_scraper.crawl_events:290 - Date tab XPath not configured. Skipping tab processing.
+2025-06-10 07:56:56,699 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.__exit__:84 - Closing Playwright resources...
+2025-06-10 07:56:56,801 - ClubTicketsScraper - INFO - classy_clubtickets_nav_scraper.__exit__:94 - Playwright resources cleaned.

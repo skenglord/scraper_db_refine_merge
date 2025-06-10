@@ -1,0 +1,48 @@
+2025-06-10 07:55:00,413 - ClubTicketsMainExecution - INFO - scraper_utils.setup_logger:42 - Logger 'ClubTicketsMainExecution' initialized. Logging to: scraper_logs/clubtickets_test/clubtickets_main_refactored_run_20250610_075500.log
+2025-06-10 07:55:00,413 - ClubTicketsMainExecution - INFO - classy_clubtickets_nav_scraper.<module>:370 - Starting ClubTickets Scraper refactored main execution...
+2025-06-10 07:55:00,413 - ClubTicketsMainExecution - INFO - classy_clubtickets_nav_scraper.<module>:382 - Test run configuration overrides: {'headless': False, 'max_pages_to_process': 1, 'mongodb_uri': 'mongodb://localhost:27017/', 'db_name': 'clubtickets_test_db', 'collection_name': 'clubtickets_test_output'}
+2025-06-10 07:55:01,108 - ClubTicketsMainExecution - CRITICAL - classy_clubtickets_nav_scraper.<module>:456 - An error occurred during the main execution of ClubTicketsScraper: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/swebot/.cache/ms-playwright/chromium-1169/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DeferRendererTasksAfterInput,DestroyProfileOnBrowserClose,DialMediaRouteProvider,ExtensionManifestV2Disabled,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --no-sandbox --no-sandbox --disable-setuid-sandbox --disable-blink-features=AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-RJqeX3 --remote-debugging-pipe --no-startup-window
+  - <launched> pid=7256
+  - [pid=7256][err] [7256:7256:0610/075501.079458:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:249] Missing X server or $DISPLAY
+  - [pid=7256][err] [7256:7256:0610/075501.079580:ERROR:ui/aura/env.cc:257] The platform failed to initialize.  Exiting.
+Traceback (most recent call last):
+  File "/app/my_scrapers/classy_clubtickets_nav_scraper.py", line 388, in <module>
+    with ClubTicketsScraper(config_overrides=test_run_config_overrides) as scraper:
+  File "/app/my_scrapers/classy_clubtickets_nav_scraper.py", line 56, in __enter__
+    self.browser = self.playwright_instance.chromium.launch(
+  File "/home/swebot/.local/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 14494, in launch
+    self._sync(
+  File "/home/swebot/.local/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/swebot/.local/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 97, in launch
+    Browser, from_channel(await self._channel.send("launch", params))
+  File "/home/swebot/.local/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+  File "/home/swebot/.local/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/swebot/.cache/ms-playwright/chromium-1169/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DeferRendererTasksAfterInput,DestroyProfileOnBrowserClose,DialMediaRouteProvider,ExtensionManifestV2Disabled,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --no-sandbox --no-sandbox --disable-setuid-sandbox --disable-blink-features=AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-RJqeX3 --remote-debugging-pipe --no-startup-window
+  - <launched> pid=7256
+  - [pid=7256][err] [7256:7256:0610/075501.079458:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:249] Missing X server or $DISPLAY
+  - [pid=7256][err] [7256:7256:0610/075501.079580:ERROR:ui/aura/env.cc:257] The platform failed to initialize.  Exiting.
+
+2025-06-10 07:55:01,108 - ClubTicketsMainExecution - INFO - classy_clubtickets_nav_scraper.<module>:458 - ClubTicketsScraper refactored test run finished. Total unified events processed: 0
