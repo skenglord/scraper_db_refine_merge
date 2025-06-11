@@ -13,8 +13,9 @@ pytz>=2023.3 # For timezone handling
 sentry-sdk[fastapi,aiohttp,flask,celery,logging,pymongo,prefect]>=1.40.0,<2.0.0 # Added Sentry SDK with common integrations
 
 # Web Scraping (if scrapers are included directly or for testing utilities)
-# playwright>=1.30.0,<2.0.0 # If Playwright usage is part of this package's direct features
-# beautifulsoup4>=4.11.0,<5.0.0 # If HTML parsing utilities are included
+playwright>=1.30.0,<2.0.0 # If Playwright usage is part of this package's direct features
+playwright-stealth>=1.0.0,<2.0.0 # For Playwright stealth plugin
+beautifulsoup4>=4.9.0,<5.0.0 # If HTML parsing utilities are included
 # requests>=2.28.0,<3.0.0 # If basic HTTP requests are made by utilities
 
 # Orchestration (if flows are defined within this package or for testing integrations)
