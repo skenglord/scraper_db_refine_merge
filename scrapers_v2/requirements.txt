@@ -1,0 +1,33 @@
+# Core Pydantic for settings and data models
+pydantic>=2.0.0,<3.0.0
+pydantic-settings>=2.0.0,<3.0.0
+
+# Database
+pymongo>=4.0.0,<5.0.0  # For MongoDB interaction
+
+# Date/Time Handling
+python-dateutil>=2.8.0,<3.0.0 # For robust date parsing in schema_adapter
+pytz>=2023.3 # For timezone handling
+
+# Error Tracking
+sentry-sdk[fastapi,aiohttp,flask,celery,logging,pymongo,prefect]>=1.40.0,<2.0.0 # Added Sentry SDK with common integrations
+
+# Web Scraping (if scrapers are included directly or for testing utilities)
+# playwright>=1.30.0,<2.0.0 # If Playwright usage is part of this package's direct features
+# beautifulsoup4>=4.11.0,<5.0.0 # If HTML parsing utilities are included
+# requests>=2.28.0,<3.0.0 # If basic HTTP requests are made by utilities
+
+# Orchestration (if flows are defined within this package or for testing integrations)
+prefect>=2.10.0,<3.0.0 # Note: Sentry integration for Prefect 2 is via sentry-sdk[prefect]
+
+# Utilities
+# python-dotenv>=1.0.0 # For loading .env files (pydantic-settings handles this, but good to note)
+# html # standard library for html.unescape
+
+# Add other specific dependencies as your scrapers_v2 project evolves.
+# For example, if you add specific API client libraries, data processing tools, etc.
+# numpy # If used by any scrapers or utilities for numerical operations
+# pandas # If used for data manipulation or CSV generation beyond basic csv module
+# html2text # If used for converting HTML to Markdown
+# lxml # Often used by BeautifulSoup for faster parsing
+# fake-useragent # If User-Agent generation is centralized here
