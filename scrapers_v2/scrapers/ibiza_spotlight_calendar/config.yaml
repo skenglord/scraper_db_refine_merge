@@ -1,0 +1,53 @@
+scraper_name: "IbizaSpotlightCalendar"
+base_url: "https://www.ibiza-spotlight.com"
+calendar_path: "/night/events"
+max_months_to_scrape: 2 # Limit for testing, can be increased for production
+db_collection: "events_ibiza_spotlight" # Example for saving
+
+# User agent for requests
+user_agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Mobile/15E148 Safari/604.1"
+viewport_size:
+  width: 390
+  height: 844
+
+# Selectors for Playwright interactions and BeautifulSoup parsing
+selectors:
+  # Playwright selectors for page interaction
+  select_date_button: "a[data-modal='calendar-dp-modal']"
+  calendar_modal: "#calendar-dp-modal"
+  confirm_date_button: "button:has-text('Confirm')"
+  modal_title: ".ui-datepicker-title"
+  modal_next_month_button: ".ui-datepicker-next"
+  modal_day_link: "td[data-handler='selectDay'] a"
+  initial_modal_content_check: "#calendar-dp-modal .ui-datepicker-title"
+
+  # Playwright selectors to get event card elements (for extracting their HTML)
+  primary_event_card: "div.card-ticket.partycal-ticket"
+  fallback_event_cards:
+    - ".partycal-ticket"
+    - ".card-ticket"
+    - ".event-card"
+
+  # BeautifulSoup selectors (to be used on HTML snippets from event cards)
+  event_title_bs: "div.ticket-header-bottom h3 a"
+  event_time_bs: "div.ticket-header time"
+  event_lineup_container_bs: "div.partyDjs" # Container for artists
+  event_artists_bs: "div.djlist div.partyDj a" # Actual artist links within the container
+  event_venue_img_bs: "div.ticket-header-bottom img" # For venue name from alt text
+  event_price_bs: ".price"
+
+# Timeouts in milliseconds
+timeouts:
+  default: 10000
+  navigation: 20000
+  element: 7000
+  quick_element: 3000 # For elements that should appear quickly, like cookie banners
+
+# Delays in seconds (min and max for random range)
+delays:
+  navigation_min: 0.8
+  navigation_max: 1.8
+  action_min: 0.3
+  action_max: 0.7
+  quick_min: 0.1
+  quick_max: 0.2
