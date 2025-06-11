@@ -1,0 +1,45 @@
+# scrapers_v2/scrapers/ticketmaster/ticketmaster_config.yaml
+
+target_urls:
+  concerts: "https://www.ticketmaster.com/discover/concerts"
+  # Add other potential start URLs if identified, e.g., for sports, arts etc.
+
+# Selectors for HTML parsing. These are placeholders and need refinement with real pages.
+selectors:
+  event_list_container: ".event-list" # Hypothetical container for all event cards
+  event_card: ".event-card-container" # From previous Python code
+  event_title_in_card: ".event-title-in-card" # Adjusted to match mock HTML
+  event_date_in_card: ".event-date-in-card" # Adjusted to match mock HTML
+  event_venue_in_card: ".event-venue-in-card" # Adjusted to match mock HTML
+  event_url_in_card: "a.event-link" # Kept from previous Python code, href is checked in parsing
+  price_in_card: ".event-price-in-card" # Matched to mock HTML
+  image_in_card: "img.event-image[src]" # Placeholder
+  json_ld_script: "script[type='application/ld+json']" # From previous Python code
+  load_more_button: "#load-more-events" # From previous Python code (used as is)
+  cookie_popup_selectors: # List of selectors to try and click to dismiss cookie popups
+    - ".cookie-accept-button-selector" # Example generic
+    - "#onetrust-accept-btn-handler" # Example, common cookie consent library
+
+# Settings related to Playwright usage
+playwright_settings:
+  enabled: true # Whether to use Playwright at all
+  headless: true
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" # Updated from mono_ticketmaster
+  default_timeout_ms: 30000 # Default timeout for Playwright operations
+  # load_more_selector is now under 'selectors' as 'load_more_button' for consistency
+  slow_mo_ms: 50 # From mono_ticketmaster previous Python code
+
+# General scraping settings
+scraping_settings:
+  # Delays are now structured for min/max
+  delays:
+    request_min_ms: 500 # From mono_ticketmaster previous Python code
+    request_max_ms: 1500 # From mono_ticketmaster previous Python code
+    post_interaction_ms: 1000 # From mono_ticketmaster previous Python code
+  max_load_more_clicks: 3 # From mono_ticketmaster previous Python code
+  # date_format_priority: # Optional: list of date formats to try if parsing is tricky
+  #   - "%Y-%m-%dT%H:%M:%S%z"
+  #   - "%b %d, %Y"
+
+# Note: Sensitive information like API keys should NOT be in this file.
+# They should be handled by the global scrapers_v2 config system (e.g., .env files).
