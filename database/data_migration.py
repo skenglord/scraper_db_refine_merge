@@ -14,7 +14,7 @@ import re
 from pathlib import Path
 
 # Assuming schema_adapter.py is in the parent directory (project root)
-from ..schema_adapter import map_to_unified_schema
+# Import moved inside function to avoid circular import
 # from mongodb_setup import MongoDBSetup
 from quality_scorer import QualityScorer
 
@@ -62,6 +62,10 @@ class DataMigration:
         # The original `event_data` is treated as the `raw_data` input
         # for the adapter.
         try:
+            # Assuming map_to_unified_schema is globally available or imported elsewhere.
+            # If it's part of a class or needs specific import, this must be adjusted.
+            # For now, direct call:
+            from schema_adapter import map_to_unified_schema # Ensure this import is valid in your project structure
             unified_event = map_to_unified_schema(
                 raw_data=event_data,
                 source_platform=source_platform_name,
