@@ -16,6 +16,7 @@ sentry-sdk[fastapi,aiohttp,flask,celery,logging,pymongo,prefect]>=1.40.0,<2.0.0 
 playwright>=1.30.0,<2.0.0 # If Playwright usage is part of this package's direct features
 playwright-stealth>=1.0.0,<2.0.0 # For Playwright stealth plugin
 beautifulsoup4>=4.9.0,<5.0.0 # If HTML parsing utilities are included
+PyYAML>=5.0,<7.0 # For YAML configuration file parsing
 # requests>=2.28.0,<3.0.0 # If basic HTTP requests are made by utilities
 
 # Orchestration (if flows are defined within this package or for testing integrations)
