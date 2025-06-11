@@ -78,6 +78,7 @@ class QualityScorer:
 
         return {
             # This structure matches the `data_quality` field in unifiedEventsSchema_v2
+            "overall": overall_score,
             "overall_score": overall_score,
             "field_quality_scores": field_scores, # field_scores now directly maps to this
             "validation_flags": all_validation_flags,
@@ -93,13 +94,20 @@ class QualityScorer:
         """Score title field (logic largely unchanged, name updated for consistency)"""
         score = 0.0
         flags = []
-        
+
         if not title:
             return 0.0, { # This dict is for internal details, not directly part of schema's validation_flags
                 "score_component": 0.0,
                 "flags": ["missing_title"]
             }
-        
+
+        # Ensure title is a string before checking length
+        if not isinstance(title, str):
+            return 0.0, {
+                "score_component": 0.0,
+                "flags": ["invalid_title_type"]
+            }
+
         # Length check
         if len(title) >= 5:
             score += 0.3
